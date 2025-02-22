@@ -1,0 +1,252 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[spanish]{babel}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% Formatos de títulos
+\titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}{
+\titlespacing*{\chapter}{0em}{*3}{*2}
+\titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0em}{*2}{*1.2}
+\titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{4em}{*1}{*0.6}
+
+% Formato de citación
+\usepackage{citation-style-language}
+\cslsetup{style = mary-ann-liebert-vancouver}
+\addbibresource{mydocument.bib}
+% Cosas generales
+\title{Factores de riesgo en el neurodesarrollo infantil}
+\newcommand{\tiempito}{marzo a junio de 2025}
+
+\begin{document}
+	\tableofcontents
+	\maketitle
+	\chapter{Antecedentes y contextualización del problema de investigación}
+En una revisión sistemática y meta-análisis realizada por Wondmagegn et al.
+(2024), titulada "Prevalence and determinants of developmental delay among
+children in low- and middle-income countries: a systematic review and
+meta-analysis", se analizaron 21 estudios primarios publicados entre 2010 y
+2024, involucrando a un total de 54,067 niños en países de ingresos bajos y
+medios. El objetivo principal fue evaluar la prevalencia combinada del retraso
+del desarrollo confirmado y sus determinantes entre los niños en estos países.
+Los resultados mostraron una prevalencia combinada de retraso del desarrollo
+del 18.83\% (IC 95\%: 15.53-22.12\%). En el análisis de subgrupos, se observó
+una alta prevalencia de retraso del desarrollo [26.69\% (IC 95\%: 15.78-37.60)]
+en estudios realizados en África. Los determinantes significativos del retraso
+del desarrollo fueron la educación materna [OR: 3.04; IC 95\% (2.05, 4.52)] y
+el bajo peso al nacer [OR: 3.61; IC 95\% (1.72, 7.57)]. Los autores concluyeron
+que la prevalencia combinada de retraso del desarrollo en países de ingresos
+bajos y medios era alta en comparación con los países de altos ingresos,
+especialmente en África, y que el nivel educativo materno y el peso al nacer
+estaban significativamente asociados con los retrasos del desarrollo.
+\cite{Wondmagegn2024}
+
+En un estudio transversal realizado por Mehner et al. (2019), titulado "The
+association of cumulative risk scoring with ASQ-3 outcomes in a rural
+impoverished region of Guatemala", se evaluó una muestra de conveniencia de 148
+madres con niños de 12 a 52 meses de edad en una zona rural de Guatemala. El
+objetivo principal fue desarrollar una puntuación de riesgo compuesta por
+factores fácilmente obtenibles para diseñar intervenciones e identificar a los
+niños de alto riesgo que más se beneficiarían de estas. Se utilizaron encuestas
+de interacción madre-hijo y cuestionarios Ages and Stages Questionnaire, Third
+Edition (ASQ-3) para evaluar el desarrollo. Los resultados mostraron que el 
+58\% de los niños tenían puntuaciones anormales en $\ge$1 dominio del ASQ-3, y
+el 35\% en $\ge$2 dominios. Se desarrollaron tres puntuaciones de riesgo:
+Riesgo Demográfico Materno (DR), Interacción Madre-Hijo (MCI) y Riesgo
+Combinado (CR). La probabilidad de tener $\ge$2 dominios con puntuaciones
+anormales aumentó significativamente con un puntaje DR creciente (OR, 1.46 [IC
+95\%, 1.15-1.86] p<0.05) y un puntaje CR creciente (OR, 2.08 [IC 95\%,
+1.41-3.07], p<0.05). Los autores concluyeron que un índice de riesgo
+acumulativo combinado de factores demográficos e interacciones madre-hijo
+parece ser una herramienta útil para predecir qué niños tienen puntuaciones
+anormales en múltiples dominios del desarrollo. \cite{CMehner2019}
+
+En un estudio transversal comunitario realizado en áreas urbanas de Etiopía por
+Delbiso et al. (2024), titulado Early childhood development and nutritional
+status in urban Ethiopia, se evaluaron 627 pares de madres e hijos de 12-36
+meses de edad entre julio y septiembre de 2022. El desarrollo infantil temprano
+(DIT) se evaluó utilizando el Cuestionario de Edades y Etapas (ASQ-3), mientras
+que el estado nutricional se determinó mediante mediciones antropométricas. Los
+resultados mostraron que los retrasos en los dominios del DIT eran comunes,
+especialmente en el dominio motor fino (41.9\%). Más de la mitad de los niños
+(52.8\%) presentaban retraso en el crecimiento. Se encontró que el retraso en
+el crecimiento y el bajo peso estaban asociados con retrasos en el DIT,
+mientras que la emaciación no lo estaba. Los niños con retraso en el
+crecimiento tenían más probabilidades de tener peores retrasos en el DIT en los
+dominios motor fino (OR = 1.54; IC 95\%: 1.11-2.15), motor grueso (OR = 1.47;
+IC 95\%: 1.05-2.04) y resolución de problemas (OR = 1.41; IC 95\%: 1.02-1.96)
+en comparación con los niños sin retraso en el crecimiento. De manera similar,
+los niños con bajo peso tenían más probabilidades de tener peores retrasos en
+el DIT en los dominios motor grueso (OR = 1.91; IC 95\%: 1.20-3.04) y motor
+fino (OR = 1.90; IC 95\%: 1.15-3.15) en comparación con los niños de peso
+normal. \cite{Delbiso2024}
+
+Domek et al. (2023) realizaron un estudio piloto para evaluar los efectos a
+largo plazo de una intervención simple con títeres de dedo para promover el
+desarrollo infantil temprano en el ámbito de atención primaria. La muestra
+incluyó 172 niños de familias principalmente de bajos ingresos, divididos en
+cohortes de intervención temprana (2 meses) y tardía (6 o 12 meses). Se utilizó
+el Cuestionario de Edades y Etapas (ASQ-3) para evaluar el desarrollo infantil
+hasta los 36 meses. Los resultados mostraron que la intervención temprana se
+asoció con mejores trayectorias de desarrollo socioemocional en comparación con
+la intervención tardía (diferencia en pendiente de 0.12, p=0.018). También se
+observaron diferencias que se acercaron a la significancia estadística en
+comunicación (p=0.056) y en la puntuación combinada no motora (p=0.052). No se
+encontraron diferencias significativas en los dominios de resolución de
+problemas, motricidad gruesa y fina. Los autores concluyeron que la
+intervención con títeres de dedo puede proporcionar una forma simple, de bajo
+costo y escalable de fomentar interacciones cuidador-infante que promuevan el
+desarrollo del lenguaje y socioemocional, especialmente cuando se proporciona
+en la infancia temprana. Este estudio destaca la importancia de las
+intervenciones tempranas en atención primaria y su potencial impacto en el
+desarrollo infantil a largo plazo. \cite{Domek2023}
+
+En un estudio transversal, descriptivo y exploratorio realizado por Ramos y
+Della Barba (2021), titulado Ages and Stages Questionnaires Brazil in
+monitoring development in early childhood education, se analizaron 392 niños de     5 a 50 meses de edad que asistían a 6 Centros de Educación Infantil (CEIs) en       un municipio del interior del estado de São Paulo, Brasil. El objetivo              principal fue delinear el perfil del desarrollo global de los niños utilizando      el Ages and Stages Questionnaires Brazil (ASQ-BR) y verificar la aplicabilidad      de este instrumento por parte de los maestros preescolares. Los resultados          mostraron que la mayoría de los niños presentaron un desarrollo dentro de lo        esperado, con los mejores desempeños en los dominios de Motricidad Gruesa           (79.44\%), Comunicación (72.34\%) y Resolución de Problemas (69.54\%). Sin          embargo, se observó una incidencia significativa de riesgo en los dominios          Personal-Social (22.08\%) y Motricidad Fina (19.03\%). En el análisis por sexo,     las niñas obtuvieron puntuaciones significativamente más altas que los niños en     los dominios de Motricidad Fina y Personal-Social. Los autores concluyeron que      el ASQ-BR se presenta como un instrumento potencial para el cribado del             desarrollo infantil en guarderías y preescolares, permitiendo a los                 profesionales reflexionar sobre su propia práctica y atender mejor las
+necesidades individuales de los niños. \cite{RAMOS2021}
+
+Oumer et al. (2022), titulado Stunting and Underweight, but not Wasting are
+Associated with Delay in Child Development in Southwest Ethiopia, se analizaron
+507 pares de madres e hijos en el Suroeste de Etiopía. El objetivo principal
+fue identificar la relación entre diferentes formas de malnutrición y el
+retraso en el desarrollo infantil entre niños de 12 a 59 meses de edad. Los
+resultados mostraron una prevalencia de retraso en el desarrollo del 29.4\% (IC
+95\%: 25.4-33.4\%). En el análisis de subgrupos, se observaron retrasos en el
+desarrollo de habilidades motoras gruesas (17.2\%), comunicación (16.8\%),
+resolución de problemas (13.4\%), habilidades personales-sociales (10.8\%) y
+motricidad fina (10.1\%). Los determinantes significativos del retraso en el
+desarrollo fueron el trabajo materno fuera del hogar [AOR: 2.9; IC 95\% (1.8,
+4.8)], el nacimiento prematuro [AOR: 3.2; IC 95\% (1.4, 7.0)], la iniciación
+temprana de la alimentación complementaria [AOR: 2.5; IC 95\% (1.37, 4.6)], el
+retraso en el crecimiento [AOR: 3.0; IC 95\% (1.9, 4.7)], el bajo peso [AOR:
+2.3; IC 95\% (1.1, 4.7)] y una baja puntuación de diversidad dietética [AOR:
+3.1; IC 95\% (1.3, 7.5)]. Los autores concluyeron que el retraso en el
+desarrollo infantil es un problema de salud pública en la región y está
+fuertemente asociado con la desnutrición crónica, el bajo peso, el consumo de
+una dieta poco diversificada y prácticas subóptimas de alimentación infantil.
+\cite{Oumer2022}
+
+En el distrito de Quetzaltenango, Guatemala, la vulnerabilidad económica, el
+acceso limitado a servicios de salud y los factores nutricionales representan
+un riesgo significativo para el neurodesarrollo infantil. Al igual que en otros
+países de ingresos bajos y medios, las condiciones adversas en esta región
+pueden influir negativamente en los hitos del desarrollo infantil temprano. En
+este contexto, se plantea la necesidad de estudiar y caracterizar los factores
+de riesgo en el neurodesarrollo infantil en niños menores de 5 años que acuden
+a servicios de salud pública en esta región, contribuyendo a la evidencia que
+respalde intervenciones efectivas en salud pública para mitigar estos riesgos.
+
+Por lo tanto, se formula la pregunta de investigación: ¿Cuáles son los factores
+de riesgo asociados al neurodesarrollo en niños menores de 5 años que asisten a
+servicios de salud pública en el distrito de Quetzaltenango durante el periodo
+de \tiempito?
+
+	\chapter*{Justificación}
+Los trastornos del desarrollo, también conocidos como retrasos del desarrollo,
+constituyen un grupo heterogéneo de condiciones que afectan el aprendizaje, el
+lenguaje, el comportamiento o las habilidades motoras.
+\cite{cdcDevelopmentalDisability} Estos retrasos se identifican cuando un niño
+no alcanza los hitos de desarrollo esperados en comparación con sus pares de la
+misma población \cite{DevelopmentalSurveillance}. Por ello es importante
+destacar que el retraso en el desarrollo no es un diagnóstico en sí mismo, sino
+un término descriptivo utilizado en la práctica clínica para indicar un
+fenotipo amplio que requiere una evaluación más detallada para determinar las
+áreas específicas de desarrollo afectadas. Hay tres tipos de retraso en el
+desarrollo basado en el número de dominios involucrados: 1) Retraso aislado en
+el desarrollo: involucra un solo dominio; 2) Múltiples retrasos en el
+desarrollo: 2 o más dominios o líneas de desarrollo afectados; y, 3) Retraso
+global en el desarrollo: retraso significativo en la mayoría de los dominios de
+desarrollo. \cite{Bellman2013} Aunque la etiología de la mayoría de los
+retrasos en el desarrollo es idiopática, cuando se identifica, puede incluir
+factores genéticos, ambientales y/o psicosociales. \cite{DevelopmentalDelay}
+
+En Guatemala, según el informe de la línea de base de la Gran Cruzada Nacional
+por la Nutrición 2021/2022 de la Secretaría de Seguridad Alimentaria y
+Nutricional, solo el 1.9\% de las madres de niños entre 2 y 5 años reportaron
+que sus hijos habían asistido alguna vez a un programa de primera infancia, y
+apenas el 0.6\% asiste actualmente a un Centro Comunitario de Desarrollo
+Infantil Temprano. Más preocupante aún, solo el 49.8\% de los niños de 24 a 59
+meses se encuentran en el camino adecuado de desarrollo, salud, aprendizaje y
+bienestar psicosocial. (11)
+
+A nivel global, según un reporte de UNICEF en 2023, se estima que 250 millones
+de niños menores de 5 años están en riesgo de no alcanzar su potencial de
+desarrollo. Aproximadamente 200 millones de niños menores de 5 años no están
+creciendo, no presentan un adecuado desarrollo global, debido a la desnutrición
+en la primera infancia. Además, más de 2 de cada 5 niños entre 3 y 4 años no
+reciben la estimulación temprana ni el cuidado parental adecuados. Como
+resultado de estas y otras amenazas, el 29\% de los niños de 3 a 5 años no
+están logrando un desarrollo apropiado. (13)
+
+El neurodesarrollo infantil es un proceso complejo y dinámico que sienta las
+bases para el futuro cognitivo, emocional y social de los individuos. En
+Quetzaltenango, Guatemala, existe una brecha significativa en la investigación
+sobre los factores que influyen en el desarrollo neurológico de los niños
+menores de 5 años. Esta carencia de datos locales específicos obstaculizan la
+implementación de intervenciones efectivas y políticas públicas adecuadas.
+
+Para llevar a cabo este estudio en Quetzaltenango, es necesario un equipo de 5
+investigadores debido a la complejidad y el alcance de la muestra, la cual
+comprende 1,697 niños. La distribución del trabajo se detalla a continuación:
+
+\begin{enumerate}
+    \item Carga de trabajo y distribución
+
+Cada investigador estará a cargo de evaluar aproximadamente 339 niños, lo cual
+permite una división equitativa para asegurar una atención detallada en cada
+caso. Esto es crucial para mantener la calidad de los datos y la consistencia
+en la recolección de información, aspecto necesario para la validez del
+estudio.
+
+	\item Tiempo estimado de evaluación
+
+Cada evaluación individual tomará alrededor de 50 minutos, incluyendo el
+consentimiento informado, perfil social, aplicación del cuestionario Ages and
+Stages Questionnaire, y las actividades específicas. Esto representa
+aproximadamente 1,417 horas en total o 283 horas por investigador, distribuidas
+en 14 semanas con jornadas de evaluación diaria. La presencia de 5
+investigadores optimiza el proceso y asegura que las evaluaciones se realicen
+en el tiempo programado.
+	
+	\item Cobertura de múltiples puntos de atención
+
+La investigación se llevará a cabo en tres servicios de salud de Quetzaltenango:
+el Centro de Salud de Quetzaltenango, el Puesto de Salud de Pacajá y el Puesto
+de Salud de San José Chiquilajá. La asignación de varios investigadores a estos
+puntos asegura que las evaluaciones sean eficientes y que se alcance una
+cobertura geográfica completa en un tiempo limitado.
+
+	\item Atención a casos en riesgo
+
+Los investigadores deben proporcionar plan educacional y material de
+seguimiento para niños identificados con riesgo en el desarrollo. La promoción
+de la Guía de Estimulación Oportuna de UNICEF, será una labor compartida entre
+los investigadores y garantizará la entrega de recomendaciones adecuadas a los
+padres de los niños participantes.
+
+\end{enumerate}
+
+En conclusión, la integración de un equipo de 5 investigadores permite abordar
+de manera exhaustiva y precisa los desafíos de la evaluación de neurodesarrollo
+en Quetzaltenango. Los resultados esperados no solo aportarán evidencia
+científica local, sino que también promoverán intervenciones que puedan mejorar
+el desarrollo integral de los niños, sensibilizando a las autoridades y
+profesionales de la salud sobre la importancia de una intervención temprana y
+costo efectiva en la primera infancia.
+
+	\chapter{Objetivos}
+\section{Objetivo general}
+Identificar factores de riesgo en el neurodesarrollo de niños menores de 5 años
+en el distrito de salud de Quetzaltenango mediante la aplicación del 
+“Cuestionario Edades y Etapas 3” en servicios de salud pública, durante el
+periodo de \tiempito.
+
+\printbibliography
+\end{document}
