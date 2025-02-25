@@ -138,9 +138,9 @@ desarrollo infantil en guarderías y preescolares, permitiendo a los
 profesionales reflexionar sobre su propia práctica y atender mejor las
 necesidades individuales de los niños. \cite{RAMOS2021}
 
-Oumer et al. (2022), titulado "El retardo de crecimiento y bajo peso, pero no
+Oumer et al. (2022), titulado “El retardo de crecimiento y bajo peso, pero no
 la desnutrición aguda, están asociados con el retraso en el desarrollo
-infantil en el suroeste de Etiopía, se analizaron 507 pares de madres e hijos
+infantil en el suroeste de Etiopía”, se analizaron 507 pares de madres e hijos
 en el Suroeste de Etiopía. El objetivo principal fue identificar la relación
 entre diferentes formas de malnutrición y el retraso en el desarrollo infantil
 entre niños de 12 a 59 meses de edad. Los resultados mostraron una prevalencia
@@ -272,10 +272,11 @@ costo efectiva en la primera infancia.
 \section{Objetivo general}
 \begin{enumerate}
 	\item
-Determinar la incidencia de factores de riesgo en el neurodesarrollo de niños
-menores de 5 años en el distrito de salud de Quetzaltenango, mediante la
-aplicación del \asq\ en servicios de atención primaria durante un período de
-seguimiento de \tiempito.
+Establecer la asociación entre factores sociodemográficos, económicos,
+familiares y médicos con el riesgo en el neurodesarrollo en niños menores de 5
+años que asisten a servicios de atención primaria en el distrito de
+Quetzaltenango, mediante evaluaciones con el \asq\ durante el período de
+\tiempito.
 \end{enumerate}
 \section{Objetivos específicos}
 \begin{enumerate}
@@ -363,10 +364,120 @@ micronutrientes.
 \end{enumerate}
 
 \section{Técnicas de recolección de información e instrumentos de medición}
+\begin{enumerate}
+	\item Técnicas de recolección de información:
+	Para llevar a cabo este estudio de cohorte prospectivo, se implementarán
+	las siguientes fases:
+	\begin{enumerate}
+		\item Fase preliminar (Febrero de 2025):
+		Se obtuvieron los permisos correspondientes a las autoridades de salud
+		del departamento de Quetzaltenango para acceder a los servicios de
+		atención primaria seleccionados. Se determinaron estrategias para
+		garantizar la uniformidad en la recolección de los datos entre los
+		investigadores.
+		\item Fase de reclutamiento inicial (Marzo a Mayo de 2025):
+		Se identificarán y reclutarán niños menores de 5 años que cumplan con
+		los criterios de inclusión en los servicios de atención primaria
+		participantes. Tras obtener el consentimiento informado de los padres o
+		tutores, se realizará:
+			\begin{itemize}
+			\item Evaluación basal del neurodesarrollo mediante la aplicación
+			del \asq, seleccionando la versión específica según la edad del
+			niño.
+			\item Aplicación de un cuestionario estructurado para recolectar
+			información sobre factores potencialmente asociados al
+			neurodesarrollo.
+			\end{itemize}
+		\item Fase de seguimiento (Abril a Junio de 2025):
+		Se realizará un seguimiento a los 2 meses de la evaluación inicial
+		donde:
+			\begin{itemize}
+			\item Se aplicará nuevamente el \asq\ para evaluar cambios en el
+			neurodesarrollo.
+			\item Se actualizará la información sobre factores de exposición
+			que puedan haber cambiado durante el período de seguimiento.
+			\item Se documentarán eventos relevantes ocurridos durante el
+			período de seguimiento.
+			\end{itemize}
+		\item Fase de clasificación y análisis:
+		Los resultados longitudinales de cada niño serán evaluados conforme al
+		puntaje obtenido en el ASQ-3 en ambos momentos (inicial y seguimiento)
+		y clasificados en tres categorías:
+			\begin{itemize}
+			\item Desarrollo típico: puntaje en el área blanca, indicativo de
+			un desarrollo acorde a su edad.
+			\item Requiere monitoreo: puntaje en el área gris, señalando
+			habilidades ligeramente por debajo del promedio.
+			\item Retraso en el desarrollo: puntaje en el área negra,
+			sugiriendo la necesidad de intervención especializada.
+			\end{itemize}
+		Se analizarán las asociaciones entre los factores de exposición
+		identificados y los resultados de neurodesarrollo en la evaluación
+		inicial, y cambios en el neurodesarrollo durante el seguimiento.
+	\end{enumerate}
+	\item Instrumentos de recolección de información
+	Para este estudio de cohorte prospectivo, se emplearán los siguientes
+	instrumentos:
+		\begin{itemize}
+		\item \asq: Adaptado al idioma español y ajustado por edad. Esta
+		herramienta validada de tamizaje del desarrollo identifica riesgos de
+		problemas de neurodesarrollo en niños de 2 a 66 meses. Será aplicado
+		por los investigadores con información proporcionada por los padres o
+		tutores y mediante observación directa de actividades específicas.
+		El \asq\ evalúa cinco áreas del desarrollo: comunicación, motricidad
+		gruesa, motricidad fina, resolución de problemas, habilidades
+		socioindividuales.
+
+		\item Cuestionario de factores de exposición: Instrumento estructurado
+		diseñado específicamente para este estudio que recopilará información
+		sobre:
+				\begin{itemize}
+					\item Variables sociodemográficas (edad, sexo, etnia, nivel
+					educativo de los padres)
+					\item Variables económicas (empleo de los padres, acceso a
+					seguridad social)
+					\item Variables de interacción familiar (tiempo de juego,
+					disponibilidad de juguetes)
+					\item Variables médicas (prematuridad, peso al nacer, tipo
+					de parto, lactancia, estado nutricional, etc.)
+				\end{itemize}
+		\end{itemize}
+\end{enumerate}
 
 \section{Plan de análisis de datos}
+\begin{enumerate}
+	\item Preparación de los datos: Los datos en formato físico serán
+	recolectados en formato digital en software estadístico de Rstudio. Se
+	realizará una limpieza de los datos para identificar y corregir posibles
+	errores de entrada. Los puntajes obtenidos en cada área del desarrollo del 
+	\asq\ se convertirán a valores estadísticos. 
+	
+	\item Análisis descriptivo de la cohorte completa en características
+	demográficas y socioeconómicas: Se calcularán frecuencias y porcentajes
+	para variables categóricas, y se calcularán medidas de tendencia central y
+	de dispersión para variables continuas.
+
+	\item Análisis estadísticos del \asq\ de la cohorte completa: se calcularán
+	medidas de tendencia central, y porcentaje de niños identificados en riesgo
+	en cada área del neurodesarrollo y en riesgo general.
+
+	\item Presentación de resultados: se elaborarán tablas y gráficos
+	apropiados con intervalos utilizando el software Rstudio y paquetes de
+	tidyverse para análisis y creación de datos informativos.
+\end{enumerate}
 
 \section{Principios éticos en la investigación}
+Esta investigación se adherirá a los principios éticos clave, tales como:
+\begin{itemize}
+	\item Consentimiento informado: explicando claramente los objetivos del
+	estudio a los padres o tutores y obteniendo su autorización.
+
+	\item Confidencialidad: los datos se mantendrán anónimos y se utilizarán 
+	exclusivamente para fines de investigación.
+
+	\item Beneficencia y no maleficencia: buscando maximizar beneficios
+	potenciales sin causar daños a los participantes.
+\end{itemize}
 
 	\chapter{Alcances y límites}
 Esta investigación se llevará a cabo con niños menores de cinco años que
