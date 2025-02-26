@@ -18,3 +18,5 @@ clean:
 	-rm *.bcf 
 	-rm *.run.xml 
 	-rm *.blx.bib
+	-rm *.ccf
+	-rm *.pdf

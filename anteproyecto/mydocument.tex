@@ -5,10 +5,11 @@
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \linespread{1.5}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{titlesec}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
+
 
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}{
@@ -35,6 +36,16 @@ Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
 \newcommand{\tiempito}{marzo a junio de 2025}
 \newcommand{\muestradeseada}{1,697}
 \newcommand{\asq}{“Cuestionario Edades y Etapas 3”}
+
+% Formato de expresiones matemáticas
+\usepackage{amsmath}
+\usepackage{graphicx} % \scalebox
+\usepackage{environ}
+\NewEnviron{myequation}{%
+\begin{equation}
+\scalebox{1.5}{$\BODY$}
+\end{equation}
+}
 
 \begin{document}
 	\tableofcontents
@@ -318,10 +329,32 @@ observacional, de cohorte prospectivo.
 \end{enumerate}
 
 \section{Tipo y técnica de muestreo}
-El tipo de muestreo será no probabilístico por conveniencia, reclutando a todos
-los niños que cumplan con los criterios de inclusión y asistan a los servicios
-de atención primaria participantes durante \tiempito, hasta alcanzar el tamaño
-de muestra deseado de \muestradeseada\ niños.
+Se utilizará un muestreo aleatorio simple probabilístico. El tamaño de la
+muestra se ha calculado aplicando la fórmula para poblaciones finitas, con base
+en una población total de 21,286 niños menores de 5 años según datos del INE
+para 2025 en el municipio de Quetzaltenango. \cite{INE} Se estableció un nivel
+de confianza del 97\%, una prevalencia estimada del 50\% y un margen de error
+del 3\%. La muestra se calculó a partir de la fórmula:
+
+%% Ecuación para muestreo de poblaciones finitas
+\begin{myequation}%
+	n = \frac{N \times Z^2 \times p \times q}{e^2 \times (N-1) + Z^2 \times p \times q} = \frac{21{,}286 \times 2.58^2 \times 0.5 \times 0.5}{0.03^2 \times (21{,}286-1) + 2.58^2 \times 0.5 \times 0.5}
+ %
+\end{myequation}
+%
+Donde: \\
+n = tamaño de la muestra \\
+N = tamaño de la población (21,286) \\
+Z = valor crítico del nivel de confianza (99\% = 2.58) \\
+p = proporción esperada (50\% = 0.5) \\
+q = 1-p (proporción complementaria) (50\% = 0.5) \\
+e = margen de error (3\% = 0.03) \\
+
+%% Ecuación para muestreo de poblaciones finitas
+\begin{myequation}%
+	n = \frac{35{,}422.0326}{19.1565 + 1.6641} = 1{,}701 %
+\end{myequation}
+%
 
 \section{Criterios de inclusión y exclusión}
 \begin{enumerate}
