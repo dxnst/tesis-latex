@@ -10,9 +10,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
 
-\usepackage{multirow}
-\usepackage{longtable}
-
+\usepackage{pdfpages}
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}{
 \titlespacing*{\chapter}{0em}{*3}{*2}
@@ -185,8 +183,7 @@ respalde intervenciones efectivas en salud pública para mitigar estos riesgos.
 
 Por lo tanto, se formula la pregunta de investigación: ¿Cuáles son los factores
 de riesgo asociados al neurodesarrollo en niños menores de 5 años que asisten a
-servicios de salud pública en el distrito de Quetzaltenango durante el periodo
-de \tiempito?
+servicios de salud pública en el distrito de Quetzaltenango durante 2025?
 
 	\chapter*{Justificación}
 Los trastornos del desarrollo, también conocidos como retrasos del desarrollo,
@@ -450,7 +447,7 @@ suplementación con micronutrientes.
 		atención primaria seleccionados. Se determinaron estrategias para
 		garantizar la uniformidad en la recolección de los datos entre los
 		investigadores.
-		\item Fase de reclutamiento inicial (Marzo a Mayo de 2025):
+		\item Fase de recolección de datos:
 		Se identificarán y reclutarán niños menores de 5 años que cumplan con
 		los criterios de inclusión en los servicios de atención primaria
 		participantes. Tras obtener el consentimiento informado de los padres o
@@ -463,20 +460,9 @@ suplementación con micronutrientes.
 			información sobre factores potencialmente asociados al
 			neurodesarrollo.
 			\end{itemize}
-		\item Fase de seguimiento (Abril a Junio de 2025):
-		Se realizará un seguimiento a los 2 meses de la evaluación inicial
-		donde:
-			\begin{itemize}
-			\item Se aplicará nuevamente el \asq\ para evaluar cambios en el
-			neurodesarrollo.
-			\item Se actualizará la información sobre factores de exposición
-			que puedan haber cambiado durante el período de seguimiento.
-			\item Se documentarán eventos relevantes ocurridos durante el
-			período de seguimiento.
-			\end{itemize}
 		\item Fase de clasificación y análisis:
-		Los resultados longitudinales de cada niño serán evaluados conforme al
-		puntaje obtenido en el ASQ-3 en ambos momentos (inicial y seguimiento)
+		Los resultados de cada niño serán evaluados conforme al
+		puntaje obtenido en el \asq\
 		y clasificados en tres categorías:
 			\begin{itemize}
 			\item Desarrollo típico: puntaje en el área blanca, indicativo de
@@ -487,8 +473,7 @@ suplementación con micronutrientes.
 			sugiriendo la necesidad de intervención especializada.
 			\end{itemize}
 		Se analizarán las asociaciones entre los factores de exposición
-		identificados y los resultados de neurodesarrollo en la evaluación
-		inicial, y cambios en el neurodesarrollo durante el seguimiento.
+		identificados y los resultados de neurodesarrollo en la evaluación.
 	\end{enumerate}
 	\item Instrumentos de recolección de información
 	Para este estudio de cohorte prospectivo, se emplearán los siguientes
@@ -522,10 +507,11 @@ suplementación con micronutrientes.
 \section{Plan de análisis de datos}
 \begin{enumerate}
 	\item Preparación de los datos: Los datos en formato físico serán
-	digitados para su uso en el software estadístico Rstudio. Se realizará una
-	limpieza de los datos para identificar y corregir posibles errores de
-	entrada. Los puntajes obtenidos en cada área del desarrollo del \asq\ se
-	convertirán a valores estadísticos. 
+	digitados para su uso en el software estadístico Rstudio y python con los
+	paquetes numpy y pandas. Se realizará una limpieza de los datos para
+	identificar y corregir posibles errores de entrada. Los puntajes obtenidos
+	en cada área del desarrollo del \asq\ se convertirán a valores
+	estadísticos. 
 	
 	\item Análisis descriptivo de datos de la cohorte completa: Se calcularán
 	frecuencias y porcentajes de los diferentes factores de riesgo presentes en
@@ -537,18 +523,29 @@ suplementación con micronutrientes.
 		\begin{itemize}
 		\item Chi-cuadrado: para determinar si hay asociación significativa
 		entre las variables categóricas y riesgo del retraso en el
-		neurodesarrollo.
-		\item Prueba t de Student: para comparar puntajes del neurodesarrollo
-		entre dos grupos diferentes de una misma categoría (por ejemplo, niños
-		con bajo peso al nacer versus niños con peso adecuado al nacer)
+		neurodesarrollo, se utilizará para evaluar factores de riesgo
+		individuales y comparar con desarrollo normal versus desarrollo en
+		riesgo.
 		\item Análisis de variancia (ANOVA): para comparar medias de puntajes
 		del neurodesarrollo en más de dos grupos diferentes de una misma
-		categoría y determinar su variación.
+		categoría y determinar su variación, por ejemplo para evaluar el riesgo
+		del neurodesarrollo en valores Z y medidas de tendencia central con
+		el grado de escolaridad de los padres de los niños: ninguna, primaria,
+		básico, diversificado, universitario.
 		\end{itemize}
-	
+
+	\item Análisis de asociación de los resultados del \asq\ del grupo
+	estudiado utilizando:
+		\begin{itemize}
+		\item Odds ratio (OR): para comparar las probabilidades de que se
+		presente riesgo en el neurodesarrollo entre dos grupos diferentes.
+		Por ejemplo para comparar si los niños con padres que tienen un trabajo
+		formal o informal tienen mayor probabilidad o no, de presentar riesgo
+		en el neurodesarrollo.
+		\end{itemize}
 	\item Presentación de resultados: se elaborarán tablas y gráficos
 	apropiados con intervalos utilizando el software Rstudio y paquetes de
-	tidyverse para análisis y creación de datos informativos.
+	CRAN como ggplot2 para análisis y creación de datos informativos.
 \end{enumerate}
 
 \section{Principios éticos en la investigación}
@@ -562,15 +559,21 @@ Esta investigación se adherirá a los principios éticos clave, tales como:
 
 	\item Beneficencia y no maleficencia: buscando maximizar beneficios
 	potenciales sin causar daños a los participantes.
+
+	\item El \asq\ es una herramienta validada, respaldada por evidencia
+	científica y recomendada por instituciones como UNICEF para su uso en
+	evaluación del neurodesarrollo infantil en servicios de atención de
+	salud. \cite{UNICEFrespaldo}
 \end{itemize}
 
 	\chapter{Alcances y límites}
 Esta investigación se llevará a cabo con niños menores de cinco años que
-asisten a los servicios de salud pública en la ciudad de Quetzaltenango, entre
-\tiempito. Dado que el neurodesarrollo infantil en este contexto ha sido poco
-explorado a nivel nacional, el estudio al ser analítico busca llenar vacíos de
-conocimiento y establecer las bases para futuras investigaciones. El objetivo
-principal es identificar la incidencia de riesgos en el neurodesarrollo
+asisten a los servicios de salud pública en la ciudad de Quetzaltenango,
+durante 2025. Dado que el neurodesarrollo infantil en este contexto ha sido
+poco explorado a nivel nacional, el estudio al ser analítico busca llenar
+vacíos de conocimiento y establecer las bases para futuras investigaciones. El
+objetivo principal es identificar la incidencia de riesgos en el
+neurodesarrollo
 utilizando el cuestionario “Edades y Etapas 3”, que proporcionará datos
 relevantes para mejorar la detección temprana y las estrategias de
 intervención, contribuyendo al desarrollo neurológico óptimo de los niños en la
@@ -591,6 +594,12 @@ los padres, lo que podría afectar la representatividad de la muestra. Por
 no proporciona un diagnóstico definitivo de trastornos del neurodesarrollo; los
 resultados deben interpretarse como indicadores de riesgo que requieren
 evaluación adicional por profesionales especializados.
+
+\chapter{Anexos}
+\includegraphics[height=0.85\textheight]{\string24meses.pdf}
+\includepdf[scale=0.85,pages=2-last,pagecommand=\subsection{Cuestionario a utilizar}]{24meses.pdf}
+
+\chapter*{Aclaraciones}
 
 \printbibliography
 \end{document}
