@@ -1,0 +1,168 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\linespread{1.5}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
+
+\usepackage{pdfpages}
+% Formatos de títulos
+\titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}{
+\titlespacing*{\chapter}{0em}{*3}{*2}
+\titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0em}{*2}{*1.2}
+\titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{4em}{*1}{*0.6}
+
+% Formato de citación
+\usepackage{citation-style-language}
+\cslsetup{style = mary-ann-liebert-vancouver}
+\addbibresource{mydocument.bib}
+
+% Formato de numeración
+\renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+
+% Cosas generales
+\title{Factores de riesgo en el neurodesarrollo infantil}
+\author{Soto Consuegra, Josué Daniel \and López Castillo, Sarah Ivón \and
+Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
+\and Mazariegos Manrique, Sonia María}
+\newcommand{\tiempito}{marzo a junio de 2025}
+\newcommand{\muestradeseada}{1,701}
+\newcommand{\asq}{“Cuestionario Edades y Etapas 3”}
+
+\begin{document}
+%	\chapter*{Dedicatoria}
+%	\chapter*{Agradecimiento}
+%	\chapter*{Resumen}
+	\tableofcontents
+%	\chapter{Introducción}
+	\chapter{Planteamiento del problema}
+\section{Descripción del problema}
+\section{Delimitación del problema}
+	\begin{enumerate}
+		\item Ámbito geográfico:
+		\item Ámbito institucional:
+		\item Ámbito poblacional:
+		\item Ámbito temporal:
+		\item Ámbito temático:
+	\end{enumerate}
+\section{Preguntas de investigación}
+
+	\chapter{Objetivos}
+\section{Objetivo general}
+	\begin{enumerate}
+		\item Establecer la asociación entre factores sociodemográficos,
+		económicos, familiares y médicos con el riesgo en el neurodesarrollo en
+		niños menores de 5 años que asisten a servicios de atención primaria en
+		el distrito de Quetzaltenango, mediante evaluaciones con el \asq\
+		durante 2025.
+	\end{enumerate}
+\section{Objetivos específicos}
+	\begin{enumerate}
+		\item Clasificar los resultados del \asq\ según grupos de edad para
+		detectar patrones específicos de riesgo en los dominios del
+		neurodesarrollo.
+		
+		\item Evaluar la asociación entre factores socioeconómicos,
+		demográficos, ambientales y antecedentes perinatales y el riesgo de
+		retraso en el neurodesarrollo utilizando el \asq.
+		
+		\item Analizar la relación entre acceso a servicios de atención
+		primaria durante el periodo prenatal y postnatal con la presencia de
+		riesgo de retraso en el neurodesarrollo.
+	\end{enumerate}	
+
+	\chapter{Justificación}
+Los trastornos del desarrollo, también conocidos como retrasos del desarrollo,
+constituyen un grupo heterogéneo de condiciones que afectan el aprendizaje, el
+lenguaje, el comportamiento o las habilidades motoras.
+\cite{cdcDevelopmentalDisability} Estos retrasos se identifican cuando un niño
+no alcanza los hitos de desarrollo esperados en comparación con sus pares de la
+misma población \cite{DevelopmentalSurveillance}. Por ello es importante
+destacar que el retraso en el desarrollo no es un diagnóstico en sí mismo, sino
+un término descriptivo utilizado en la práctica clínica para indicar un
+fenotipo amplio que requiere una evaluación más detallada para determinar las
+áreas específicas de desarrollo afectadas. Hay tres tipos de retraso en el
+desarrollo basado en el número de dominios involucrados: 1) Retraso aislado en
+el desarrollo: involucra un solo dominio; 2) Múltiples retrasos en el
+desarrollo: 2 o más dominios o líneas de desarrollo afectados; y, 3) Retraso
+global en el desarrollo: retraso significativo en la mayoría de los dominios de
+desarrollo. \cite{Bellman2013} Aunque la etiología de la mayoría de los
+retrasos en el desarrollo es idiopática, cuando se identifica, puede incluir
+factores genéticos, ambientales y/o psicosociales. \cite{DevelopmentalDelay}
+
+En Guatemala, según el informe de la línea de base de la Gran Cruzada Nacional
+por la Nutrición 2021/2022 de la Secretaría de Seguridad Alimentaria y
+Nutricional, solo el 1.9\% de las madres de niños entre 2 y 5 años reportaron
+que sus hijos habían asistido alguna vez a un programa de primera infancia, y
+apenas el 0.6\% asiste actualmente a un Centro Comunitario de Desarrollo
+Infantil Temprano. Más preocupante aún, solo el 49.8\% de los niños de 24 a 59
+meses se encuentran en el camino adecuado de desarrollo, salud, aprendizaje y
+bienestar psicosocial. \cite{SESAN2022}
+
+A nivel global, según un reporte de UNICEF en 2023, se estima que 250 millones
+de niños menores de 5 años están en riesgo de no alcanzar su potencial de
+desarrollo. Aproximadamente 200 millones de niños menores de 5 años no están
+creciendo, no presentan un adecuado desarrollo global, debido a la desnutrición
+en la primera infancia. Además, más de 2 de cada 5 niños entre 3 y 4 años no
+reciben la estimulación temprana ni el cuidado parental adecuados. Como
+resultado de estas y otras amenazas, el 29\% de los niños de 3 a 5 años no
+están logrando un desarrollo apropiado. \cite{UNICEF2023}
+
+El neurodesarrollo infantil es un proceso complejo y dinámico que sienta las
+bases para el futuro cognitivo, emocional y social de los individuos. En
+Quetzaltenango, Guatemala, existe una brecha significativa en la investigación
+sobre los factores que influyen en el desarrollo neurológico de los niños
+menores de 5 años. Esta carencia de datos locales específicos obstaculizan la
+implementación de intervenciones efectivas y políticas públicas adecuadas.
+
+Para llevar a cabo este estudio en Quetzaltenango, es necesario un equipo de 5
+investigadores debido a la complejidad y el alcance de la muestra, la cual
+comprende \muestradeseada\ niños. La distribución del trabajo se detalla a
+continuación:
+
+	\begin{itemize}
+		\item Carga de trabajo y distribución: Cada investigador estará a cargo
+		de evaluar aproximadamente 340 niños, lo cual permite una división
+		equitativa para asegurar una atención detallada en cada caso. Esto es
+		crucial para mantener la calidad de los datos y la consistencia en la
+		recolección de información, aspecto necesario para la validez del
+		estudio.
+		\item Tiempo estimado de evaluación: Cada evaluación individual tomará
+		alrededor de 30 a 50 minutos. Esto representa aproximadamente 1,417
+		horas en total o 283 horas por investigador. La presencia de 5
+		investigadores optimiza el proceso y asegura que las evaluaciones se
+		realicen en el tiempo programado.
+		\item Cobertura de múltiples puntos de atención: La investigación se
+		llevará a cabo en tres servicios de atención primaria de
+		Quetzaltenango: el Centro de Salud de Quetzaltenango, el Puesto de
+		Salud de Pacajá y el Puesto de Salud de San José Chiquilajá.
+		\item Atención a casos en riesgo: Los niños identificados con riesgo en
+		el neurodesarrollo y sus padres o tutores recibirán plan educacional y
+		material de apoyo para promover actividades de estimulación temprana en
+		casa. El mismo lo llevará a cabo el investigador utilizando
+		herramientas recomendadas por UNICEF.
+	\end{itemize}
+
+En conclusión, la integración de un equipo de 5 investigadores permite abordar
+de manera exhaustiva y precisa los desafíos de la evaluación de neurodesarrollo
+en niños menores de 5 años en Quetzaltenango. Los resultados esperados no solo
+aportarán evidencia científica local, sino que también promoverán
+intervenciones que puedan mejorar el desarrollo integral de los niños,
+sensibilizando a las autoridades y profesionales de la salud sobre la
+importancia de intervenciones tempranas y costo efectivas en el desarrollo de
+la primera infancia.
+
+	\chapter{Marco teórico}
+	\chapter{Población y métodos}
+
+
+\printbibliography
+\end{document}
