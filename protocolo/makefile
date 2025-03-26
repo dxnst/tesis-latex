@@ -2,7 +2,7 @@ default: build
 
 build:
 	pdflatex mydocument.tex
-	citeproc-lua mydocument.aux
+	biber mydocument
 	pdflatex mydocument.tex
 	pdflatex mydocument.tex
 
