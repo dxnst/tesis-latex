@@ -23,12 +23,12 @@
 \usepackage{csquotes}
 \usepackage[backend=biber, style=vancouver]{biblatex}
 \DeclareFieldFormat*{url}{\bibstring{urlfrom}: \url{#1}}
-\DeclareFieldFormat{urldate}{\bibstring{urlseen}\space#1}
+\DeclareFieldFormat{urldate}{[\bibstring{urlseen}: \space#1]}
 \addbibresource{mydocument.bib}
 
 \DefineBibliographyStrings{spanish}{
 	urlfrom = {Disponible en},
-	urlseen = {Accedido:},
+	urlseen = {Accedido},
 }
 
 % Formato de numeración
