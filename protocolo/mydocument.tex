@@ -10,6 +10,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
 
+% Formato de tabla y de título de tabla
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[table]{skip=0pt,singlelinecheck=off}
+
 \usepackage{pdfpages}
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}
@@ -189,6 +194,18 @@ demográficos e interacciones madre-hijo parece ser una herramienta útil para
 predecir qué niños tienen puntuaciones anormales en múltiples dominios del
 desarrollo. \cite{CMehner2019}
 
+En el contexto específico de Guatemala, un análisis del informe de la  línea de
+base de la Gran Cruzada Nacional por la Nutrición 2021/2022 revela  datos
+preocupantes: la cobertura de programas de primera infancia es extremadamente
+limitada, con apenas un 1.9\% de niños entre 2 y 5 años que han asistido alguna
+vez a estos programas. Más alarmante aún es que solo el 49.8\% de los niños
+guatemaltecos entre 24 y 59 meses muestran un desarrollo adecuado  en las
+dimensiones de salud, aprendizaje y bienestar psicosocial \cite{SESAN2022}.
+Estos datos son consistentes con las observaciones de Mehner et al.
+\cite{CMehner2019} en zonas rurales de Guatemala, donde encontraron que el 58\%
+de los niños evaluados presentaban puntuaciones anormales en al menos un
+dominio del ASQ-3.
+
 En una revisión sistemática y meta-análisis realizada por Wondmagegn et al.
 (2024), titulada "Prevalencia y determinantes del retraso del desarrollo entre
 los niños en países de ingresos bajos y medios: una revisión sistemática y un
@@ -293,11 +310,387 @@ En el distrito de Quetzaltenango, Guatemala, la vulnerabilidad económica, el
 acceso limitado a servicios de salud y los factores nutricionales representan
 un riesgo significativo para el neurodesarrollo infantil. Al igual que en otros
 países de ingresos bajos y medios, las condiciones adversas en esta región
-pueden influir negativamente en los hitos del desarrollo infantil temprano. En
-este contexto, se plantea la necesidad de estudiar y caracterizar los factores
-de riesgo en el neurodesarrollo infantil en niños menores de 5 años que acuden
-a servicios de salud pública en esta región, contribuyendo a la evidencia que
-respalde intervenciones efectivas en salud pública para mitigar estos riesgos.
+pueden influir negativamente en los hitos del desarrollo infantil temprano.
+
+Esta problemática local se enmarca en un contexto global igualmente 
+preocupante. Según UNICEF\cite{UNICEF2023}, aproximadamente 250 millones de 
+niños menores de 5 años a nivel mundial están en riesgo de no alcanzar su 
+potencial de desarrollo, con cerca de 200 millones afectados por desnutrición 
+en la primera infancia. Particularmente relevante para nuestro estudio es que 
+más de 2 de cada 5 niños entre 3 y 4 años no reciben la estimulación temprana 
+ni el cuidado parental adecuados, factores que Domek et al.\cite{Domek2023} 
+identificaron como críticos para el desarrollo del lenguaje y socioemocional. 
+
+La unión de los datos nacionales con los hallazgos globales subraya la 
+necesidad de investigaciones específicas en contextos como Quetzaltenango, 
+donde factores socioeconómicos, nutricionales y de acceso a servicios de salud 
+pueden influir significativamente en los patrones de desarrollo infantil.
+
+\section{Neurodesarrollo}
+El neurodesarrollo es un proceso dinámico de interacción entre el niño y el 
+entorno que lo rodea, necesario para el aprendizaje y la productividad. Abarca
+diversos dominios neurológicos esenciales: sensorial, motor, lingüistico,
+visuo-espacial, intelectual, memoria, cognición social y función ejecutiva.
+\cite{Nelson46}
+
+El desarrollo del cerebro humano es un proceso prolongado que comienza en la 
+tercera semana gestacional con la diferenciación de células progenitoras 
+neurales y se extiende al menos hasta la adolescencia tardía, posiblemente 
+durante toda la vida. Los procesos que contribuyen al desarrollo cerebral van 
+desde eventos moleculares de expresión genética hasta influencias ambientales. 
+Es fundamental entender que estos diferentes niveles y tipos de procesos 
+interactúan para sustentar la serie continua de eventos que definen el 
+desarrollo cerebral.
+\cite{Stiles2010}
+
+Tanto la expresión genética como los estímulos ambientales son esenciales para 
+el desarrollo cerebral normal, y la alteración de cualquiera de estos factores 
+puede modificar fundamentalmente los resultados neurales. Sin embargo, ni los 
+genes ni los estímulos son determinantes absolutos del resultado final. El
+desarrollo cerebral se caracteriza más apropiadamente como una serie compleja
+de procesos dinámicos y adaptativos que operan a lo largo del desarrollo para
+promover la diferenciación de nuevas estructuras y funciones neurales.
+\cite{Stiles2010}
+
+Los primeros años de vida se caracterizan por un desarrollo acelerado, durante
+el cual numerosas estructuras neuronales se construyen y organizan. En esta
+etapa crucial, las experiencias tienen mayor capacidad de penetrar
+profundamente y modelar el desarrollo futuro del niño. Procesos como la poda
+neuronal o sináptica y la metilación del ADN permiten que las experiencias
+modifiquen el cerebro en desarrollo, por lo que interacciones biológicas y del
+entorno son importantes en el neurodesarrollo. \cite{Feldman2}
+
+\section{Procesos biológicos del desarrollo cerebral}
+El cerebro humano evoluciona a partir de un grupo limitado de células
+embrionarias hasta convertirse en el sistema orgánico más complejo, todo ello
+durante los escasos 280 días que comprende la gestación humana. Lo que 
+distingue principalmente el desarrollo fetal humano del de otras especies es 
+precisamente el cerebro, con su masiva corteza prefrontal y su extraordinaria 
+capacidad para investigar y reflexionar sobre su propia naturaleza y 
+funcionamiento. \cite{Polin124}
+
+Durante el neurodesarrollo, los eventos genéticos y epigenéticos se entrelazan 
+siguiendo una regulación estricta, tanto temporal como espacial, transformando
+un delgado disco de neuroepitelio indiferenciado en un sofisticado sistema de
+múltiples capas. \cite{Polin124}
+
+El proceso de desarrollo cerebral, genéticamente predeterminado, comprende
+siete fases claramente definidas que se despliegan a lo largo de un extenso
+período evolutivo. \cite{Kolb7} Mientras algunas de estas fases están
+circunscritas a períodos específicos, otras mantienen su actividad durante
+intervalos temporales más prolongados. Las características de estas fases se
+sintetizan en el cuadro \ref{tab:fases-desarrollo-cerebral}.
+
+\begin{table}[htbp]
+\caption{Siete fases del desarrollo cerebral}
+\label{tab:fases-desarrollo-cerebral}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ll}
+\hline
+\multicolumn{1}{c}{\textbf{Fase del desarrollo}} & \multicolumn{1}{c}{\textbf{Proceso}} \\ \hline
+1. Nacimiento celular & Origen de las neuronas y la glia \\
+2. Migración celular & Movimiento de las células a su posición funcional \\
+3. Diferenciación celular & Las células precursoras se transforman en un tipo de célula especializada \\
+4. Maduración celular & Crecimiento de dendritas y axones \\
+5. Sinaptogénesis & Formación de sitios de comunicación de célula a célula \\
+6. Muerte celular y poda sináptica & Muerte celular programada y desmantelamiento de circuitos no usados \\
+7. Mielinización & Formación de la vaina de mielina que aumenta la velocidad de neurotransmisión \\ \hline \hline
+\footnotesize Fuente: Kolb, B y Whishaw, I y Campbell T. \cite{Kolb7}
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Desarrollo cerebral en el período embrionario}
+\subsubsection{Gastrulación: establecimiento de las capas germinales primordiales}
+Uno de los primeros pasos cruciales en el desarrollo cerebral ocurre durante la
+tercer semana de gestación, cuando la masa celular interna bilaminar, compuesta
+por el epiblasto y el hipoblasto, experimenta el proceso de gastrulación para
+formar las tres capas germinales embrionarias fundamentales: endodermo,
+mesodermo y ectodermo. \cite{Polin124}
+
+Este proceso se inicia con la aparición de la línea primitiva en la superficie
+del epiblasto y la definición del polo cefálico, denominado nodo primitivo. La
+formación de la línea primitiva está principalmente controlada por la
+activación de la vía de señalización Wnt. \cite{MooreEmbryo4}
+
+Durante la gastrulación, el epiblasto adquiere la capacidad de migrar hacia la
+línea primitiva mediante el proceso de transformación epitelio-mesenquimal. La
+disminución de la adhesión celular permite que las células migratorias del
+epiblasto se invaginen en la región del nodo y la línea primitiva, deslaminen
+y desplacen a las células del hipoblasto para formar el endodermo y el
+mesodermo. Las células restantes del epiblasto se diferencian en ectodermo. El
+mesodermo dorsal da origen a la notocorda, estructura que posteriormente induce
+al ectodermo suprayacente a engrosarse y formar la placa neural, dando lugar al
+neuroectodermo. Este momento marca el final de la gastrulación y el inicio de
+la neurulación. \cite{Polin124}
+
+La gastrulación también establece visiblemente los ejes primarios del embrión y
+del sistema nervioso: lateral, anteroposterior y dorsoventral. Para el día
+embrionario 20, las tres capas germinales (endodermo, mesodermo y ectodermo)
+están completamente formadas, siendo el ectodermo la capa que dará origen tanto
+a la piel como al sistema nervioso central. \cite{Polin124}
+
+\subsubsection{Neurulación: formación del tubo neural}
+La neurulación es el proceso mediante el cual se forma el tubo neural a partir
+del plegamiento de la placa neural epitelial. En humanos, este proceso ocurre
+en dos fases distintas: la neurulación primaria, durante las semanas 3 y 4 de
+gestación, que conduce al desarrollo del cerebro y la médula espinal, y la
+neurulación secundaria, durante las semanas 5 y 6, con la formación de la
+porción inferior de la médula espinal sacra y coccígea. \cite{Polin124}
+
+La placa neural se forma aproximadamente el día embrionario 21 y para el día 22
+el surco neural se hace evidente. La fusión del surco neural comienza el día 23
+para formar el tubo neural, cerrándose primero la sección central. La porción
+rostral del tubo neural, habitada por las primeras células migratorias, se
+convertirá en el cerebro, mientras que la porción caudal, que recibe células
+migratorias posteriores, formará la médula espinal. Las regiones rostral y
+caudal del tubo neural son las últimas en cerrarse. \cite{Gibb2018}
+
+Durante la neurulación, la población de células madre neurales experimenta una
+rápida expansión mediante división celular simétrica de las células
+neuroepiteliales (CNE). Las CNE generadas en este periodo están influenciadas
+por la expresión de las moléculas de señalización Emx2 y Pax6, que producen
+progenitores destinados a regiones cerebrales específicas. \cite{Gibb2018}
+
+Para satisfacer la demanda de neuronas que poblarán el cerebro, alrededor del
+día 25, las CNE comienzan a dividirse de manera simétrica, produciendo dos
+CNE con cada división, proceso que continúa hasta aproximadamente el día 42.
+Poco antes del inicio de la neurogénesis, estas células pierden sus uniones
+estrechas, comienzan a expresar genes gliales e inician su transformación en
+células gliales radiales. \cite{Stiles2010}
+
+\subsubsection{Formación de vesículas cerebrales primarias y secundarias}
+Al finalizar la neurulación, el embrión mide entre 3 y 5 mm de longitud, y para
+el final de la octava semana gestacional alcanza entre 27 y 31 mm, un
+incremento de diez veces su tamaño. Durante este periodo, la forma del sistema
+nervioso primitivo cambia dramáticamente. \cite{Stiles2010}
+
+Justo antes del cierre completo del tubo neural, el extremo anterior del tubo
+comienza a expandirse formando las tres vesículas cerebrales primarias: el
+prosencéfalo (la vesícula más anterior, precursora del cerebro anterior), el
+mesencéfalo (vesícula media, precursora de las estructuras del cerebro medio) y
+el rombencéfalo (vesícula posterior, que se desarrollará como cerebro
+posterior). \cite{Stiles2010}
+
+Estos tres segmentos se subdividen posteriormente y, al final del periodo
+embrionario, están presentes las cinco vesículas cerebrales secundarias. El
+prosencéfalo se divide en telencéfalo y diencéfalo, mientras que el
+rombencéfalo se divide en metencéfalo y mielencéfalo. El mesencéfalo permanece
+sin subdividirse. Estas cinco subdivisiones se alinean a lo largo del eje
+rostro-caudal del embrión y establecen la organización primaria del sistema
+nervioso central. \cite{Stiles2010}
+
+\subsection{Desarrollo cerebral en el período fetal}
+Los eventos embrionarios de las primeras seis semanas de desarrollo establecen
+el patrón tridimensional del cerebro y la médula espinal, determinando el
+destino de las primeras células neurales. Las etapas posteriores del desarrollo
+se caracterizan por una proliferación y diferenciación masiva de neuronas y
+células gliales, seguidas por la migración y organización de la corteza
+cerebral y cerebelosa, el crecimiento dendrítico, la sinaptogénesis y,
+finalmente, la formación de vainas de mielina alrededor de las neuronas.
+\cite{Polin124}
+
+Durante esta fase del desarrollo cerebral, el cerebro previamente liso adquiere
+el patrón de plegamiento con giros y surcos típicamente observados en el
+cerebro maduro. Este proceso de desarrollo no consiste en fases temporalmente
+separadas, sino en una superposición continua de proliferación, migración y
+organización neuronal. \cite{Gibb2018}
+
+\subsubsection{Fase 1 - Nacimiento celular}
+Todas las neuronas y células gliales derivan de centros proliferativos
+especializados cercanos a la superficie pial: la zona ventricular, la zona
+subventricular y, como se ha descrito más recientemente, la zona subventricular
+externa. El crecimiento cerebral se caracteriza por la proliferación neuronal
+entre las semanas 8 y 15 del desarrollo, y posteriormente por la generación de
+glía radial que cambia a una multiplicación principalmente glial a mediados del
+segundo trimestre, extendiéndose hasta la vida posnatal. Cierta proliferación
+neuronal ocurre más tarde en la gestación, principalmente en la capa granular
+externa del cerebelo y en la zona subventricular. \cite{Polin124} 
+
+El primordio cortical está compuesto por células madre neurales pluripotentes
+en división y células progenitoras neurales más restrictivas que colectivamente
+forman la zona ventricular. Estas células neurales se dividen mediante el
+proceso único de movimiento nuclear intercinético. A medida que el núcleo se
+mueve en consonancia con el ciclo celular, el ambiente a lo largo del eje
+apical-basal expone los núcleos a diferentes señales, proliferativas versus
+neurogénicas. Estos eventos proliferativos tempranos aumentan dramáticamente el
+grosor y la superficie de la zona ventricular, particularmente en el
+prosencéfalo. \cite{Polin124}
+
+Derivadas de la zona ventricular, las células de la glía radial mantienen mayor
+pluripotencia y son capaces de producir tanto neuronas como células gliales
+(astrocitos y oligodendrocitos). Las células gliales radiales son células no
+neuronales elongadas que cumplen dos funciones: actúan como andamio guía para
+la posterior migración de neuronas y como progenitores neurogénicos y gliales.
+\cite{Polin124}
+
+\subsubsection{Fase 2 - Migración celular}
+Entre las semanas 12 y 20 de gestación, millones de neuronas postmitóticas se
+desplazan desde sus sitios de origen en la zona ventricular y la zona
+subventricular hacia la corteza en desarrollo y los núcleos profundos, donde
+residirán durante toda la vida, ocupando posiciones específicas para formar la
+corteza de seis capas, observable a las 28 semanas de gestación. El momento y
+la dirección de estas múltiples migraciones simultáneas están estrictamente
+regulados, y los trastornos de este proceso son poco comunes.
+\cite{Polin124}
+
+Después de que las células se generan en la zona ventricular o subventricular,
+migran de manera radial a lo largo de las células gliales radiales. Las células
+que forman las capas más profundas de la corteza cerebral salen primero. 
+\cite{Polin124}
+
+\subsubsection{Fase 3 - Diferenciación celular}
+Las especializaciones del cerebro humano surgen durante etapas concretas del
+neurodesarrollo, un proceso controlado espacial y temporalmente cuya
+ontogenia es generalmente compartida entre los mamíferos. La diferenciación
+neuronal no constituye un evento aislado, sino un proceso continuo que comienza
+con células precursoras, continúa a través de la generación, migración e
+integración de neuronas recién formadas en circuitos específicos, y prosigue
+durante un prolongado período de maduración neuronal funcional.
+\cite{Lindhout2024}
+
+El neurodesarrollo se inicia con la proliferación de células neuroepiteliales
+que se transforman en diferentes poblaciones de progenitores neurales. Estos
+progenitores dan origen a diversos subtipos neuronales que migran hacia
+regiones cerebrales específicas, estableciendo las bases estructurales y
+funcionales del cerebro en formación. \cite{Lindhout2024}
+
+En la corteza cerebral, los primeros progenitores que aparecen son la glía
+radial apical, que continúan expandiéndose y produciendo tipos adicionales de
+progenitores amplificadores, como los progenitores intermedios y la glía radial
+basal o externa. Este conjunto de progenitores corticales eventualmente da
+origen a las neuronas corticales, que posteriormente migran hacia la superficie
+exterior y forman las distintas capas de la corteza en un orden de adentro
+hacia afuera. \cite{Lindhout2024}
+
+Los progenitores intermedios producen neuronas, mientras que las células de
+glía radial dan origen tanto a neuronas de proyección como a astrocitos. A
+medida que se forman capas sucesivas del manto cortical, los progenitores se
+vuelven más limitados en los tipos celulares que pueden generar.
+\cite{Lindhout2024}
+
+Cuando las células madre multipotentes se diferencian primero en células
+progenitoras neurales y posteriormente en neuronas, las alteraciones en la
+metilación del ADN, las modificaciones de histonas, la accesibilidad de la
+cromatina y la composición de variantes de histonas median cambios específicos
+en la transcripción génica asociados con cada etapa del desarrollo.
+\cite{Lindhout2024}
+
+\subsubsection{Fase 4 - Maduración celular}
+Una vez que las neuronas alcanzan su destino final, extienden dendritas y un
+axón en un intento de establecer conexiones con otras células y convertirse en
+parte integral de una red de comunicación. Las dendritas recopilan información
+de otras neuronas, mientras que el axón proporciona un medio para enviar
+información a neuronas ubicadas más adelante en la línea de comunicación.
+Muchas dendritas se extienden desde una neurona para recibir información de
+células en la red, pero un solo axón transmite la información procesada por la
+célula. \cite{Gibb2018}
+
+Para establecer contactos apropiados, el axón posee un cono de crecimiento en
+su extremo principal. Este cono de crecimiento es guiado mediante el muestreo
+de moléculas trópicas producidas localmente que finalmente ayudan al axón a
+encontrar su objetivo previsto. Una vez identificado ese objetivo, se forma una
+conexión llamada sinapsis, que proporciona el medio para la comunicación célula
+a célula. En el contexto de la sinapsis, el axón se considera el terminal
+presináptico y la dendrita, el terminal postsináptico. \cite{Gibb2018}
+
+\subsubsection{Fase 5 - Sinaptogénesis}
+El momento de la formación de sinapsis varía a lo largo del cerebro en
+desarrollo. Los principios básicos de la sinaptogénesis incluyen la formación
+de las sinapsis más tempranas en las zonas marginal y de la subplaca, un
+aumento en el número de sinapsis en la placa cortical hasta un pico que excede
+el número adulto, y un período posterior de eliminación sináptica. En el
+cerebro, las sinapsis se observan inicialmente en neuronas de la subplaca y la
+zona marginal. \cite{Polin124}
+
+Inicialmente, las dendritas aparecen como procesos gruesos con algunas 
+ramificaciones finas. A medida que avanza el desarrollo, aparece un gran número
+y variedad de espinas dendríticas. Posteriormente comienza la eliminación
+sináptica, y se pierde una gran proporción de sinapsis. \cite{Polin124}
+
+Los factores que estimulan la formación y el desarrollo de sinapsis en el
+cerebro en desarrollo incluyen tanto eventos independientes de la actividad
+como eventos dependientes de la actividad que ocurren después del desarrollo de
+receptores en neuronas diana y la generación de actividad eléctrica.
+\cite{Polin124}
+
+\subsubsection{Fase 6 - Muerte celular y poda sináptica}
+La formación del cerebro también depende de procesos degenerativos que
+comienzan en el período prenatal. La muerte celular programada o apoptosis se
+inicia para reducir el número de células en el cerebro que no han logrado
+establecer conexiones útiles o tienen conexiones infrautilizadas.
+\cite{Gibb2018}
+
+La muerte celular y la eliminación selectiva de procesos neuronales y sinapsis,
+o poda en el desarrollo cerebral, son críticas para el comportamiento posnatal
+normal. Típicamente, aproximadamente la mitad de las neuronas en la región
+cortical mueren antes de la maduración final. Este proceso de muerte celular
+programada, la apoptosis, se inicia y se mantiene por la expresión de genes
+específicos. Un aspecto crítico en las fases finales de la secuencia hacia la
+muerte celular es la activación de caspasas. \cite{Polin124}
+
+La apoptosis parece ser desencadenada fundamentalmente por la competencia
+neuronal por cantidades limitadas de factores tróficos, generados por el
+objetivo, la entrada aferente o la glía asociada, permitiendo el emparejamiento
+numérico de poblaciones neuronales interconectadas y la eliminación de
+proyecciones aberrantes o incorrectas. \cite{Polin124}
+
+\subsection{Desarrollo cerebral en el período postnatal}
+Aunque la producción y migración de neuronas son principalmente eventos
+prenatales, el desarrollo cerebral continúa de manera significativa después del
+nacimiento. La proliferación y migración de progenitores gliales se extiende
+durante un período prolongado después del nacimiento, mientras que la
+diferenciación y maduración de estas células prosigue a lo largo de toda la
+infancia. \cite{Stiles2010}
+
+En el período postnatal, la neurogénesis continúa únicamente en un grado muy
+limitado. No obstante, en la zona subventricular, nuevas neuronas siguen
+emergiendo y migrando hacia el bulbo olfatorio. Asimismo, se producen neuronas
+en el giro dentado del hipocampo, donde migran desde la capa subgranular
+solamente hasta la cercana capa granular. Estas formas excepcionales de
+neurogénesis parecen continuar durante toda la vida adulta, pero producen solo
+un pequeño porcentaje de la población neuronal total.
+\cite{Stiles2010}
+
+En contraste con la neurogénesis limitada, la proliferación y migración de
+progenitores gliales continúa durante un período prolongado mientras los
+oligodendrocitos y astrocitos se diferencian. \cite{Stiles2010}
+
+La sinaptogénesis que comenzó en el período prenatal continúa en el período
+postnatal y a lo largo de toda la vida del individuo. La apoptosis continúa
+desempeñando un papel fundamental en el desarrollo cerebral durante el período
+postnatal. Las sinapsis poco utilizadas son eliminadas en un proceso denominado
+poda sináptica, que optimiza los circuitos neuronales para mejorar la
+eficiencia funcional. \cite{Gibb2018}
+
+\subsubsection{Fase 7 - Mielinización}
+Aunque cierta mielinización ocurre en el período prenatal, este proceso se
+intensifica después del nacimiento y continúa hasta bien entrada la tercera
+década de vida. El proceso de mielinización predice la maduración de áreas
+corticales. Las áreas motoras y sensoriales primarias del cerebro se mielinizan
+primero, mientras que las áreas de asociación lo hacen en último lugar.
+\cite{Gibb2018}
+
+En el tercer trimestre de gestación, los oligodendrocitos inmaduros desarrollan
+extensiones lineales mientras envuelven los axones en preparación para la
+mielinización. En el sistema nervioso central, los oligodendrocitos forman
+hasta 40 segmentos separados de mielina en múltiples axones, a diferencia del
+sistema nervioso periférico, donde las células de Schwann mielinizan axones
+individuales. \cite{Polin124}
+
+Este proceso es seguido por la diferenciación hacia el oligodendrocito maduro,
+que podría desencadenarse en parte por señales dependientes de la actividad
+axonal. Los oligodendrocitos maduros se convierten en la etapa oligodendroglial
+predominante en los meses posteriores al nacimiento a término y dan origen a la
+mielinización. \cite{Polin124}
+
+Después del inicio de la mielinización, los procesos intracelulares comienzan a
+intensificarse para crear la composición rica en lípidos de la mielina. El
+colesterol, los fosfolípidos y los glucoesfingolípidos representan el 70\% de
+la membrana mielínica. Estas células han desarrollado un sistema altamente
+eficaz para mantener la proporción óptima de clases de lípidos en la membrana
+estrechamente envuelta para realizar su función aislante durante la conducción
+nerviosa. \cite{Polin124}
 
 	\chapter{Población y métodos}
 \section{Tipo y diseño de la investigación}
@@ -355,6 +748,24 @@ de muestra deseado de \muestradeseada\ niños.
 	\end{enumerate}
 
 \section{Definición y operacionalización de variables}
+Las variables cualitativas incluyen: sexo (nominal: masculino, femenino), etnia
+(nominal: maya, ladino), residencia (nominal: rural, urbano), escolaridad del
+cuidador (ordinal: ninguna hasta universitario), servicios básicos como agua,
+servicios sanitarios, eliminación de basura y alumbrado (todas nominales),
+propiedad de casa, condición y tipo de empleo, estado civil, tipo de parto y
+atención del mismo (nominales).
+
+Las variables cuantitativas comprenden: edad (continua: años, meses), número de
+personas en casa y hermanos (discretas), exposición a dispositivos electrónicos
+y tiempo de juego cuidador-niño (continuas), edad gestacional y peso al nacer
+(discretas y continuas respectivamente), controles prenatales (discreta),
+indicadores antropométricos de talla/edad y peso/talla (escala), y las cinco
+dimensiones del neurodesarrollo evaluadas mediante cuestionarios (cuantitativas
+de escala: comunicación, motricidad gruesa y fina, resolución de problemas y
+socio-individual).
+
+Se describen de forma ordenada en la siguiente tabla:
+
 \includepdf[scale=0.90,landscape=true,pages=-,pagecommand={\thispagestyle{plain}}]{OpVariables.pdf}
 
 \section{Hipótesis}
