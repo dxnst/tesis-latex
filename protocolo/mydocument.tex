@@ -2250,6 +2250,19 @@ Se describen de forma ordenada en la siguiente tabla:
 		\end{itemize}
 \end{enumerate}
 
+\section{Plan de procesamiento de datos}
+Los datos serán recolectados utilizando la boleta de recolección de datos (ver
+anexo) la cual consiste en un formulario en línea diseñada específicamente para
+capturar las variables clave del estudio. Estos formularios permitirán un
+registro manual eficiente y organizado de la información obtenida a partir de
+las respuestas al \asq\ y el resto de variables de interés.
+
+Se realizará una limpieza inicial de datos para que la base de datos final sea
+consistente y no existan variaciones por sesgo de entrada de datos. Los datos
+estructurados se exportarán en archivos de formato .csv, que ofrecen
+compatibilidad universal con herramientas estadísticas y de análisis de datos
+como R y python.
+
 \section{Plan de análisis de datos}
 \begin{enumerate}
 	\item Preparación de los datos: Los datos en formato físico serán
@@ -2259,10 +2272,12 @@ Se describen de forma ordenada en la siguiente tabla:
 	en cada área del desarrollo del \asq\ se convertirán a valores
 	estadísticos. 
 	
-	\item Análisis descriptivo de los datos: Se calcularán frecuencias y
-	porcentajes de los diferentes factores de riesgo presentes en la población
-	a estudiar. Se calcularán medidas de tendencia central como media, mediana,
-	y desviación estándar de los puntajes del neurodesarrollo.
+	\item Análisis descriptivo de los datos: se llevará a cabo un análisis
+		descriptivo para resumir las características demográficas,
+		socioeconómicas y clínicas de la población estudiada. Se utilizarán
+		medidas de tendencia central (media, mediana, moda) y dispersión
+		(desviación estándar, rango) para describir las variables continuas,
+		así como frecuencias y porcentajes para las variables categóricas.
 
 	\item Análisis comparativo de los resultados del \asq\ de la cohorte
 	completa utilizando las siguientes herramientas estadísticas:
@@ -2310,30 +2325,77 @@ Se describen de forma ordenada en la siguiente tabla:
 
 \section{Límites de la investigación}
 \subsection{Obstáculos}
+El desarrollo de la investigación puede enfrentarse a diversos obstáculos que
+podrían dificultar el proceso:
+
+\begin{itemize}
+    \item Poca colaboración en la toma de datos: La disposición de los
+		cuidadores para participar en las encuestas y cuestionarios podría ser
+		limitada, especialmente si perciben que el proceso consume tiempo
+		significativo.
+    \item Barreras culturales: Las creencias culturales podrían influir en su
+		disposición a colaborar o compartir información relacionada con la
+		salud y el neurodesarrollo infantil.
+    \item Nivel académico: El bajo nivel educativo de algunos cuidadores podría
+		dificultar la comprensión de las preguntas del \asq, lo que podría
+		impactar la calidad de los datos recolectados.
+\end{itemize}
 
 \subsection{Alcances}
+\begin{itemize}
+    \item \textbf{Formulación del problema:} La investigación aborda la
+		identificación y análisis de los factores de riesgo asociados al
+		neurodesarrollo infantil en niños menores de 5 años en el distrito de
+		Quetzaltenango, evaluados mediante el \asq.
+    \item \textbf{Método:} Se emplea un diseño observacional transversal que
+		permite recolectar datos en un periodo específico, sin realizar
+		intervenciones que modifiquen las variables estudiadas.
+    \item \textbf{Teoría:} El marco teórico se fundamenta en modelos
+		biopsicosociales del desarrollo infantil y en la literatura previa
+		sobre factores de riesgo relacionados con el neurodesarrollo en
+		contextos similares.
+    \item \textbf{Tiempo:} El estudio se realizará \tiempito, con un enfoque en
+		la evaluación del presente estado del neurodesarrollo infantil en la 
+		población objetivo.
+    \item \textbf{Espacio:} La investigación se delimita geográficamente al
+		distrito de salud de Quetzaltenango, incluyendo el Centro de Salud de
+		Quetzaltenango, el Puesto de Salud de Pacajá y el Puesto de Salud de
+		San José Chiquilajá.
+\end{itemize}
 
 \section{Aspectos éticos de la investigación}
-Esta investigación se adherirá a los principios éticos clave, tales como:
-\begin{itemize}
-	\item Consentimiento informado: explicando claramente los objetivos del
-	estudio a los padres o tutores y obteniendo su autorización.
+El presente estudio cumple con los principios éticos fundamentales establecidos
+para la investigación en seres humanos, garantizando la protección de los
+derechos, dignidad y bienestar de los participantes. A continuación, se
+detallan los aspectos éticos considerados:
 
-	\item Confidencialidad: los datos se mantendrán anónimos y se utilizarán 
-	exclusivamente para fines de investigación.
+\subsection{Respeto por las personas}
+Se asegura el respeto a la autonomía de los cuidadores y los participantes al
+obtener su consentimiento informado previo a la participación en el estudio.
+Este documento describe claramente los objetivos, procedimientos, beneficios y
+posibles riesgos del estudio, garantizando que los participantes comprendan la
+información antes de decidir participar de manera voluntaria.
 
-	\item Beneficencia y no maleficencia: buscando maximizar beneficios
-	potenciales sin causar daños a los participantes.
+\subsection{Confidencialidad y privacidad}
+La privacidad de los participantes será estrictamente respetada. Toda la
+información recolectada será tratada de manera confidencial y utilizada
+únicamente con fines de investigación.
 
-	\item Justicia: en el estudio participará toda la población que cumpla
-	con los criterios de inclusión los cuales no están condicionados por
-	factores como sexo, etnia o lugar de origen del participante.
+\subsection{Justicia}
+Se garantiza que todos los niños elegibles y sus cuidadores tengan igualdad de
+oportunidades para participar en el estudio, sin discriminación por razones de
+género, etnia, nivel socioeconómico o creencias religiosas. Asimismo, los
+resultados del estudio estarán orientados a beneficiar a la comunidad en
+general, fomentando políticas y estrategias que mejoren el neurodesarrollo
+infantil.
 
-	\item El \asq\ es una herramienta validada, respaldada por evidencia
-	científica y recomendada por instituciones como UNICEF para su uso en
-	evaluación del neurodesarrollo infantil en servicios de atención de
-	salud. \cite{UNICEFrespaldo}
-\end{itemize}
+\subsection{Beneficencia y no maleficencia}
+Este estudio no implica intervenciones invasivas ni riesgos significativos para
+los participantes. Se emplean técnicas observacionales y cuestionarios
+validados que no afectan la salud o el bienestar de los niños ni de sus
+cuidadores. El diseño del estudio está orientado a maximizar los beneficios
+potenciales al proporcionar información útil para diseñar intervenciones en
+salud pública.
 
 \subsection{Categoría de riesgo}
 Categoría I: El diseño del estudio se basa en la aplicación del /asq/ el cual
@@ -2353,7 +2415,8 @@ cuestionarios a los cuidadores, sin invadir la intimidad personal ni requerir
 información sensible o confidencial.
 
 \subsection{Consentimiento informado}
-Ver anexo.
+Todos los cuidadores firmarán un consentimiento informado antes de participar
+en el estudio, el mismo se detalla en anexos.
 
 \section{Recursos}
 
@@ -2390,6 +2453,12 @@ En esta sección se describen los recursos necesarios para la realización del e
 \end{table}
 
 \section{Cronograma de actividades}
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=1\textwidth]{gantt}
+    \caption{Gráfico de Gantt}
+    \label{fig:gantt}
+\end{figure}
 
 \printbibliography
 \end{document}
