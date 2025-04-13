@@ -1,9 +1,10 @@
 \documentclass[11pt,letterpaper]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{arimo}
 \usepackage[T1]{fontenc}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
 \linespread{1.5}
 \usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{titlesec}
@@ -15,7 +16,11 @@
 \usepackage{caption}
 \captionsetup[table]{skip=0pt,singlelinecheck=off}
 
+% Formato de inserción de imagenes y archivos pdf
+\usepackage{wrapfig}
+\graphicspath{ {images/} }
 \usepackage{pdfpages}
+
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}
 \titlespacing*{\chapter}{0em}{*3}{*2}
@@ -604,7 +609,8 @@ siete fases claramente definidas que se despliegan a lo largo de un extenso
 período evolutivo. \cite{Kolb7} Mientras algunas de estas fases están
 circunscritas a períodos específicos, otras mantienen su actividad durante
 intervalos temporales más prolongados. Las características de estas fases se
-sintetizan en el cuadro \ref{tab:fases-desarrollo-cerebral}.
+sintetizan en el cuadro \ref{tab:fases-desarrollo-cerebral} y se ilustran en la
+figura \ref{fig:embriologiacerebral}. 
 
 \begin{table}[htbp]
 \caption{Siete fases del desarrollo cerebral}
@@ -839,6 +845,14 @@ como eventos dependientes de la actividad que ocurren después del desarrollo de
 receptores en neuronas diana y la generación de actividad eléctrica.
 \cite{Polin124}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{embriologiacerebral}
+    \caption{Procesos biológicos del desarrollo cerebral. Modificado de:
+	Lindhout FW, Krienen FM, Pollard KS y Lancaster MA. \cite{Lindhout2024}}
+    \label{fig:embriologiacerebral}
+\end{figure}
+
 \subsubsection{Fase 6 - Muerte celular y poda sináptica}
 La formación del cerebro también depende de procesos degenerativos que
 comienzan en el período prenatal. La muerte celular programada o apoptosis se
@@ -969,6 +983,36 @@ tiempo en el desarrollo infantil, reflejando tanto los procesos de desarrollo
 que tienen lugar a lo largo del tiempo como la influencia cambiante de los
 eventos (ej. un evento traumático) según su duración y la etapa de desarrollo
 en la que ocurren. \cite{Feldman3}
+
+\begin{wrapfigure}{r}{0.55\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.55\textwidth]{sistemasbronfenbrenner}
+	\caption{La teoría de Bronfenbrenner describe los múltiples niveles que
+	impactan al niño en un momento dado y durante el curso del desarrollo.
+	Modificado de: Julian M y Lumeng J. \cite{Feldman3}}
+	\label{fig:sistemasbronfenbrenner}
+\end{wrapfigure}
+
+El sistema familiar, a su vez, opera dentro de sistemas más amplios como la 
+familia extendida, la subcultura, la cultura y la sociedad. El modelo ecológico 
+de Bronfenbrenner representa estas relaciones como círculos concéntricos (ver
+figura \ref{fig:sistemasbronfenbrenner}), con la díada padre-hijo en el centro
+(junto con los factores de riesgo y de protección asociados) y la sociedad en
+general en la periferia. Los cambios en  cualquier nivel se reflejan en los
+niveles superiores e inferiores. Además, estos sistemas y sus interacciones
+cambian con el tiempo, algunas influencias  son persistentes y crónicas,
+mientras que otras son temporales. \cite{Nelson19}
+
+Por ejemplo, la transición de una economía industrial a una basada en los 
+servicios y la información, así como la influencia del racismo sistémico, son 
+ejemplos de cómo la sociedad ejerce efectos profundos sobre las familias y los 
+niños. Comprender el ecosistema más amplio del niño es crucial para entender su 
+entorno familiar y el contexto de su desarrollo. Factores como la pobreza, el 
+racismo sistémico, el acceso a la educación, el transporte, los alimentos, la 
+vivienda, el empleo de los padres y los sistemas de apoyo local influyen 
+significativamente en el bienestar de un niño. Siempre que sea posible, 
+identificar los recursos y activos comunitarios para las familias puede ayudar 
+a promover la salud y el desarrollo. \cite{Nelson19}
 
 \subsubsection{Modelo Transaccional de Sameroff}
 El modelo transaccional de Arnold Sameroff se basa en las ideas de
