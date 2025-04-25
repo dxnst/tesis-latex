@@ -20,6 +20,8 @@
 \usepackage{wrapfig}
 \graphicspath{ {images/} }
 \usepackage{pdfpages}
+
+% Formato de fórmulas y expresiones matemáticas
 \usepackage{amsmath}
 
 % Formatos de títulos
@@ -2788,50 +2790,42 @@ estadística permitirá determinar si existen diferencias significativas en las
 medias de los puntajes Z entre tres o más grupos independientes, definidos por
 las distintas categorías de los factores de riesgo.
 
-\subsubsection{Procedimiento para el análisis ANOVA}
-El procedimiento para evaluar el efecto de factores de riesgo con múltiples 
-categorías (por ejemplo, la escolaridad materna) sobre los puntajes Z de los 
-dominios del neurodesarrollo será el siguiente:
+Dado que es previsible que los tamaños muestrales no sean homogéneos entre los
+diferentes grupos de interés (debido a las características propias del muestreo
+en servicios de atención primaria), se evaluará si esta heterogeneidad afecta
+los resultados mediante la prueba de Levene para homogeneidad de varianzas. 
 
+\subsubsection{Prueba de Levene para homogeneidad de varianzas}
+La prueba de Levene es una prueba estadística inferencial utilizada para
+evaluar la igualdad de varianzas entre diferentes grupos. Esta prueba es menos
+sensible a desviaciones de la normalidad que otras pruebas de igualdad de
+varianzas, lo que la hace particularmente útil en el contexto de este estudio.
+
+El procedimiento de la prueba de Levene implica:
 \begin{enumerate}
-    \item Se calcularán los puntajes Z para cada dominio del \asq\ 
-    (comunicación, motricidad gruesa, motricidad fina, resolución de problemas 
-    y personal-social) estandarizados por edad.
-    
-    \item Para cada factor de riesgo categórico con más de dos niveles, como 
-    la escolaridad materna (con categorías: sin escolaridad, primaria, básico, 
-    diversificado y universitaria), se realizará un ANOVA de una vía para cada
-    uno de los cinco dominios del neurodesarrollo.
-    
-    \item Se verificarán los supuestos del ANOVA:
-    \begin{itemize}
-        \item Normalidad de los residuos mediante la prueba de 
-        Shapiro-Wilk y gráficos Q-Q.
-        \item Homogeneidad de varianzas mediante la prueba de Levene.
-        \item Independencia de las observaciones.
-    \end{itemize}
-    
-    \item Se calculará el estadístico F mediante la fórmula:
-    \[
-    F = \frac{\text{Varianza entre grupos}}{\text{Varianza dentro de grupos}} = 
-    \frac{\sum_{i=1}^k n_i(\bar{X}_i - \bar{X})^2/(k-1)}
-    {\sum_{i=1}^k\sum_{j=1}^{n_i}(X_{ij} - \bar{X}_i)^2/(N-k)}
-    \]
-    
-    Donde:
-    \begin{itemize}
-        \item $k$ representa el número de grupos (por ejemplo, $k = 5$ para las
-        cinco categorías de escolaridad materna).
-        \item $n_i$ es el número de observaciones en el grupo $i$.
-        \item $\bar{X}_i$ es la media del grupo $i$.
-        \item $\bar{X}$ es la media general.
-        \item $X_{ij}$ es el valor de la observación $j$ en el grupo $i$.
-        \item $N$ es el número total de observaciones.
-    \end{itemize}
-    
-    \item Se determinará el valor p asociado al estadístico F y se establecerá
-    un nivel de significancia de $\alpha = 0.05$.
+    \item Calcular la diferencia absoluta entre cada valor en un grupo y la
+		media o mediana de ese grupo.
+    \item Realizar un ANOVA de un factor sobre estos valores de diferencia
+		absoluta.
+    \item El estadístico resultante sigue una distribución F con k-1 y N-k
+		grados de libertad, donde k es el número de grupos y N el tamaño total
+		de la muestra.
 \end{enumerate}
+
+Se interpretará el valor p de la prueba de Levene de la siguiente manera:
+\begin{itemize}
+    \item Si $p > 0.05$: No se rechaza la hipótesis nula de igualdad de
+		varianzas, por lo tanto, podemos proceder con el ANOVA tradicional.
+    \item Si $p \leq0.05$: Se rechaza la hipótesis nula, lo que indica que las
+		varianzas no son iguales entre los grupos, requiriendo el uso de una
+		alternativa robusta.
+\end{itemize}
+
+En caso de que no se cumpla el supuesto de homogeneidad de varianzas, se
+utilizará la prueba de Welch como alternativa robusta al ANOVA tradicional. La
+prueba de Welch realiza un ajuste de los grados de libertad para compensar la
+heterogeneidad de varianzas, lo que la hace especialmente apropiada para
+muestras con tamaños desiguales.
 
 \subsubsection{Análisis post-hoc}
 En caso de encontrar diferencias significativas en el ANOVA ($p < 0.05$), se
@@ -2841,7 +2835,6 @@ existen las diferencias:
 \begin{itemize}
     \item Se utilizará la prueba de Tukey HSD cuando se cumpla el supuesto de
     homogeneidad de varianzas.
-    
     \item Se empleará la prueba de Games-Howell cuando no se cumpla el supuesto
     de homogeneidad de varianzas.
 \end{itemize}
@@ -2868,41 +2861,6 @@ siguientes aspectos:
         \item $\eta^2 \approx 0.14$ o mayor: efecto grande
     \end{itemize}
 \end{itemize}
-
-\subsubsection{Ejemplo de aplicación}
-Para analizar el efecto de la escolaridad materna sobre el dominio de 
-motricidad fina, se clasificarán las puntuaciones Z de los \muestradeseada\ 
-niños según el nivel educativo de la madre y se realizará un ANOVA. 
-Suponiendo que:
-
-\begin{itemize}
-    \item $F(4, 1696) = 8.76$
-    \item $p < 0.001$
-    \item $\eta^2 = 0.02$
-\end{itemize}
-
-Estos resultados indicarían que:
-
-\begin{itemize}
-    \item Existe una diferencia estadísticamente significativa en los puntajes Z
-    del dominio de motricidad fina según el nivel educativo de la madre.
-    \item El tamaño del efecto es pequeño a moderado ($\eta^2 = 0.02$).
-    \item Las pruebas post-hoc revelarían específicamente entre qué niveles
-    educativos se encuentran las diferencias significativas, permitiendo 
-    identificar gradientes de riesgo.
-\end{itemize}
-
-\subsubsection{Ajuste por comparaciones múltiples}
-Dado que se realizarán múltiples análisis ANOVA para los cinco dominios del
-neurodesarrollo y varios factores de riesgo, se aplicará la corrección de
-Bonferroni para controlar la tasa de error tipo I, dividiendo el nivel de
-significancia ($\alpha = 0.05$) entre el número de comparaciones realizadas.
-
-\subsubsection{Integración con otros análisis}
-Los resultados del ANOVA complementarán los hallazgos del análisis Chi-cuadrado,
-permitiendo una evaluación más completa de los factores asociados con el
-neurodesarrollo infantil, tanto en términos categóricos (riesgo/no riesgo) como
-continuos (puntajes Z).
 
 \subsection{Análisis de asociación}
 Se analizarán los resultados del \asq\ del grupo estudiado utilizando odds
