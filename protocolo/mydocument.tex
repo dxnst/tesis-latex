@@ -20,6 +20,7 @@
 \usepackage{wrapfig}
 \graphicspath{ {images/} }
 \usepackage{pdfpages}
+\usepackage{amsmath}
 
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}
@@ -2731,50 +2732,65 @@ compatibilidad universal con herramientas estadísticas y de análisis de datos
 como R y python.
 
 \section{Plan de análisis de datos}
-\begin{enumerate}
-	\item Preparación de los datos: Los datos en formato físico serán
-	digitados para su uso en el software estadístico Rstudio y python con los
-	paquetes numpy y pandas. Se realizará una limpieza de los datos para
-	identificar y corregir posibles errores de entrada. Los puntajes obtenidos
-	en cada área del desarrollo del \asq\ se convertirán a valores
-	estadísticos. 
+\subsection{Preparación de los datos}
+Los datos en formato físico serán digitados para su uso en el software
+estadístico Rstudio y python con los paquetes numpy y pandas. Se realizará una
+limpieza de los datos para identificar y corregir posibles errores de entrada.
+Los puntajes obtenidos en cada área del desarrollo del \asq\ se convertirán a
+valores estadísticos. 
 	
-	\item Análisis descriptivo de los datos: se llevará a cabo un análisis
-		descriptivo para resumir las características demográficas,
-		socioeconómicas y clínicas de la población estudiada. Se utilizarán
-		medidas de tendencia central (media, mediana, moda) y dispersión
-		(desviación estándar, rango) para describir las variables continuas,
-		así como frecuencias y porcentajes para las variables categóricas.
+\subsection{Análisis descriptivo}
+Se realizará inicialmente un análisis descriptivo de la muestra, calculando
+frecuencias y porcentajes para las variables categóricas, y medidas de
+tendencia central (media, mediana) y dispersión (desviación estándar, rango
+intercuartílico) para las variables cuantitativas. Los resultados se
+presentarán utilizando tablas de frecuencia y gráficos según corresponda al
+tipo de variable.
 
-	\item Análisis comparativo de los resultados del \asq\ de la cohorte
-	completa utilizando las siguientes herramientas estadísticas:
-		\begin{itemize}
-		\item Chi-cuadrado: para determinar si hay asociación significativa
-		entre las variables categóricas y riesgo del retraso en el
-		neurodesarrollo, se utilizará para evaluar factores de riesgo
-		individuales y comparar con desarrollo normal versus desarrollo en
-		riesgo.
-		\item Análisis de variancia (ANOVA): para comparar medias de puntajes
-		del neurodesarrollo en más de dos grupos diferentes de una misma
-		categoría y determinar su variación, por ejemplo para evaluar el riesgo
-		del neurodesarrollo en valores Z y medidas de tendencia central con
-		el grado de escolaridad de los padres de los niños: ninguna, primaria,
-		básico, diversificado, universitario.
-		\end{itemize}
+\subsection{Análisis inferencial}
+Para evaluar la asociación entre los factores de riesgo (variables
+independientes) y los resultados del \asq\ (variables dependientes), se
+aplicarán las siguientes técnicas estadísticas:
 
-	\item Análisis de asociación de los resultados del \asq\ del grupo
-	estudiado utilizando:
-		\begin{itemize}
-		\item Odds ratio (OR): para comparar las probabilidades de que se
-		presente riesgo en el neurodesarrollo entre dos grupos diferentes.
-		Por ejemplo para comparar si los niños con padres que tienen un trabajo
-		formal o informal tienen mayor probabilidad o no, de presentar riesgo
-		en el neurodesarrollo.
-		\end{itemize}
-	\item Presentación de resultados: se elaborarán tablas y gráficos
-	apropiados con intervalos utilizando el software Rstudio y paquetes de
-	CRAN como ggplot2 para análisis y creación de datos informativos.
+\subsubsection{Prueba Chi-cuadrado de independencia}
+La prueba Chi-cuadrado será nuestra principal herramienta para analizar la
+asociación entre factores de riesgo categóricos y los resultados del \asq\
+dicotomizados (desarrollo típico/en riesgo). Esta prueba evaluará si existe una
+asociación estadísticamente significativa entre los factores de exposición y
+los resultados de neurodesarrollo.
+
+Para una población de \muestradeseada\ niños menores de 5 años, el
+procedimiento para la prueba Chi-cuadrado será el siguiente:
+
+\begin{enumerate}
+    \item Se construirán tablas de contingencia para cada par de variables
+		categóricas (factor de riesgo y resultado del \asq).
+    
+    \item Se calculará el estadístico Chi-cuadrado mediante la fórmula:
+    \[
+    \chi^2 = \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+    \]
+    
+    Donde \( O_{ij} \) son las frecuencias observadas y \( E_{ij} \) son las
+	frecuencias esperadas bajo la hipótesis nula de independencia.
+    
+    \item Se establecerá un nivel de significancia estadística de $\alpha = 0.05$
+		para todas las pruebas, e intervalos de confianza de 95\% cálculados
+		por el método del error estándar para describir el rango en el que se
+		encuentra el valor real.
 \end{enumerate}
+
+\subsection{Análisis de asociación}
+Se analizarán los resultados del \asq\ del grupo estudiado utilizando odds
+ratio (OR): para comparar las probabilidades de que se presente riesgo en el
+neurodesarrollo entre dos grupos diferentes. Por ejemplo para comparar si los
+niños con padres que tienen un trabajo formal o informal tienen mayor
+probabilidad o no, de presentar riesgo en el neurodesarrollo.
+
+\subsection{Presentación de resultados}
+Se elaborarán tablas y gráficos apropiados con intervalos utilizando el
+software Rstudio y paquetes de CRAN como ggplot2 para análisis y creación de
+datos informativos.
 
 \section{Hipótesis}
 	\begin{enumerate}
