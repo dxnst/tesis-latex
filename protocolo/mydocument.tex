@@ -2637,14 +2637,14 @@ servicios sanitarios, eliminación de basura y alumbrado (todas nominales),
 propiedad de casa, condición y tipo de empleo, estado civil, tipo de parto y
 atención del mismo (nominales).
 
-Las variables cuantitativas comprenden: edad (continua: años, meses), número de
-personas en casa y hermanos (discretas), exposición a dispositivos electrónicos
-y tiempo de juego cuidador-niño (continuas), edad gestacional y peso al nacer
-(discretas y continuas respectivamente), controles prenatales (discreta),
-indicadores antropométricos de talla/edad y peso/talla (escala), y las cinco
-dimensiones del neurodesarrollo evaluadas mediante cuestionarios (cuantitativas
-de escala: comunicación, motricidad gruesa y fina, resolución de problemas y
-socio-individual).
+Las variables cuantitativas comprenden: edad (intervalos: años, meses), número
+de personas en casa y hermanos (discretas), exposición a dispositivos
+electrónicos y tiempo de juego cuidador-niño (continuas), edad gestacional y
+peso al nacer (discretas y continuas respectivamente), controles prenatales
+(discreta), indicadores antropométricos de talla/edad y peso/talla (escala), y
+las cinco dimensiones del neurodesarrollo evaluadas mediante cuestionarios
+(cuantitativas de escala: comunicación, motricidad gruesa y fina, resolución de
+problemas y socio-individual).
 
 Se describen de forma ordenada en la siguiente tabla:
 
@@ -2779,6 +2779,130 @@ procedimiento para la prueba Chi-cuadrado será el siguiente:
 		por el método del error estándar para describir el rango en el que se
 		encuentra el valor real.
 \end{enumerate}
+
+\subsection{Análisis de varianza (ANOVA)}
+Para evaluar la relación entre factores de riesgo con múltiples categorías y
+los resultados del neurodesarrollo cuantificados mediante puntajes Z del 
+\asq, se utilizará el análisis de varianza (ANOVA) de una vía. Esta técnica
+estadística permitirá determinar si existen diferencias significativas en las
+medias de los puntajes Z entre tres o más grupos independientes, definidos por
+las distintas categorías de los factores de riesgo.
+
+\subsubsection{Procedimiento para el análisis ANOVA}
+El procedimiento para evaluar el efecto de factores de riesgo con múltiples 
+categorías (por ejemplo, la escolaridad materna) sobre los puntajes Z de los 
+dominios del neurodesarrollo será el siguiente:
+
+\begin{enumerate}
+    \item Se calcularán los puntajes Z para cada dominio del \asq\ 
+    (comunicación, motricidad gruesa, motricidad fina, resolución de problemas 
+    y personal-social) estandarizados por edad.
+    
+    \item Para cada factor de riesgo categórico con más de dos niveles, como 
+    la escolaridad materna (con categorías: sin escolaridad, primaria, básico, 
+    diversificado y universitaria), se realizará un ANOVA de una vía para cada
+    uno de los cinco dominios del neurodesarrollo.
+    
+    \item Se verificarán los supuestos del ANOVA:
+    \begin{itemize}
+        \item Normalidad de los residuos mediante la prueba de 
+        Shapiro-Wilk y gráficos Q-Q.
+        \item Homogeneidad de varianzas mediante la prueba de Levene.
+        \item Independencia de las observaciones.
+    \end{itemize}
+    
+    \item Se calculará el estadístico F mediante la fórmula:
+    \[
+    F = \frac{\text{Varianza entre grupos}}{\text{Varianza dentro de grupos}} = 
+    \frac{\sum_{i=1}^k n_i(\bar{X}_i - \bar{X})^2/(k-1)}
+    {\sum_{i=1}^k\sum_{j=1}^{n_i}(X_{ij} - \bar{X}_i)^2/(N-k)}
+    \]
+    
+    Donde:
+    \begin{itemize}
+        \item $k$ representa el número de grupos (por ejemplo, $k = 5$ para las
+        cinco categorías de escolaridad materna).
+        \item $n_i$ es el número de observaciones en el grupo $i$.
+        \item $\bar{X}_i$ es la media del grupo $i$.
+        \item $\bar{X}$ es la media general.
+        \item $X_{ij}$ es el valor de la observación $j$ en el grupo $i$.
+        \item $N$ es el número total de observaciones.
+    \end{itemize}
+    
+    \item Se determinará el valor p asociado al estadístico F y se establecerá
+    un nivel de significancia de $\alpha = 0.05$.
+\end{enumerate}
+
+\subsubsection{Análisis post-hoc}
+En caso de encontrar diferencias significativas en el ANOVA ($p < 0.05$), se
+realizarán pruebas post-hoc para identificar específicamente entre qué grupos
+existen las diferencias:
+
+\begin{itemize}
+    \item Se utilizará la prueba de Tukey HSD cuando se cumpla el supuesto de
+    homogeneidad de varianzas.
+    
+    \item Se empleará la prueba de Games-Howell cuando no se cumpla el supuesto
+    de homogeneidad de varianzas.
+\end{itemize}
+
+\subsubsection{Interpretación de resultados}
+La interpretación de los resultados del ANOVA se realizará considerando los 
+siguientes aspectos:
+
+\begin{itemize}
+    \item Un valor $p < 0.05$ indicará que existe al menos una diferencia 
+    significativa entre los distintos niveles del factor estudiado.
+    
+    \item El valor de $\eta^2$ (eta cuadrado) se calculará para estimar el 
+    tamaño del efecto:
+    \[
+    \eta^2 = \frac{\text{Suma de cuadrados entre grupos}}{\text{Suma de 
+    cuadrados total}}
+    \]
+    
+    \item Se interpretará el tamaño del efecto según los criterios de Cohen:
+    \begin{itemize}
+        \item $\eta^2 \approx 0.01$: efecto pequeño
+        \item $\eta^2 \approx 0.06$: efecto mediano
+        \item $\eta^2 \approx 0.14$ o mayor: efecto grande
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Ejemplo de aplicación}
+Para analizar el efecto de la escolaridad materna sobre el dominio de 
+motricidad fina, se clasificarán las puntuaciones Z de los \muestradeseada\ 
+niños según el nivel educativo de la madre y se realizará un ANOVA. 
+Suponiendo que:
+
+\begin{itemize}
+    \item $F(4, 1696) = 8.76$
+    \item $p < 0.001$
+    \item $\eta^2 = 0.02$
+\end{itemize}
+
+Estos resultados indicarían que:
+
+\begin{itemize}
+    \item Existe una diferencia estadísticamente significativa en los puntajes Z
+    del dominio de motricidad fina según el nivel educativo de la madre.
+    \item El tamaño del efecto es pequeño a moderado ($\eta^2 = 0.02$).
+    \item Las pruebas post-hoc revelarían específicamente entre qué niveles
+    educativos se encuentran las diferencias significativas, permitiendo 
+    identificar gradientes de riesgo.
+\end{itemize}
+
+\subsubsection{Ajuste por comparaciones múltiples}
+Dado que se realizarán múltiples análisis ANOVA para los cinco dominios del
+neurodesarrollo y varios factores de riesgo, se aplicará la corrección de
+Bonferroni para controlar la tasa de error tipo I, dividiendo el nivel de
+significancia ($\alpha = 0.05$) entre el número de comparaciones realizadas.
+
+\subsubsection{Integración con otros análisis}
+Los resultados del ANOVA complementarán los hallazgos del análisis Chi-cuadrado,
+permitiendo una evaluación más completa de los factores asociados con el
+neurodesarrollo infantil, tanto en términos categóricos (riesgo/no riesgo) como
+continuos (puntajes Z).
 
 \subsection{Análisis de asociación}
 Se analizarán los resultados del \asq\ del grupo estudiado utilizando odds
