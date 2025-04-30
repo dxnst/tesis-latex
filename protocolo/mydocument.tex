@@ -54,7 +54,7 @@
 Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
 \and Mazariegos Manrique, Sonia María}
 \newcommand{\tiempito}{durante 2,025}
-\newcommand{\muestradeseada}{1,701}
+\newcommand{\muestradeseada}{1,700}
 \newcommand{\asq}{“Cuestionario Edades y Etapas 3”}
 
 \begin{document}
@@ -2150,9 +2150,9 @@ auditiva bilateral leve a moderada permanente. \cite{Feldman44}
 Cuando un niño muestra errores de habla basados en patrones o reglas
 implícitas a pesar de la capacidad para producir los mismos sonidos
 correctamente en otros contextos, la condición se denomina trastorno
-fonológico. Un niño que omite las consonantes finales puede decir "feli" en
-lugar de "feliz" y "canta" en lugar de "cantar", pero probablemente no tenga
-ningún problema al decir palabras como "zombi" o "rana". El niño está
+fonológico. Un niño que omite las consonantes finales puede decir ``feli'' en
+lugar de ``feliz'' y ``canta'' en lugar de ``cantar'', pero probablemente no
+tenga ningún problema al decir palabras como ``zombi'' o ``rana''. El niño está
 aplicando una regla incorrecta en lugar de mostrar una incapacidad para
 producir el sonido correctamente. \cite{Feldman44}
 
@@ -2221,27 +2221,27 @@ La primera descripción clínica de seis niños con una constelación de rasgos
 fácilmente reconocibles como lo que actualmente se conoce como TEA fue
 publicada por la psiquiatra rusa Grunya Sukhareva en 1925. \cite{Myers2025}
 
-En 1943, Leo Kanner describió elocuentemente a 11 niños con "alteraciones
-autistas innatas del contacto afectivo" caracterizadas por un compromiso social
-y de interacción profundamente deficiente; alteraciones en la comunicación que
-variaban desde el mutismo hasta la ecolalia, inversión pronominal y literalidad;
-e interacciones inusuales con el entorno, incluyendo un "deseo obsesivo y
-ansioso por el mantenimiento de la igualdad" que no se explicaba por un
-deterioro cognitivo general. \cite{Myers2025}
+En 1943, Leo Kanner describió elocuentemente a 11 niños con ``alteraciones
+autistas innatas del contacto afectivo'' caracterizadas por un compromiso
+social y de interacción profundamente deficiente; alteraciones en la
+comunicación que variaban desde el mutismo hasta la ecolalia, inversión
+pronominal y literalidad; e interacciones inusuales con el entorno, incluyendo
+un ``deseo obsesivo y ansioso por el mantenimiento de la igualdad'' que no se
+explicaba por un deterioro cognitivo general. \cite{Myers2025}
 
 Al año siguiente, Hans Asperger contribuyó con un informe sobre cuatro niños
 con una constelación similar de características que constituían una
-"psicopatía autística", que incluía falta de reciprocidad en las
+``psicopatía autística'', que incluía falta de reciprocidad en las
 interacciones sociales y una gama restringida de intereses intensos e
 inusuales, pero con adquisición normal o precoz del lenguaje, con habilidades
 lingüísticas por encima del promedio pero con sutiles anomalías en la
 comunicación verbal y no verbal, además de torpeza motora. \cite{Myers2025}
 
 \subsubsection{Definición Actual}
-Casi 80 años después de los trabajos seminales de Kanner y Asperger, y casi un
+Casi 80 años después de los trabajos iniciales de Kanner y Asperger, y casi un
 siglo después de la descripción inicial y presciente de Sukhareva, los
 criterios diagnósticos del TEA siguen siendo notablemente consistentes con las
-observaciones originales de estos perspicaces clínicos. \cite{Myers2025}
+observaciones originales de estos clínicos. \cite{Myers2025}
 
 Antes del DSM-5, cinco trastornos superpuestos capturaban el espectro:
 trastorno autista, trastorno de Asperger, trastorno desintegrativo infantil,
@@ -2275,10 +2275,10 @@ La patogénesis del TEA no se comprende completamente. El consenso general es
 que el TEA es causado por factores genéticos que alteran el desarrollo
 cerebral, específicamente la conectividad neuronal, afectando así el
 desarrollo de la comunicación social y conduciendo a intereses restrictivos y
-comportamientos repetitivos. Este consenso está respaldado por la "teoría
-epigenética", en la que un gen anormal se "activa" al principio del desarrollo
-fetal y afecta la expresión de otros genes sin cambiar su secuencia primaria
-de ADN. \cite{AutismUpToDate}
+comportamientos repetitivos. Este consenso está respaldado por la ``teoría
+epigenética'', en la que un gen anormal se ``activa'' al principio del
+desarrollo fetal y afecta la expresión de otros genes sin cambiar su secuencia
+primaria de ADN. \cite{AutismUpToDate}
 
 Dada la complejidad del TEA y la diversidad de manifestaciones clínicas, es
 probable que las interacciones entre múltiples genes o combinaciones de genes
@@ -2789,6 +2789,38 @@ los resultados del neurodesarrollo cuantificados mediante puntajes Z del
 estadística permitirá determinar si existen diferencias significativas en las
 medias de los puntajes Z entre tres o más grupos independientes, definidos por
 las distintas categorías de los factores de riesgo.
+
+El modelo matemático del ANOVA de un factor puede expresarse como:
+
+\begin{equation}
+Y_{ij} = \mu + \alpha_i + \varepsilon_{ij}
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $Y_{ij}$ es la observación $j$-ésima en el $i$-ésimo grupo
+    \item $\mu$ es la media general
+    \item $\alpha_i$ es el efecto del factor de riesgo $i$
+    \item $\varepsilon_{ij}$ es el error aleatorio que sigue una distribución $N(0, \sigma^2)$
+\end{itemize}
+
+El estadístico $F$ para el ANOVA se calcula como la razón entre la varianza
+entre grupos y la varianza dentro de los grupos:
+
+\begin{equation}
+F = \frac{MS_{\text{entre}}}{MS_{\text{dentro}}} = \frac{\sum_{i=1}^{k} n_i(\bar{Y}_i - \bar{Y})^2/(k-1)}{\sum_{i=1}^{k}\sum_{j=1}^{n_i} (Y_{ij} - \bar{Y}_i)^2/(N-k)}
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $MS_{\text{entre}}$ es la media cuadrática entre grupos
+    \item $MS_{\text{dentro}}$ es la media cuadrática dentro de los grupos
+    \item $k$ es el número de grupos
+    \item $n_i$ es el tamaño de la muestra del grupo $i$
+    \item $\bar{Y}_i$ es la media del grupo $i$
+    \item $\bar{Y}$ es la media general
+    \item $N$ es el tamaño total de la muestra
+\end{itemize}
 
 Dado que es previsible que los tamaños muestrales no sean homogéneos entre los
 diferentes grupos de interés (debido a las características propias del muestreo
