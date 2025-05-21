@@ -30,7 +30,37 @@
 \titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
 \titlespacing*{\section}{0em}{*2}{*1.2}
 \titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
-\titlespacing*{\subsection}{4em}{*1}{*0.6}
+
+\usepackage{etoolbox}
+
+% Define the indentation values
+\newlength{\subsectionindent}
+\newlength{\subsubsectionindent}
+\setlength{\subsectionindent}{1em}          % Subtle indentation for subsections
+\setlength{\subsubsectionindent}{2.5em}     % Higher but still subtle indentation for subsubsections
+
+% Setup hooks to adjust paragraph indentation when sections begin
+\makeatletter
+% Reset indentation at section level
+\pretocmd{\section}{\setlength{\leftskip}{0pt}}{}{}
+
+% Set indentation for subsection and its paragraphs
+\pretocmd{\subsection}{\setlength{\leftskip}{\subsectionindent}}{}{}
+
+% Set indentation for subsubsection and its paragraphs
+\pretocmd{\subsubsection}{\setlength{\leftskip}{\subsubsectionindent}}{}{}
+\makeatother
+
+% Optional: If you also want the section titles themselves indented to match
+\titlespacing*{\subsection}
+  {\subsectionindent}           % left margin - matches paragraph indentation
+  {3.25ex plus 1ex minus .2ex}  % before spacing
+  {1.5ex plus .2ex}             % after spacing
+
+\titlespacing*{\subsubsection}
+  {\subsubsectionindent}        % left margin - matches paragraph indentation
+  {3.25ex plus 1ex minus .2ex}  % before spacing
+  {1.5ex plus .2ex}             % after spacing
 
 % Formato de citación
 \usepackage{csquotes}
