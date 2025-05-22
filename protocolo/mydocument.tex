@@ -1,5 +1,5 @@
 \documentclass[11pt,letterpaper]{report}
-\usepackage[margin=1in]{geometry}
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[sfdefault]{arimo}
 \usepackage[T1]{fontenc}
@@ -10,6 +10,18 @@
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
 \usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
+
+% Add these packages for improved layout
+\usepackage{microtype}  
+\usepackage{needspace}  
+
+% Adjust how LaTeX handles page breaks
+\widowpenalty=9999
+\clubpenalty=9999
+\brokenpenalty=9999
+
+% Try to fill pages better
+\flushbottom
 
 % Formato de tabla y de título de tabla
 \usepackage{graphicx}
@@ -26,9 +38,9 @@
 
 % Formatos de títulos
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{SECCIÓN \ \thechapter.}{0.6em}{\centering\MakeUppercase}
-\titlespacing*{\chapter}{0em}{*3}{*2}
+\titlespacing*{\chapter}{0em}{0cm}{*2}
 \titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
-\titlespacing*{\section}{0em}{*2}{*1.2}
+\titlespacing*{\section}{0em}{*1}{*1.2}
 \titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
 
 % Modified subsubsection format with a visible bullet
@@ -48,6 +60,7 @@
 
 % Setup hooks to adjust paragraph indentation when sections begin
 \makeatletter
+
 % Reset indentation at section level
 \pretocmd{\section}{\setlength{\leftskip}{0pt}}{}{}
 
@@ -162,6 +175,13 @@ factores en el contexto específico de Quetzaltenango.
 
 \section{Preguntas de investigación}
 	\begin{enumerate}
+		\item ¿Cuál es la magnitud y distribución de la asociación entre
+			factores sociodemográficos, económicos, familiares, de acceso a
+			servicios de salud y antecedentes perinatales con el riesgo de
+			retraso en los cinco dominios del neurodesarrollo evaluados mediante
+			el Cuestionario de Edades y Etapas 3 en niños menores de 5 años que
+			asisten a servicios de atención primaria en Quetzaltenango durante
+			2025?
 		\item ¿Qué patrones específicos de riesgo en los dominios del
 			neurodesarrollo pueden identificarse mediante el Cuestionario
 			Edades y Etapas 3 en niños menores de 5 años que asisten a
@@ -1574,49 +1594,7 @@ ocupacional. Erikson reconoció que estas etapas surgen en el contexto de las
 expectativas de la sociedad occidental europea; en otras culturas, los
 problemas relevantes pueden ser muy diferentes. \cite{Nelson19}. Erikson
 describió el ciclo de vida con ocho etapas específicas, cada una representando
-una tensión dinámica entre dos fuerzas opuestas:
-
-La primera etapa (infancia) representa la tensión entre la confianza básica y
-la desconfianza. Incorpora los análisis freudianos de la etapa oral en una
-interacción más amplia entre padres e hijos. La crianza confiable y sensible
-construye el sentido de confianza del niño en los padres, mientras que el
-cuidado negligente construye un sentido de desconfianza. Estas interacciones
-conducen a la propensión del individuo a dar o no dar a los demás. Además, el
-niño debe encontrar un equilibrio entre seguridad y peligro. El resultado de
-juzgar situaciones como seguras en lugar de peligrosas produce un sentido de
-esperanza, que es omnipresente a lo largo de la vida. \cite{Feldman3}
-
-La segunda etapa (2-3 años) representa la tensión entre autonomía y vergüenza y
-duda. El creciente control del lenguaje y muscular de los niños proporciona
-oportunidades tanto para la independencia como para ir más allá de los límites
-permitidos. Los padres establecen límites a sus hijos, y los niños deben
-aprender a inhibir impulsos y practicar el autocontrol sin sentir vergüenza o
-perder autoestima cuando fracasan. Llegar al delicado equilibrio entre el
-control de uno mismo y el control por parte de otros se generaliza a las
-actitudes del niño hacia la ley y el orden. \cite{Feldman3}
-
-La tercera etapa (4-5 años) representa la tensión entre iniciativa y culpa. Al
-igual que Freud, Erikson caracteriza la tercera etapa en términos de la
-adquisición del rol sexual y un superyó funcional; sin embargo, Erikson señala
-que las preocupaciones fálicas emergentes crean en los niños la modalidad
-masculina de intrusión y en las niñas la modalidad femenina de receptividad.
-Estas tendencias impulsan al niño a buscar los modelos apropiados para su
-género e identificarse con ellos. Los varones se adentran en las interacciones
-sociales, mientras que las mujeres son receptivas a los deseos de los demás. La
-analogía fálica de intrusión se extiende a las habilidades del yo que permiten
-a los niños crear sus propios proyectos y propósitos. Estos son fomentados por
-la capacidad para el juego imaginativo. Pero las actividades imaginativas y los
-planes de los niños pueden llevar a territorio prohibido. Los niños deben
-aprender a discernir por sí mismos, no solo por directivas de los padres,
-cuándo han cruzado la línea hacia pensamientos, sentimientos y acciones
-inaceptables. Esta tensión es el origen del superyó y la culpa. Los intentos
-de encontrar el equilibrio apropiado de iniciativas personales con restricciones
-morales dan forma al sentido de propósito del niño. \cite{Feldman3}
-
-Erikson fue pionero en describir el desarrollo a lo largo de toda la vida. Para
-Erikson, el adulto sano y maduro era productivo en el trabajo y estaba en una
-relación mutuamente satisfactoria. Las últimas etapas del desarrollo fueron
-pasos hacia el logro de estos puntos finales. \cite{Feldman3}
+una tensión dinámica entre dos fuerzas opuestas.
 
 \subsection{Teorías cognitivas}
 El desarrollo cognitivo se comprende mejor a través del trabajo de Piaget. Un
@@ -1919,14 +1897,14 @@ de atención e hiperactividad también presentan algún trastorno específico de
 aprendizaje. \cite{DSM5TR}
 
 El DSM-5-TR clasifica los trastornos del neurodesarrollo en seis categorías:
-    \begin{enumerate}
+    \begin{itemize}
         \item Trastorno del desarrollo Intelectual
         \item Trastornos de la comunicación
         \item Trastorno del espectro autista
         \item Trastorno por déficit de atención e hiperactividad
         \item Trastorno específico del aprendizaje
         \item Trastornos motores
-    \end{enumerate}
+    \end{itemize}
 
 \subsection{Trastorno del desarrollo intelectual}
 \subsubsection{Definición}
@@ -2606,7 +2584,7 @@ problemas y socio-individual).
 
 Se describen de forma ordenada en la siguiente tabla:
 
-\includepdf[scale=0.90,landscape=true,pages=-,pagecommand={\thispagestyle{plain}}]{images/variables.pdf}
+\includepdf[scale=0.93,landscape=true,pages=-,pagecommand={\thispagestyle{plain}}]{images/variables.pdf}
 
 \section{Técnicas de recolección de información e instrumentos de medición}
 	\begin{enumerate}
@@ -2625,17 +2603,15 @@ Se describen de forma ordenada en la siguiente tabla:
 		participantes. Tras obtener el consentimiento informado de los padres o
 		tutores, se realizará:
 			\begin{itemize}
-			\item Evaluación basal del neurodesarrollo mediante la aplicación
-			del \asq, seleccionando la versión específica según la edad del
-			niño.
+			\item Evaluación del neurodesarrollo mediante la aplicación del
+			\asq, seleccionando la versión específica según la edad del niño.
 			\item Aplicación de un cuestionario estructurado para recolectar
 			información sobre factores potencialmente asociados al
 			neurodesarrollo.
 			\end{itemize}
 		\item Fase de clasificación y análisis:
-		Los resultados de cada niño serán evaluados conforme al
-		puntaje obtenido en el \asq\
-		y clasificados en tres categorías:
+		Los resultados de cada niño serán evaluados conforme al puntaje obtenido
+		en el \asq\ y clasificados en tres categorías:
 			\begin{itemize}
 			\item Desarrollo típico: puntaje en el área blanca, indicativo de
 			un desarrollo acorde a su edad.
@@ -2651,30 +2627,10 @@ Se describen de forma ordenada en la siguiente tabla:
 	Para este estudio de cohorte prospectivo, se emplearán los siguientes
 	instrumentos:
 		\begin{itemize}
-		\item \asq: Adaptado al idioma español y ajustado por edad. Esta
-		herramienta validada de tamizaje del desarrollo identifica riesgos de
-		problemas de neurodesarrollo en niños de 2 a 66 meses. Será aplicado
-		por los investigadores con información proporcionada por los padres o
-		tutores y mediante observación directa de actividades específicas.
-		El \asq\ evalúa cinco áreas del desarrollo: comunicación, motricidad
-		gruesa, motricidad fina, resolución de problemas, habilidades
-		socioindividuales.
-
-		\item Cuestionario de factores de exposición: Instrumento estructurado
-		diseñado específicamente para este estudio que recopilará información
-		sobre:
-				\begin{itemize}
-					\item Variables sociodemográficas (edad, sexo, etnia, nivel
-					educativo de los padres)
-					\item Variables económicas (empleo de los padres, acceso a
-					seguridad social)
-					\item Variables de interacción familiar (tiempo de juego,
-					disponibilidad de juguetes)
-					\item Variables médicas (prematuridad, peso al nacer, tipo
-					de parto, lactancia, estado nutricional, etc.)
-				\end{itemize}
+		\item \asq: Adaptado al idioma español y ajustado por edad.	
+		\item Cuestionario de factores de riesgo.
 		\end{itemize}
-\end{enumerate}
+	\end{enumerate}
 
 \section{Plan de procesamiento de datos}
 Los datos serán recolectados utilizando la boleta de recolección de datos (ver
@@ -2692,17 +2648,15 @@ como R y python.
 \section{Plan de análisis de datos}
 \subsection{Preparación de los datos}
 Los datos en formato físico serán digitados para su uso en el software
-estadístico Rstudio y python con los paquetes numpy y pandas. Se realizará una
-limpieza de los datos para identificar y corregir posibles errores de entrada.
-Los puntajes obtenidos en cada área del desarrollo del \asq\ se convertirán a
-valores estadísticos. 
+estadístico Rstudio y python con los paquetes numpy y pandas. Los puntajes
+obtenidos en cada área del desarrollo del \asq\ se convertirán a valores
+estadísticos. 
 	
 \subsection{Análisis descriptivo}
 Se realizará inicialmente un análisis descriptivo de la muestra, calculando
 frecuencias y porcentajes para las variables categóricas, y medidas de
-tendencia central (media, mediana) y dispersión (desviación estándar, rango
-intercuartílico) para las variables cuantitativas. Los resultados se
-presentarán utilizando tablas de frecuencia y gráficos según corresponda al
+tendencia central y dispersión para las variables cuantitativas. Los resultados
+se presentarán utilizando tablas de frecuencia y gráficos según corresponda al
 tipo de variable.
 
 \subsection{Análisis inferencial}
@@ -2827,29 +2781,6 @@ existen las diferencias:
     de homogeneidad de varianzas.
 \end{itemize}
 
-\subsubsection{Interpretación de resultados}
-La interpretación de los resultados del ANOVA se realizará considerando los 
-siguientes aspectos:
-
-\begin{itemize}
-    \item Un valor $p < 0.05$ indicará que existe al menos una diferencia 
-    significativa entre los distintos niveles del factor estudiado.
-    
-    \item El valor de $\eta^2$ (eta cuadrado) se calculará para estimar el 
-    tamaño del efecto:
-    \[
-    \eta^2 = \frac{\text{Suma de cuadrados entre grupos}}{\text{Suma de 
-    cuadrados total}}
-    \]
-    
-    \item Se interpretará el tamaño del efecto según los criterios de Cohen:
-    \begin{itemize}
-        \item $\eta^2 \approx 0.01$: efecto pequeño
-        \item $\eta^2 \approx 0.06$: efecto mediano
-        \item $\eta^2 \approx 0.14$ o mayor: efecto grande
-    \end{itemize}
-\end{itemize}
-
 \subsection{Análisis de asociación}
 Se analizarán los resultados del \asq\ del grupo estudiado utilizando odds
 ratio (OR): para comparar las probabilidades de que se presente riesgo en el
@@ -2951,21 +2882,11 @@ potenciales al proporcionar información útil para diseñar intervenciones en
 salud pública.
 
 \subsection{Categoría de riesgo}
-Categoría I: El diseño del estudio se basa en la aplicación del /asq/ el cual
+Categoría I: El diseño del estudio se basa en la aplicación del \asq\ el cual
 es una herramienta validada y no invasiva para evaluar el neurodesarrollo
 infantil. Este cuestionario se aplica a los cuidadores (padres o tutores) de
 los niños de forma observacional y no requiere intervención directa sobre los
 participantes.
-
-No se realiza ninguna intervención médica, psicológica o social que implique
-modificar variables fisiológicas, psicológicas o sociales de los niños o sus
-cuidadores.
-
-La información recolectada se limita a aspectos relacionados con el desarrollo
-infantil, tales como antecedentes perinatales, factores socioeconómicos y
-acceso a servicios de salud. Estos datos se obtienen mediante entrevistas o
-cuestionarios a los cuidadores, sin invadir la intimidad personal ni requerir
-información sensible o confidencial.
 
 \subsection{Consentimiento informado}
 Todos los cuidadores firmarán un consentimiento informado antes de participar
@@ -2985,7 +2906,6 @@ En esta sección se describen los recursos necesarios para la realización del e
 \textbf{Categoría}       & \textbf{Descripción}                                                                                                                                                 \\ \hline
 \textbf{Humanos}         & \begin{tabular}[c]{@{}l@{}}
                            - Equipo de 5 investigadores encargados de la recolección y análisis de datos. \\
-                           - Profesionales de salud para el acceso a los servicios de atención primaria. \\
                            - Asesores académicos y revisores para validar el diseño y resultados del estudio.
                            \end{tabular} \\ \hline
 \textbf{Físicos}         & \begin{tabular}[c]{@{}l@{}}
@@ -2994,11 +2914,10 @@ En esta sección se describen los recursos necesarios para la realización del e
 \textbf{Materiales}      & \begin{tabular}[c]{@{}l@{}}
                            - Cuestionarios físicos y digitales del ASQ-3. \\
                            - Computadoras y software estadístico para el análisis de datos. \\
-                           - Material de oficina como papelería, impresoras, y consumibles. \\
+						   - Utiles varios de oficina. \\
                            \end{tabular} \\ \hline
 \textbf{Presupuesto}     & \begin{tabular}[c]{@{}l@{}}
                            - Costos asociados al transporte y logística. \\
-                           - Adquisición de materiales e instrumentos de medición. \\
                            - Imprevistos y gastos operativos diversos.
                            \end{tabular} \\ \hline
 \end{tabular}%
@@ -3006,29 +2925,35 @@ En esta sección se describen los recursos necesarios para la realización del e
 \end{table}
 
 \section{Cronograma de actividades}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
 	\includegraphics[width=1\textwidth]{gantt}
-    \caption{Gráfico de Gantt}
+	\captionsetup{font=footnotesize}
+	\caption{Gráfico de Gantt}
     \label{fig:gantt}
 \end{figure}
 
 \printbibliography
 
 \appendix
-\includepdf[scale=0.75,pages=-,
+\includepdf[scale=0.9,pages=-,
   pagecommand={\section*{Anexo 1: Consentimiento informado}},
   addtotoc={1,chapter,1,{Consentimiento informado},{sec:consentimiento}}
 ]{images/consentimiento.pdf}
 
-\includepdf[scale=0.75,pages=-,
+\includepdf[scale=0.85,pages=-,
   pagecommand={\section*{Anexo 2: Boleta de recolección de datos}},
   addtotoc={1,chapter,1,{Boleta de recolección de datos},{sec:boleta}}
 ]{images/boleta.pdf}
 
-\includepdf[scale=0.75,pages=-,
+\includepdf[scale=0.80,pages=-,
   pagecommand={\section*{Anexo 3: Ejemplo de Cuestionario Edades y Etapas 3}},
   addtotoc={1,chapter,1,{Ejemplo de cuestionario edades y etapas 3},{sec:asq3}}
 ]{images/36meses.pdf}
+
+\includepdf[scale=0.8,landscape=true,pages=-,
+	pagecommand={\section*{Anexo 4: Árbol de problemas}},
+	addtotoc={1,chapter,1,{Árbol de problemas},{sec:arbol}}
+]{images/arbol.pdf}
 
 \end{document}
