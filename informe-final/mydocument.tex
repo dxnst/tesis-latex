@@ -95,6 +95,10 @@
 }
 
 % Formato de numeración
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
 \renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
 
@@ -2063,6 +2067,13 @@ participantes.
 \subsection{Consentimiento informado}
 Todos los cuidadores firmaron un consentimiento informado antes de participar
 en el estudio, el mismo se detalla en anexos.
+
+	\chapter{Resultados}
+
+	\chapter{Discusión y análisis}
+\section{Conclusiones}
+\section{Recomendaciones}
+\section{Plan de acción y aportes}
 
 \printbibliography
 
