@@ -13,7 +13,7 @@
 
 % Add these packages for improved layout
 \usepackage{microtype}  
-\usepackage{needspace}  
+\usepackage{needspace}
 
 % Adjust how LaTeX handles page breaks
 \widowpenalty=9999
@@ -27,6 +27,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \captionsetup[table]{skip=0pt,singlelinecheck=off}
+\usepackage{tabularray}
 
 % Formato de inserción de imagenes y archivos pdf
 \usepackage{wrapfig}
@@ -101,6 +102,10 @@
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
 \renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+
+% Redefinir el formato de numeración de tablas y figuras para usar arábigos
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 
 % Cosas generales
 \title{Factores de riesgo en el neurodesarrollo infantil}
@@ -2068,9 +2073,98 @@ participantes.
 Todos los cuidadores firmaron un consentimiento informado antes de participar
 en el estudio, el mismo se detalla en anexos.
 
-	\chapter{Resultados}
+\chapter{Resultados}
+El presente estudio evaluó una muestra de niños atendidos en diferentes
+servicios de salud de Quetzaltenango. Se analizaron datos de un total de 1725
+niños con edades comprendidas entre 1 a 60 meses, lo que representa un amplio
+espectro del desarrollo infantil temprano.
 
-	\chapter{Discusión y análisis}
+\begin{table}[htbp]
+\caption{Distribución de niños evaluados por grupo de edad y sexo}
+\label{tab:resultado1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Grupo de edad & Femenino (n) & Femenino (\%) & Masculino (n) & Masculino (\%) & Total (n) & Total (\%) \\ \hline
+0-2 meses   & 43  & 2.49  & 39  & 2.26  & 82   & 4.75  \\ \hline
+3-4 meses   & 38  & 2.20  & 44  & 2.55  & 82   & 4.75  \\ \hline
+5-6 meses   & 53  & 3.07  & 46  & 2.67  & 99   & 5.74  \\ \hline
+7-8 meses   & 31  & 1.80  & 38  & 2.20  & 69   & 4.00  \\ \hline
+9-10 meses  & 67  & 3.88  & 59  & 3.42  & 126  & 7.30  \\ \hline
+11-12 meses & 61  & 3.54  & 84  & 4.87  & 145  & 8.41  \\ \hline
+13-16 meses & 63  & 3.65  & 73  & 4.23  & 136  & 7.88  \\ \hline
+17-20 meses & 69  & 4.00  & 84  & 4.87  & 153  & 8.87  \\ \hline
+21-24 meses & 79  & 4.58  & 93  & 5.39  & 172  & 9.97  \\ \hline
+25-30 meses & 72  & 4.17  & 90  & 5.22  & 162  & 9.39  \\ \hline
+31-36 meses & 75  & 4.35  & 108 & 6.26  & 183  & 10.61 \\ \hline
+37-48 meses & 82  & 4.75  & 96  & 5.57  & 178  & 10.32 \\ \hline
+49+ meses   & 70  & 4.06  & 68  & 3.94  & 138  & 8.00  \\ \hline
+Total       & 803 & 46.55 & 922 & 53.45 & 1725 & 100.0 \\ \hline
+\end{tabular}%
+}
+\footnotesize Fuente: Boleta de recolección de datos.
+\end{table}
+
+\begin{table}[htbp]
+\caption{Distribución de niños evaluados de acuerdo a edad gestacional}
+\label{tab:eg}
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[438]Q[188]Q[287]},
+  cells = {c},
+  hlines,
+  vlines,
+}
+Categoría & Cantidad & Porcentaje (\%)\\
+A término & 1545 & 89.5\\
+Pretérmino tardío & 114 & 6.6\\
+Pretérmino moderado & 57 & 3.3\\
+Muy pretérmino & 9 & 0.5\\
+Total & 1725 & 100.0
+\end{tblr}
+\footnotesize Fuente: Boleta de recolección de datos.
+\end{table}
+
+\begin{table}[htbp]
+\caption{Etnia y residencia de los niños evaluados}
+\label{tab:eg}
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[196]Q[210]Q[246]Q[133]Q[140]},
+  cells = {c},
+  hlines,
+  vlines,
+}
+Etnia & Área rural (n) & Área urbana (n) & Total (n) & Total (\%)\\
+Indígena & 183 & 558 & 741 & 42.96\\
+No indígena & 74 & 910 & 984 & 57.04\\
+Total (n) & 257 & 1468 & 1725 & 100\\
+Total (\%) & 14.90 & 85.1 & -- & 100
+\end{tblr}
+\footnotesize Fuente: Boleta de recolección de datos.
+\end{table}
+
+\begin{table}[htbp]
+\caption{Escolaridad materna y paterna de los niños}
+\label{tab:my-table}
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[229]Q[175]Q[181]Q[163]Q[171]},
+  cells = {c},
+  hlines,
+  vlines,
+}
+Escolaridad & Madre (n) & Madre (\%) & Padre (n) & Padre (\%)\\
+Ninguna & 63 & 3.68 & 50 & 2.99\\
+Primaria & 315 & 18.38 & 259 & 15.49\\
+Básico & 507 & 29.58 & 380 & 22.73\\
+Diversificado & 701 & 40.90 & 811 & 48.50\\
+Universitario & 128 & 7.47 & 172 & 10.29
+\end{tblr}
+\footnotesize Fuente: Boleta de recolección de datos.
+\end{table}
+
+\chapter{Discusión y análisis}
 \section{Conclusiones}
 \section{Recomendaciones}
 \section{Plan de acción y aportes}
