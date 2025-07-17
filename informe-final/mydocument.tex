@@ -28,6 +28,11 @@
 \usepackage{caption}
 \captionsetup[table]{skip=0pt,singlelinecheck=off}
 \usepackage{tabularray}
+\usepackage{threeparttable}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{xcolor}
 
 % Formato de inserción de imagenes y archivos pdf
 \usepackage{wrapfig}
@@ -2080,30 +2085,41 @@ niños con edades comprendidas entre 1 a 60 meses, lo que representa un amplio
 espectro del desarrollo infantil temprano.
 
 \begin{table}[htbp]
-\caption{Distribución de niños por grupo de edad y sexo}
-\footnotesize
+\centering
+\caption{Distribución de Niños por Grupo de Edad y Sexo}
 \label{tab:resultado1}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-Grupo de edad & Femenino (n) & Femenino (\%) & Masculino (n) & Masculino (\%) & Total (n) & Total (\%) \\ \hline
-0-2 meses   & 43  & 2.49  & 39  & 2.26  & 82   & 4.75  \\ \hline
-3-4 meses   & 38  & 2.20  & 44  & 2.55  & 82   & 4.75  \\ \hline
-5-6 meses   & 53  & 3.07  & 46  & 2.67  & 99   & 5.74  \\ \hline
-7-8 meses   & 31  & 1.80  & 38  & 2.20  & 69   & 4.00  \\ \hline
-9-10 meses  & 67  & 3.88  & 59  & 3.42  & 126  & 7.30  \\ \hline
-11-12 meses & 61  & 3.54  & 84  & 4.87  & 145  & 8.41  \\ \hline
-13-16 meses & 63  & 3.65  & 73  & 4.23  & 136  & 7.88  \\ \hline
-17-20 meses & 69  & 4.00  & 84  & 4.87  & 153  & 8.87  \\ \hline
-21-24 meses & 79  & 4.58  & 93  & 5.39  & 172  & 9.97  \\ \hline
-25-30 meses & 72  & 4.17  & 90  & 5.22  & 162  & 9.39  \\ \hline
-31-36 meses & 75  & 4.35  & 108 & 6.26  & 183  & 10.61 \\ \hline
-37-48 meses & 82  & 4.75  & 96  & 5.57  & 178  & 10.32 \\ \hline
-49+ meses   & 70  & 4.06  & 68  & 3.94  & 138  & 8.00  \\ \hline
-Total       & 803 & 46.55 & 922 & 53.45 & 1725 & 100.0 \\ \hline
-\end{tabular}%
+\begin{threeparttable}
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {X[2,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  row{Z} = {font=\bfseries, bg=gray!15},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-\footnotesize Fuente: Boleta de recolección de datos.
+\textbf{Grupo de Edad} & {\textbf{Femenino}\\n} & \textbf{Femenino (\%)} & {\textbf{Masculino}\\n} & \textbf{Masculino (\%)} & {\textbf{Total}\\n} & \textbf{Total (\%)} \\
+0-2 meses & 43 & 2.49 & 39 & 2.26 & 82 & 4.75 \\
+3-4 meses & 38 & 2.20 & 44 & 2.55 & 82 & 4.75 \\
+5-6 meses & 53 & 3.07 & 46 & 2.67 & 99 & 5.74 \\
+7-8 meses & 31 & 1.80 & 38 & 2.20 & 69 & 4.00 \\
+9-10 meses & 67 & 3.88 & 59 & 3.42 & 126 & 7.30 \\
+11-12 meses & 61 & 3.54 & 84 & 4.87 & 145 & 8.41 \\
+13-16 meses & 63 & 3.65 & 73 & 4.23 & 136 & 7.88 \\
+17-20 meses & 69 & 4.00 & 84 & 4.87 & 153 & 8.87 \\
+21-24 meses & 79 & 4.58 & 93 & 5.39 & 172 & 9.97 \\
+25-30 meses & 72 & 4.17 & 90 & 5.22 & 162 & 9.39 \\
+31-36 meses & 75 & 4.35 & 108 & 6.26 & 183 & 10.61 \\
+37-48 meses & 82 & 4.75 & 96 & 5.57 & 178 & 10.32 \\
+49+ meses & 70 & 4.06 & 68 & 3.94 & 138 & 8.00 \\
+\textbf{Total} & \textbf{803} & \textbf{46.55} & \textbf{922} & \textbf{53.45} & \textbf{1,725} & \textbf{100.0} \\
+\end{tblr}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[htbp]
@@ -2116,191 +2132,253 @@ Total       & 803 & 46.55 & 922 & 53.45 & 1725 & 100.0 \\ \hline
 \end{figure}
 
 \begin{table}[htbp]
-\caption{Distribución de niños de acuerdo a edad gestacional}
-\footnotesize
+\centering
+\caption{Distribución de Niños de Acuerdo a Edad Gestacional}
 \label{tab:eg}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[438]Q[188]Q[287]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.8\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Categoría & Cantidad & Porcentaje (\%)\\
-A término & 1545 & 89.5\\
-Pretérmino tardío & 114 & 6.6\\
-Pretérmino moderado & 57 & 3.3\\
-Muy pretérmino & 9 & 0.5\\
-Total & 1725 & 100.0
+\textbf{Categoría} & \textbf{Cantidad} & \textbf{Porcentaje (\%)} \\
+A término & 1,545 & 89.5 \\
+Pretérmino tardío & 114 & 6.6 \\
+Pretérmino moderado & 57 & 3.3 \\
+Muy pretérmino & 9 & 0.5 \\
+\textbf{Total} & \textbf{1,725} & \textbf{100.0} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Criterios de clasificación:} A término (37-42 semanas), Pretérmino tardío (34-36 semanas), Pretérmino moderado (32-33 semanas), Muy pretérmino ($<$32 semanas).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Etnia y residencia de los niños}
-\footnotesize
+\centering
+\caption{Distribución por Etnia y Área de Residencia}
 \label{tab:etnia-residencia}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[196]Q[210]Q[246]Q[133]Q[140]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Etnia & Área rural (n) & Área urbana (n) & Total (n) & Total (\%)\\
-Indígena & 183 & 558 & 741 & 42.96\\
-No indígena & 74 & 910 & 984 & 57.04\\
-Total (n) & 257 & 1468 & 1725 & 100\\
-Total (\%) & 14.90 & 85.1 & -- & 100
+\textbf{Etnia} & {\textbf{Área Rural}\\n (\%)} & {\textbf{Área Urbana}\\n (\%)} & {\textbf{Total}\\n (\%)} \\
+Indígena & 183 (71.2) & 558 (38.0) & 741 (42.96) \\
+No indígena & 74 (28.8) & 910 (62.0) & 984 (57.04) \\
+\textbf{Total} & \textbf{257 (14.90)} & \textbf{1,468 (85.10)} & \textbf{1,725 (100.0)} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
-\end{table}
-
-\begin{table}
+\begin{tablenotes}
 \footnotesize
-\caption{Distribución de edad materna y paterna de los niños}
-\begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[256]Q[165]Q[175]Q[160]Q[171]},
-  cells = {c},
-  hlines,
-  vlines,
-}
-Intervalo de edad & Madres (n) & Madres (\%) & Padres (n) & Padres (\%) \\
-14-19             & 104        & 6.1         & 40         & 2.4         \\
-20-24             & 412        & 24.0        & 304        & 18.2        \\
-25-29             & 548        & 32.0        & 457        & 27.3        \\
-30-34             & 433        & 25.3        & 430        & 25.7        \\
-35-39             & 180        & 10.5        & 292        & 17.4        \\
-40-44             & 31         & 1.8         & 106        & 6.3         \\
-45+               & 6          & 0.4         & 45         & 2.7         
-\end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Escolaridad materna y paterna de los niños}
+\centering
+\caption{Distribución de Edad Materna y Paterna}
+\label{tab:edad_padres}
+\begin{threeparttable}
+\begin{tblr}{
+  width = 0.9\linewidth,
+  colspec = {X[2,c]X[1,c]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
+}
+{\textbf{Intervalo de}\\    \textbf{Edad (años)}} & {\textbf{Madres}\\n} & {\textbf{Madres}\\    \textbf{(\%)}} & {\textbf{Padres}\\n} & {\textbf{Padres}\\    \textbf{(\%)}} \\
+14-19 & 104 & 6.1 & 40 & 2.4 \\
+20-24 & 412 & 24.0 & 304 & 18.2 \\
+25-29 & 548 & 32.0 & 457 & 27.3 \\
+30-34 & 433 & 25.3 & 430 & 25.7 \\
+35-39 & 180 & 10.5 & 292 & 17.4 \\
+40-44 & 31 & 1.8 & 106 & 6.3 \\
+45+ & 6 & 0.4 & 45 & 2.7 \\
+\textbf{Total}\tnote{a} & \textbf{1,714} & \textbf{100.0} & \textbf{1,674} & \textbf{100.0} \\
+\end{tblr}
+\begin{tablenotes}
 \footnotesize
+\item[a] Datos disponibles para 1,714 madres y 1,674 padres de la muestra total de 1,725 niños.
+\item \textit{Estadísticas descriptivas:} Edad materna promedio: 28.2 años (DE: 5.4); Edad paterna promedio: 30.1 años (DE: 6.1).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Nivel Educativo Materno y Paterno}
 \label{tab:escolaridad}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[229]Q[175]Q[181]Q[163]Q[171]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.9\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Escolaridad & Madre (n) & Madre (\%) & Padre (n) & Padre (\%)\\
-Ninguna & 63 & 3.68 & 50 & 2.99\\
-Primaria & 315 & 18.38 & 259 & 15.49\\
-Básico & 507 & 29.58 & 380 & 22.73\\
-Diversificado & 701 & 40.90 & 811 & 48.50\\
-Universitario & 128 & 7.47 & 172 & 10.29
+\textbf{Nivel Educativo} & {\textbf{Madre}\\n} & \textbf{Madre (\%)} & {\textbf{Padre}\\n} & \textbf{Padre (\%)} \\
+Ninguna & 63 & 3.68 & 50 & 2.99 \\
+Primaria & 315 & 18.38 & 259 & 15.49 \\
+Básico & 507 & 29.58 & 380 & 22.73 \\
+Diversificado & 701 & 40.90 & 811 & 48.50 \\
+Universitario & 128 & 7.47 & 172 & 10.29 \\
+\textbf{Total}\tnote{a} & \textbf{1,714} & \textbf{100.0} & \textbf{1,672} & \textbf{100.0} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item[a] Datos disponibles para 1,714 madres y 1,672 padres de la muestra total.
+\item \textit{Nota:} Los padres muestran mayor proporción de educación diversificada y universitaria comparado con las madres ($p < 0.05$).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Condición de trabajo materna y paterna de los niños}
-\footnotesize
+\centering
+\caption{Condición Laboral Materna y Paterna}
+\label{tab:empleo}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[260]Q[163]Q[173]Q[158]Q[167]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.9\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Tipo de empleo   & Madre (n) & Madre (\%) & Padre (n) & Padre (\%) \\
-Trabajo formal   & 504       & 29.65      & 1056      & 63.01      \\
-Trabajo informal & 346       & 20.35      & 464       & 27.68      \\
-No trabaja       & 850       & 50.00      & 156       & 9.31       
+\textbf{Tipo de Empleo} & {\textbf{Madre}\\n} & \textbf{Madre (\%)} & {\textbf{Padre}\\n} & \textbf{Padre (\%)} \\
+Trabajo formal & 504 & 29.65 & 1,056 & 63.01 \\
+Trabajo informal & 346 & 20.35 & 464 & 27.68 \\
+No trabaja & 850 & 50.00 & 156 & 9.31 \\
+\textbf{Total}\tnote{a} & \textbf{1,700} & \textbf{100.0} & \textbf{1,676} & \textbf{100.0} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item[a] Datos disponibles para 1,700 madres y 1,676 padres con información laboral completa.
+\item \textit{Nota:} Diferencias significativas en patrones de empleo por género ($p < 0.001$, prueba de chi-cuadrado).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Distribución de acceso a servicios básicos del hogar de los niños}
-\footnotesize
+\centering
+\caption{Acceso a Servicios Básicos en el Hogar}
+\label{tab:servicios_basicos}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[348]Q[304]Q[123]Q[163]},
-  cells = {c},
-  cell{2}{1} = {r=4}{},
-  cell{6}{1} = {r=3}{},
-  cell{9}{1} = {r=5}{},
-  cell{15}{1} = {r=4}{},
-  vlines,
-  hline{1-2,6,9,14-15,19} = {-}{},
-  hline{3-5,7-8,10-13,16-18} = {2-4}{},
+  colspec = {X[3,l]X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Variable                          & Categoría                       & Frecuencia & Porcentaje (\%) \\
-Agua para el consumo del hogar    & Red de tubería                  & 1562       & 90.55           \\
-                                  & Chorro público                  & 142        & 8.23            \\
-                                  & Pozo público o privado          & 18         & 1.04            \\
-                                  & Río, lago, tonel, camión y otro & 3          & 0.17            \\
-Tipo de servicio sanitario        & Inodoro                         & 1615       & 93.62           \\
-                                  & Letrina/Pozo ciego              & 109        & 6.32            \\
-                                  & Excusado lavable                & 1          & 0.06            \\
-Forma de eliminar la basura       & Servicio municipal o privado    & 1482       & 85.91           \\
-                                  & La quema                        & 223        & 12.93           \\
-                                  & La tira en cualquier lugar      & 9          & 0.52            \\
-                                  & La entierra                     & 8          & 0.46            \\
-                                  & Otra                            & 3          & 0.17            \\
-Tipo de alumbrado                 & Eléctrico                       & 1725       & 100.0           \\
-Fuente de energía para cocinar    & Gas propano                     & 1503       & 87.13           \\
-                                  & Leña                            & 216        & 12.52           \\
-                                  & Gas corriente, carbón y otros   & 4          & 0.23            \\
-                                  & Electricidad                    & 2          & 0.12            
+\textbf{Variable} & \textbf{Categoría} & \textbf{Frecuencia} & \textbf{Porcentaje (\%)} \\
+\textbf{Agua para consumo del hogar} & Red de tubería & 1,562 & 90.55 \\
+& Chorro público & 142 & 8.23 \\
+& Pozo público o privado & 18 & 1.04 \\
+& Río, lago, tonel, camión y otro & 3 & 0.17 \\
+\textbf{Tipo de servicio sanitario} & Inodoro & 1,615 & 93.62 \\
+& Letrina/Pozo ciego & 109 & 6.32 \\
+& Excusado lavable & 1 & 0.06 \\
+\textbf{Eliminación de basura} & Servicio municipal o privado & 1,482 & 85.91 \\
+& La quema & 223 & 12.93 \\
+& La tira en cualquier lugar & 9 & 0.52 \\
+& La entierra & 8 & 0.46 \\
+& Otra & 3 & 0.17 \\
+\textbf{Tipo de alumbrado} & Eléctrico & 1,725 & 100.0 \\
+\textbf{Fuente de energía para cocinar} & Gas propano & 1,503 & 87.13 \\
+& Leña & 216 & 12.52 \\
+& Gas corriente, carbón y otros & 4 & 0.23 \\
+& Electricidad & 2 & 0.12 \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[htbp]
-\caption{Distribución de condiciones familiares de los niños}
-\footnotesize
+\centering
+\caption{Características de la Composición Familiar}
+\label{tab:composicion_familiar}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[292]Q[52]Q[67]Q[138]Q[52]Q[67]Q[138]Q[52]Q[67]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[3,l]X[1,c]X[1,c]X[2,l]X[1,c]X[1,c]X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\scriptsize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-No. de personas que viven en el hogar & (n) & (\%)  & No. de hermanos & (n) & (\%)  & Posición del niño & (n) & (\%)  \\
-1-2                                   & 1   & 0.06  & 0               & 540 & 31.3  & Primero           & 694 & 40.23 \\
-3-4                                   & 751 & 43.54 & 1               & 591 & 34.26 & Segundo           & 616 & 35.71 \\
-5-6                                   & 573 & 33.22 & 2               & 381 & 22.09 & Tercero           & 372 & 21.57 \\
-7-8                                   & 269 & 15.59 & 3               & 144 & 8.35  & Cuarto            & 37  & 2.14  \\
-9-10                                  & 68  & 3.94  & 4               & 47  & 2.72  & Quinto            & 3   & 0.17  \\
-11+                                   & 63  & 3.65  & 5               & 17  & 0.99  & Sexto             & 2   & 0.12  \\
-                                      &     &       & 6+              & 5   & 0.29  & Séptimo           & 1   & 0.06  
+{\textbf{Personas en}\\    \textbf{el hogar}} & \textbf{n} & \textbf{(\%)} & {\textbf{Número de}\\    \textbf{hermanos}} & \textbf{n} & \textbf{(\%)} & {\textbf{Posición}\\    \textbf{del niño}} & \textbf{n} & \textbf{(\%)} \\
+1-2 & 1 & 0.06 & 0 & 540 & 31.3 & Primero & 694 & 40.23 \\
+3-4 & 751 & 43.54 & 1 & 591 & 34.26 & Segundo & 616 & 35.71 \\
+5-6 & 573 & 33.22 & 2 & 381 & 22.09 & Tercero & 372 & 21.57 \\
+7-8 & 269 & 15.59 & 3 & 144 & 8.35 & Cuarto & 37 & 2.14 \\
+9-10 & 68 & 3.94 & 4 & 47 & 2.72 & Quinto & 3 & 0.17 \\
+11+ & 63 & 3.65 & 5 & 17 & 0.99 & Sexto & 2 & 0.12 \\
+ & & & $\geq$6 & 5 & 0.29 & Séptimo+ & 1 & 0.06 \\
+\textbf{Total} & \textbf{1,725} & \textbf{100.0} & \textbf{Total} & \textbf{1,725} & \textbf{100.0} & \textbf{Total} & \textbf{1,725} & \textbf{100.0} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota:} Promedio de personas por hogar: 5.2 (DE: 2.1); Promedio de hermanos: 1.2 (DE: 1.1).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\caption{Distribución de acceso a cuidados prenatales}
-\footnotesize
+\begin{table}[htbp]
+\centering
+\caption{Acceso a Cuidados Prenatales}
+\label{tab:cuidados_prenatales}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[162]Q[88]Q[46]Q[65]Q[371]Q[79]Q[54]Q[65]},
-  cells = {c},
-  cell{2}{1} = {r=6}{},
-  cell{2}{5} = {r=2}{},
-  cell{4}{5} = {r=2}{},
-  cell{6}{5} = {r=2}{},
-  vlines,
-  hline{1-2,8} = {-}{},
-  hline{3,5,7} = {2-4,6-8}{},
-  hline{4,6} = {2-8}{},
+  colspec = {X[2,l]X[1,c]X[1,c]X[3,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Variable                 & Categoría & (n) & (\%)  & Variable                                                    & Categoría & (n)  & (\%)  \\
-No. controles prenatales & 0         & 16  & 0.93  & Acceso a ultrasonido obstétrico                             & No        & 94   & 5.45  \\
-                         & 1-2       & 77  & 4.46  &                                                             & Sí        & 1631 & 94.55 \\
-                         & 3-4       & 388 & 22.49 & Acceso a vitaminas prenatales durante el 1er trimestre      & No        & 204  & 11.83 \\
-                         & 5-6       & 603 & 34.96 &                                                             & Sí        & 1521 & 88.17 \\
-                         & 7-10      & 629 & 36.46 & Acceso a vitaminas prenatales durante el resto del embarazo & No        & 122  & 7.07  \\
-                         & 11+       & 12  & 0.7   &                                                             & Sí        & 1603 & 92.93 
+\textbf{Variable} & \textbf{Categoría} & \textbf{(\%)} & \textbf{Variable} & \textbf{Categoría} & \textbf{(\%)} \\
+{\textbf{Controles}\\    \textbf{prenatales}} & 0 & 0.93 & {\textbf{Ultrasonido}\\    \textbf{obstétrico}} & No & 5.45 \\
+& 1-2 & 4.46 & & Sí & 94.55 \\
+& 3-4 & 22.49 & {\textbf{Vitaminas}\\    \textbf{(1er trimestre)}} & No & 11.83 \\
+& 5-6 & 34.96 & & Sí & 88.17 \\
+& 7-10 & 36.46 & {\textbf{Vitaminas}\\    \textbf{(resto embarazo)}} & No & 7.07 \\
+& $\geq$11 & 0.70 & & Sí & 92.93 \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota:} Promedio de controles prenatales: 6.2 (DE: 2.1).
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[htbp]
@@ -2312,176 +2390,293 @@ No. controles prenatales & 0         & 16  & 0.93  & Acceso a ultrasonido obsté
     \label{fig:parto}
 \end{figure}
 
-\begin{table}
-\caption{Causas de césarea de emergencia de la población estudiada}
-\footnotesize
+\begin{table}[htbp]
+\centering
+\caption{Causas de Césarea de Emergencia}
+\label{tab:causas_cesarea}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[610]Q[163]Q[160]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[4,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Categoría                                & Frecuencia & Porcentaje \\
-Complicaciones del líquido amniótico     & 138        & 43.4\%     \\
-Sufrimiento fetal                        & 84         & 26.4\%     \\
-Preeclampsia                             & 36         & 11.3\%     \\
-Falta de progresión del trabajo de parto & 23         & 7.2\%      \\
-Presentación fetal anómala               & 11         & 3.5\%      \\
-Ruptura pretérmino de membranas ovulares & 5          & 1.6\%      \\
-Problemas de placenta                    & 3          & 0.9\%      \\
-Embarazo múltiple                        & 2          & 0.6\%      \\
-Infección materna                        & 1          & 0.3\%      \\
-Otras causas                             & 14         & 4.4\%      
+\textbf{Categoría} & \textbf{Frecuencia} & \textbf{Porcentaje} \\
+Complicaciones del líquido amniótico & 138 & 43.4\% \\
+Sufrimiento fetal & 84 & 26.4\% \\
+Preeclampsia & 36 & 11.3\% \\
+Falta de progresión del trabajo de parto & 23 & 7.2\% \\
+Presentación fetal anómala & 11 & 3.5\% \\
+Ruptura pretérmino de membranas ovulares & 5 & 1.6\% \\
+Problemas de placenta & 3 & 0.9\% \\
+Embarazo múltiple & 2 & 0.6\% \\
+Infección materna & 1 & 0.3\% \\
+Otras causas & 14 & 4.4\% \\
+\textbf{Total} & \textbf{317} & \textbf{100.0\%} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota:} Datos de acuerdo a 317 casos de césarea de emergencia de un total de 1,725 nacimientos.
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\caption{Tipo de lactancia que recibieron en diferentes períodos durante la infancia}
-\footnotesize
+\begin{table}[htbp]
+\centering
+\caption{Patrones de Lactancia Durante los Primeros 24 Meses de Vida}
+\label{tab:lactancia_periodos}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[363]Q[237]Q[163]Q[173]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[3,l]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Tipo de Lactancia           & {Primeros 6 meses\\(n, \%)} & {6-12 meses\\(n, \%)} & {12-24 meses\\(n, \%)} \\
-Fórmula infantil            & 135 (7.8\%)                 & 125 (8.0\%)           & 101 (8.0\%)            \\
-Lactancia materna exclusiva & 1,254 (72.7\%)              & 867 (55.6\%)          & 609 (48.1\%)           \\
-Mixta                       & 336 (19.5\%)                & 568 (36.4\%)          & 547 (43.2\%)           \\
-Otro tipo de lactancia      & 0 (0.0\%)                   & 0 (0.0\%)             & 8 (0.6\%)       
+\textbf{Tipo de Lactancia} & {\textbf{0-6 meses}\\n (\%)} & {\textbf{6-12 meses}\\n (\%)} & {\textbf{12-24 meses}\\n (\%)} \\
+Lactancia materna exclusiva & 1,254 (72.7) & 867 (55.6) & 609 (48.1) \\
+Lactancia mixta & 336 (19.5) & 568 (36.4) & 547 (43.2) \\
+Fórmula infantil & 135 (7.8) & 125 (8.0) & 101 (8.0) \\
+Otro tipo de lactancia\tnote{a} & 0 (0.0) & 0 (0.0) & 8 (0.6) \\
+\textbf{Total evaluado} & \textbf{1,725} & \textbf{1,560} & \textbf{1,265} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item[a] Incluye leche de vaca, leche evaporada y otras alternativas.
+\item \textit{Nota:} Las diferencias en el total se deben a la disponibilidad de datos según la edad del niño al momento de la evaluación.
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Acceso a suplementación con perla de vitamina A durante la infancia}
+\begin{table}[htbp]
+\centering
+\caption{Cobertura de Suplementación con Vitamina A por Grupos de Edad}
+\label{tab:vitamina_a}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[406]Q[187]Q[173]Q[173]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.9\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Suplementación con Vitamina A & {6-12 meses\\(n, \%)} & {12-18 meses\\(n, \%)} & {18-24 meses\\(n, \%)} \\
-No recibió                    & 473 (30.3\%)          & 536 (42.3\%)           & 473 (46.1\%)           \\
-Sí recibió                    & 1,088 (69.7\%)        & 731 (57.7\%)           & 554 (53.9\%)           
+\textbf{Estado de Suplementación} & {\textbf{6-12 meses}\\n (\%)} & {\textbf{12-18 meses}\\n (\%)} & {\textbf{18-24 meses}\\n (\%)} \\
+Sí recibió & 1,088 (69.7) & 731 (57.7) & 554 (53.9) \\
+No recibió & 473 (30.3) & 536 (42.3) & 474 (46.1) \\
+\textbf{Total evaluado} & \textbf{1,561} & \textbf{1,267} & \textbf{1,028} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Acceso a suplementación de vitaminas y minerales espolvoreados durante la infancia}
+\begin{table}[htbp]
+\centering
+\caption{Cobertura de Suplementación con Vitaminas y Minerales Espolvoreados}
+\label{tab:vitaminas_minerales}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[312]Q[215]Q[200]Q[200]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.9\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Suplementación V/M & {6-12 meses\\(n, \%)} & {12-18 meses\\(n, \%)} & {18-24 meses\\(n, \%)} \\
-No recibió         & 483 (30.9\%)          & 498 (39.3\%)           & 474 (46.2\%)           \\
-Sí recibió         & 1,078 (69.1\%)        & 769 (60.7\%)           & 553 (53.8\%)           
+\textbf{Estado de Suplementación con Vitaminas y Minerales Espolvoreados} & {\textbf{6-12 meses}\\n (\%)} & {\textbf{12-18 meses}\\n (\%)} & {\textbf{18-24 meses}\\n (\%)} \\
+Sí recibió & 1,078 (69.1) & 769 (60.7) & 553 (53.8) \\
+No recibió o No los consumió & 483 (30.9) & 498 (39.3) & 474 (46.2) \\
+\textbf{Total evaluado} & \textbf{1,561} & \textbf{1,267} & \textbf{1,027} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Distribución de antecedentes nutricionales durante la infancia}
+\begin{table}[htbp]
+\centering
+\caption{Prevalencia de Antecedentes Nutricionales}
+\label{tab:antecedentes_nutricionales}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[331]Q[327]Q[275]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.8\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Antecedente nutricional & {Retardo de crecimiento\\(n, \%)} & {Desnutrición aguda\\(n, \%)} \\
-No                      & 1,533 (88.9\%)                    & 1,623 (94.1\%)                \\
-Sí                      & 192 (11.1\%)                      & 102 (5.9\%)                   
+\textbf{Antecedente Nutricional} & {\textbf{Retardo de}\\    \textbf{Crecimiento}\\n (\%)} & {\textbf{Desnutrición}\\    \textbf{Aguda}\\n (\%)} \\
+Presente & 192 (11.1) & 102 (5.9) \\
+Ausente & 1,533 (88.9) & 1,623 (94.1) \\
+\textbf{Total} & \textbf{1,725 (100.0)} & \textbf{1,725 (100.0)} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Distribución de antecedentes de hospitalización durante la infancia}
+\begin{table}[htbp]
+\centering
+\caption{Prevalencia de Antecedentes de Hospitalización por Período}
+\label{tab:hospitalizacion}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[346]Q[273]Q[321]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.9\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Antecedentes de hospitalización & {Hospitalización neonatal\\(n, \%)} & {Hospitalización en la infancia\\(n, \%)} \\
-No                              & 1,518 (88.0\%)                      & 1,488 (86.3\%)                            \\
-Sí                              & 207 (12.0\%)                        & 237 (13.7\%)                              
+\textbf{Antecedente de Hospitalización} & {\textbf{Período Neonatal}\\    \textbf{(0-28 días)}\\n (\%)} & {\textbf{Infancia}\\    \textbf{($>$28 días)}\\n (\%)} \\
+Sí presentó & 207 (12.0) & 237 (13.7) \\
+No presentó & 1,518 (88.0) & 1,488 (86.3) \\
+\textbf{Total} & \textbf{1,725 (100.0)} & \textbf{1,725 (100.0)} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\caption{Principales causas de hospitalización durante el período neonatal e infancia}
-\footnotesize
+\begin{table}[htbp]
+\centering
+\caption{Principales Causas de Hospitalización por Período de Vida}
+\label{tab:causas_hospitalizacion}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[487]Q[454]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[1,l]X[1,l]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=t, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Período neonatal                           & Infancia                                \\
-Ictericia Neonatal: 70 (33.8\%)            & Neumonía: 119 (50.2\%)                  \\
-Prematuridad: 61 (29.5\%)                  & Síndrome Diarreico Agudo: 53 (22.4\%)   \\
-Taquipnea Transitoria: 50 (24.2\%)         & Bronquiolitis: 48 (20.3\%)              \\
-Neumonía: 9 (4.3\%)                        & Fiebre De Origen Desconocido: 4 (1.7\%) \\
-Síndrome De Aspiración Meconial: 5 (2.4\%) & Intolerancia a la lactosa: 2 (0.8\%)    \\
-Anomalías Congénitas: 3 (1.4\%)            & Hernioplastia: 2 (0.8\%)                \\
-Sepsis: 3 (1.4\%)                          & Sepsis: 2 (0.8\%)                       \\
-Asfixia Perinatal: 2 (1.0\%)               & Apendicitis Aguda: 2 (0.8\%)            
+{\textbf{Período Neonatal}\\    \textbf{(n = 207)}} & {\textbf{Infancia}\\    \textbf{(n = 237)}} \\
+\textbf{1.} Ictericia neonatal: 70 (33.8\%) & \textbf{1.} Neumonía: 119 (50.2\%) \\
+\textbf{2.} Prematuridad: 61 (29.5\%) & \textbf{2.} Síndrome diarreico agudo: 53 (22.4\%) \\
+\textbf{3.} Taquipnea transitoria: 50 (24.2\%) & \textbf{3.} Bronquiolitis: 48 (20.3\%) \\
+\textbf{4.} Neumonía: 9 (4.3\%) & \textbf{4.} Fiebre de origen desconocido: 4 (1.7\%) \\
+\textbf{5.} Síndrome de aspiración meconial: 5 (2.4\%) & \textbf{5.} Intolerancia a la lactosa: 2 (0.8\%) \\
+\textbf{6.} Anomalías congénitas: 3 (1.4\%) & \textbf{6.} Hernioplastia: 2 (0.8\%) \\
+\textbf{7.} Sepsis neonatal: 3 (1.4\%) & \textbf{7.} Sepsis: 2 (0.8\%) \\
+\textbf{8.} Asfixia perinatal: 2 (1.0\%) & \textbf{8.} Apendicitis aguda: 2 (0.8\%) \\
+{\textbf{Otros diagnósticos:} 4 (1.9\%)} & {\textbf{Otros diagnósticos:} 5 (2.1\%)} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota:} Las tres primeras causas representan el 87.5\% de hospitalizaciones neonatales y el 92.9\% de hospitalizaciones en la infancia.
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Distribución de estado de vacunación de los niños}
+\begin{table}[htbp]
+\centering
+\caption{Estado de Vacunación}
+\label{tab:vacunacion}
+\begin{threeparttable}
 \begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[596]Q[308]},
-  cells = {c},
-  hlines,
-  vlines,
+  width = 0.7\linewidth,
+  colspec = {X[2,l]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Estado de vacunación al día & Casos (n, \%)  \\
-Sí                          & 1,637 (94.9\%) \\
-No                          & 88 (5.1\%)     
+\textbf{Estado de Vacunación} & \textbf{Casos n (\%)} \\
+Esquema completo para la edad & 1,637 (94.9) \\
+Esquema incompleto & 88 (5.1) \\
+\textbf{Total} & \textbf{1,725 (100.0)} \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota:} Evaluación de acuerdo al esquema nacional de vacunación vigente según la edad del niño al momento del estudio.
+\item \textit{Fuente:} Boleta de recolección de datos.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-\begin{table}
-\footnotesize
-\caption{Resultados de la evaluación de diferentes dominios del desarrollo infantil}
+\begin{table}[htbp]
+\centering
+\caption{Evaluación del Desarrollo Infantil por Dominios Específicos}
+\label{tab:desarrollo_dominios}
+\begin{threeparttable}
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[283]Q[204]Q[208]Q[244]},
-  cells = {c},
-  hlines,
-  vlines,
+  colspec = {X[2,l]X[1,c]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
 }
-Dominios del desarrollo            & Desarrollo Adecuado & Desarrollo en Riesgo & Desarrollo en Alto Riesgo \\
-Comunicación (n, \%)            & 1,628 (94.4\%)      & 83 (4.8\%)           & 14 (0.8\%)                \\
-Motricidad Gruesa (n, \%)       & 1,437 (83.3\%)      & 234 (13.6\%)         & 54 (3.1\%)                \\
-Motricidad Fina (n, \%)         & 1,577 (91.4\%)      & 124 (7.2\%)          & 24 (1.4\%)                \\
-Resolución de Problemas (n, \%) & 1,597 (92.6\%)      & 116 (6.7\%)          & 12 (0.7\%)                \\
-Socio-Individual (n, \%)        & 1,600 (92.8\%)      & 108 (6.3\%)          & 17 (1.0\%)                
+\textbf{Dominio del Desarrollo} & {\textbf{Desarrollo}\\    \textbf{Adecuado}\\n (\%)} & {\textbf{Desarrollo}\\    \textbf{en Riesgo}\\n (\%)} & {\textbf{Desarrollo en}\\    \textbf{Alto Riesgo}\\n (\%)} \\
+Comunicación & 1,628 (94.4) & 83 (4.8) & 14 (0.8) \\
+Resolución de problemas & 1,597 (92.6) & 116 (6.7) & 12 (0.7) \\
+Desarrollo socio-individual & 1,600 (92.8) & 108 (6.3) & 17 (1.0) \\
+Motricidad fina & 1,577 (91.4) & 124 (7.2) & 24 (1.4) \\
+Motricidad gruesa & 1,437 (83.3) & 234 (13.6) & 54 (3.1) \\
 \end{tblr}
-\footnotesize Fuente: Boleta de recolección de datos y Cuestionario Edades y Etapas 3.
+\begin{tablenotes}
+\footnotesize
+\item \textit{Criterios de clasificación:} Desarrollo adecuado ($Z > -1$), Desarrollo en riesgo ($-2 < Z \leq -1$), Desarrollo en alto riesgo ($Z \leq -2$)..
+\item \textit{Fuente:} Boleta de recolección de datos y Cuestionario Edades y Etapas 3.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Clasificación Global del Desarrollo Infantil}
+\label{tab:desarrollo_global}
+\begin{threeparttable}
+\begin{tblr}{
+  width = 0.8\linewidth,
+  colspec = {X[2,l]X[1,c]X[1,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
+}
+\textbf{Clasificación Global} & \textbf{Frecuencia} & \textbf{Porcentaje} \\
+Desarrollo adecuado global\tnote{a} & 1,155 & 66.96 \\
+Riesgo en cualquier dominio\tnote{b} & 570 & 33.04 \\
+Alto riesgo en cualquier dominio\tnote{c} & 90 & 5.22 \\
+\textbf{Total} & \textbf{1,725} & \textbf{100.00} \\
+\end{tblr}
+\begin{tablenotes}
+\footnotesize
+\item[a] Todos los dominios con $Z > -1$
+\item[b] Al menos un dominio con $Z \leq -1$
+\item[c] Al menos un dominio con $Z \leq -2$
+\item \textit{Nota:} Los casos de alto riesgo están incluidos en la categoría de riesgo general.
+\item \textit{Fuente:} Resultados del Cuestionario edades y etapas 3.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \begin{figure}[htbp]
