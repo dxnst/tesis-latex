@@ -9,7 +9,9 @@
 \usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
-\usepackage[skip=0pt plus8pt, indent=1.25cm]{parskip}
+
+% Consistent paragraph spacing - exactly 1.5 points between paragraphs
+\usepackage[skip=1.5pt, indent=1.25cm]{parskip}
 
 % Add these packages for improved layout
 \usepackage{microtype}  
@@ -42,12 +44,31 @@
 % Formato de fórmulas y expresiones matemáticas
 \usepackage{amsmath}
 
-% Formatos de títulos
+% Custom page style for top-right page numbering (slightly more centered)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
+\renewcommand{\headrulewidth}{0pt} % Remove header rule
+\renewcommand{\footrulewidth}{0pt} % Remove footer rule
+
+% For chapter pages (which use 'plain' style by default)
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear all header and footer fields
+  \fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
+  \renewcommand{\headrulewidth}{0pt} % Remove header rule
+  \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+}
+
+% Formatos de títulos with consistent 1.5pt spacing after titles
 \titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{CAPÍTULO \ \thechapter.}{0.6em}{\centering\MakeUppercase}
-\titlespacing*{\chapter}{0em}{0cm}{*2}
+\titlespacing*{\chapter}{0em}{0cm}{1.5pt}
+
 \titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
-\titlespacing*{\section}{0em}{*1}{*1.2}
+\titlespacing*{\section}{0em}{*1}{1.5pt}
+
 \titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{\subsectionindent}{*1}{1.5pt}
 
 % Modified subsubsection format with a visible bullet
 \titleformat{\subsubsection}[block]
@@ -55,6 +76,7 @@
   {}
   {0pt}
   {\makebox[1.2em][l]{$\diamond$}\hspace{0.6em}}
+\titlespacing*{\subsubsection}{\subsubsectionindent}{*1}{1.5pt}
 
 \usepackage{etoolbox}
 
@@ -77,16 +99,13 @@
 \pretocmd{\subsubsection}{\setlength{\leftskip}{\subsubsectionindent}}{}{}
 \makeatother
 
-% Optional: If you also want the section titles themselves indented to match
-\titlespacing*{\subsection}
-  {\subsectionindent}           % left margin - matches paragraph indentation
-  {3.25ex plus 1ex minus .2ex}  % before spacing
-  {1.5ex plus .2ex}             % after spacing
+% Configure enumerate and itemize spacing - 1.5pt after list environment
+\setlist[enumerate]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
+\setlist[itemize]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
 
-\titlespacing*{\subsubsection}
-  {\subsubsectionindent}        % left margin - matches paragraph indentation
-  {3.25ex plus 1ex minus .2ex}  % before spacing
-  {1.5ex plus .2ex}             % after spacing
+% Set consistent spacing between list items
+\setlist[enumerate]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+\setlist[itemize]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
 
 % Formato de citación
 \usepackage{csquotes}
@@ -119,7 +138,23 @@ Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
 \and Mazariegos Manrique, Sonia María}
 \newcommand{\tiempito}{durante 2,025}
 \newcommand{\muestradeseada}{1,700}
-\newcommand{\asq}{“Cuestionario Edades y Etapas 3”}
+\newcommand{\asq}{"Cuestionario Edades y Etapas 3"}
+
+% Custom page style for top-right page numbering (slightly more centered)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
+\renewcommand{\headrulewidth}{0pt} % Remove header rule
+\renewcommand{\footrulewidth}{0pt} % Remove footer rule
+
+% For chapter pages (which use 'plain' style by default)
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear all header and footer fields
+  \fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
+  \renewcommand{\headrulewidth}{0pt} % Remove header rule
+  \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+}
 
 \begin{document}
 \pagenumbering{roman}
@@ -245,21 +280,21 @@ ambientales que caracterizan esta zona. A pesar de constituir una de las
 regiones económicamente más activas del país, persisten importantes desafíos en
 términos de equidad en el acceso a oportunidades de desarrollo infantil.
 
-Esta investigación surge de la necesidad de generar evidencia científica que
-permita comprender los factores de riesgo asociados al neurodesarrollo infantil
-en Quetzaltenango. El objetivo principal de esta investigación es establecer la
-asociación entre  factores sociodemográficos, económicos, familiares y médicos
-con el riesgo en  el neurodesarrollo en niños menores de 5 años que asisten a
-servicios de  atención primaria en el distrito de Quetzaltenango, mediante
-evaluaciones con el \asq. Específicamente, se busca clasificar los resultados
-según grupos de edad para detectar patrones específicos de riesgo, evaluar la
-asociación entre diversos factores de riesgo y el neurodesarrollo, y analizar la
+Esta investigación surgió de la necesidad de generar evidencia científica para
+comprender los factores de riesgo asociados al neurodesarrollo infantil
+en Quetzaltenango. El objetivo principal de esta investigación fue establecer la
+asociación entre factores sociodemográficos, económicos, familiares y médicos
+con el riesgo en el neurodesarrollo en niños menores de 5 años en servicios de 
+atención primaria en el distrito de Quetzaltenango, mediante evaluaciones con
+el \asq. Específicamente, se buscó clasificar los resultados
+según grupos de edad para detectar patrones específicos de riesgo, se evaluó
+la asociación entre diversos factores de riesgo y el neurodesarrollo, y la
 relación entre el acceso a servicios de salud y la presencia de riesgo de
 retraso en el desarrollo.
 
-Los resultados de este estudio proporcionarán evidencia para contribuir al
-diseño de intervenciones y políticas públicas que puedan mejorar el
-neurodesarrollo durante la primera infancia en Quetzaltenango.
+Los resultados de este estudio son evidencia para contribuir al diseño de
+intervenciones y políticas públicas que puedan mejorar el desarrollo
+infantil temprano en Quetzaltenango.
 
 	\chapter{Antecedentes}
 \section{Antecedentes y contextualización del neurodesarrollo infantil}
@@ -1782,7 +1817,7 @@ seguimiento de casos. \cite{Manasyan2023, Colbert2021}
 
 	\chapter{Material y método}
 \section{Diseño de la investigación}
-Estudio de enfoque cuantitativo, diseño analítico, observacional, prospectivo
+Estudio de enfoque cuantitativo, diseño analítico, prospectivo
 de corte transversal.
 
 \section{Población}
@@ -1885,7 +1920,7 @@ Para este estudio se emplearon los siguientes instrumentos:
 		Se identificaron niños menores de 5 años que cumplieron con los
 		criterios de inclusión en los servicios de atención primaria
 		participantes. Tras obtener el consentimiento informado de los padres o
-		tutores, se realizaró:
+		tutores, se realizó:
 			\begin{itemize}
 			\item Evaluación del neurodesarrollo mediante la aplicación del
 			\asq, seleccionando la versión específica según la edad del niño.
@@ -1910,9 +1945,9 @@ Para este estudio se emplearon los siguientes instrumentos:
 
 \section{Procedimientos de análisis de la información}
 Los datos fueron recolectados utilizando la boleta de recolección de datos (ver
-anexo) la cual consiste en un formulario en línea.
+anexo \ref{sec:boleta}) la cual consiste en un formulario en línea.
 
-Se realizaró una limpieza inicial de datos para asegurar la consistencia de los
+Se realizó una limpieza inicial de datos para asegurar la consistencia de los
 datos y evitar sesgo por entrada de datos.
 
 Los puntajes obtenidos en cada área del desarrollo del \asq\ se convertieron a
@@ -2031,16 +2066,9 @@ heterogeneidad de varianzas, lo que la hace especialmente apropiada para
 muestras con tamaños desiguales.
 
 \subsubsection{Análisis post-hoc}
-En caso de encontrar diferencias significativas en el ANOVA ($p < 0.05$), se
-realizaron pruebas post-hoc para identificar específicamente entre qué grupos
-existen las diferencias:
-
-\begin{itemize}
-    \item Se utilizará la prueba de Tukey HSD cuando se cumpla el supuesto de
-    homogeneidad de varianzas.
-    \item Se empleará la prueba de Games-Howell cuando no se cumpla el supuesto
-    de homogeneidad de varianzas.
-\end{itemize}
+En los casos donde se encontraron diferencias significativas en el ANOVA
+($p < 0.05$), se realizaron pruebas post-hoc Tukey HSD para identificar
+específicamente entre qué grupos existen las diferencias.
 
 \subsection{Análisis de asociación}
 Se analizaron los resultados del \asq\ del grupo estudiado utilizando odds
@@ -2050,13 +2078,13 @@ niños con padres que tienen un trabajo formal o informal tienen mayor
 probabilidad o no, de presentar riesgo en el neurodesarrollo.
 
 \subsection{Presentación de resultados}
-Se elaboraron tablas y gráficos apropiados con intervalos utilizando el
-software Rstudio, paquetes de CRAN como ggplot2 para análisis y creación de
-datos informativos, así como paquetes de python.
+Se elaboraron tablas y gráficos apropiados con intervalos utilizando
+python y paquetes numpy, pandas, también se utilizó el software
+Rstudio con paquetes de CRAN.
 
 \section{Procedimientos para garantizar aspectos éticos de la investigación}
-El presente estudio cumple con los principios éticos fundamentales establecidos
-para la investigación en seres humanos, garantizando la protección de los
+El presente estudio cumplió con los principios éticos fundamentales establecidos
+para la investigación en seres humanos, se garantizó la protección de los
 derechos, dignidad y bienestar de los participantes. A continuación, se
 detallan los aspectos éticos considerados:
 
@@ -2079,27 +2107,23 @@ estudio están orientados a beneficiar a la comunidad en general, fomentando
 políticas y estrategias que mejoren el neurodesarrollo infantil.
 
 \subsection{Beneficencia y no maleficencia}
-Este estudio no implica intervenciones invasivas ni riesgos significativos para
+Este estudio no implicó intervenciones invasivas ni riesgos significativos para
 los participantes. Se emplearon técnicas observacionales y cuestionarios
 validados que no afectan la salud o el bienestar de los niños ni de sus
 cuidadores.
 
 \subsection{Categoría de riesgo}
-Categoría I: El diseño del estudio se basa en la aplicación del \asq\ el cual
+Categoría I: El diseño del estudio se basó en la aplicación del \asq\ el cual
 es una herramienta validada y no invasiva para evaluar el neurodesarrollo
-infantil. Este cuestionario se aplica a los cuidadores (padres o tutores) de
-los niños de forma observacional y no requiere intervención directa sobre los
+infantil. Este cuestionario se aplicó a los cuidadores (padres o tutores) de
+los niños de forma observacional y no requirió intervención directa sobre los
 participantes.
 
 \subsection{Consentimiento informado}
-Todos los cuidadores firmaron un consentimiento informado antes de participar
-en el estudio, el mismo se detalla en anexos.
+Todos los cuidadores firmaron un consentimiento informado (ver anexo
+\ref{sec:consentimiento}) antes de participar en el estudio.
 
 \chapter{Resultados}
-El presente estudio evaluó una muestra de niños atendidos en diferentes
-servicios de salud de Quetzaltenango. Se analizaron datos de un total de 1725
-niños con edades comprendidas entre 1 a 60 meses, lo que representa un amplio
-espectro del desarrollo infantil temprano.
 
 \begin{table}[htbp]
 \centering
@@ -2138,14 +2162,6 @@ espectro del desarrollo infantil temprano.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{distribucion_edad_sexo}
-	\captionsetup{font=footnotesize}
-	\caption{Distribución de edad y sexo de los niños. Fuente: Cuadro \ref{tab:resultado1}}
-    \label{fig:edad-sexo}
-\end{figure}
 
 \begin{table}[htbp]
 \centering
@@ -3339,13 +3355,11 @@ con predominancia masculina (53.45\%) sobre femenina (46.55\%), como se
 observa en el Cuadro~\ref{tab:resultado1}. La distribución etaria reveló mayor 
 concentración en los grupos de 7-12 meses (19.7\%), lo que refleja las
 características de la población que acude a servicios de 
-atención primaria para controles de crecimiento y vacunación. La 
-Figura~\ref{fig:edad-sexo} ilustra esta distribución equilibrada por grupos 
-etarios.
+atención primaria para controles de crecimiento y vacunación. 
 
 En cuanto a la edad gestacional al nacer, el 89.5\% fueron nacimientos a 
 término, con un 10.5\% de prematuridad en diferentes grados 
-(Cuadro~\ref{tab:eg}).
+(Cuadro~\ref{tab:eg}). Similar a estudios en Guatemala que estiman 12.6\% de partos pretérmino \cite{Pusdekar2020}.
 
 La distribución étnica mostró 57.04\% de población no indígena y 42.96\% 
 indígena, con marcada concentración de población indígena en área rural 
@@ -3379,7 +3393,7 @@ La cobertura prenatal fue adecuada con promedio de 6.70 controles prenatales,
 prenatales en el primer trimestre del embarazo y 92.93\% consumieron vitaminas
 prenatales durante el resto del embarazo (Cuadro~\ref{tab:cuidados_prenatales}). 
 La mayoría de partos fueron atendidos en hospitales públicos (64.7\%) con 
-resolución por vía vaginal (59.0\%) (Figura~\ref{fig:parto}).
+resolución por vía vaginal (59.0\%) (Figura~\ref{fig:parto}). Se encontraron mejores condiciones en la región comparado con resultados de la Encuesta Nacional de Salud Materno Infantil de 2014-2025 que reportaban menor suplementación con ácido fólico y menor calidad de atención antenatal \cite{Santos2025}.
 
 Las principales causas de cesárea de emergencia fueron complicaciones del 
 líquido amniótico (43.4\%), sufrimiento fetal (26.4\%) y preeclampsia (11.3\%) 
@@ -3408,14 +3422,12 @@ socio-individual (92.8\%),  motricidad fina (91.4\%) y motricidad gruesa
 (83.3\%)  (Cuadro~\ref{tab:desarrollo_dominios}). La motricidad gruesa mostró
 mayor  vulnerabilidad con 16.7\% en riesgo, confirmando los hallazgos del
 análisis de puntajes Z donde este dominio presentó la media más baja (-0.269) 
-(Cuadro~\ref{tab:estadisticas_z_scores}).
+(Cuadro~\ref{tab:estadisticas_z_scores}). Se encontraron menores porcentajes de riesgo en los diferentes dominios del desarrollo comparado con estudios anteriores en Guatemala que reportaban hasta 40\% de desarrollo en riesgo en el dominio de motricidad fina \cite{Angulo2023}.
 
 La clasificación global del desarrollo mostró que 66.96\% de niños tienen 
 desarrollo adecuado global, 33.04\% presentan riesgo en cualquier dominio y 
-5.22\% alto riesgo (Cuadro~\ref{tab:desarrollo_global}). Esta distribución es 
-consistente con literatura internacional donde los dominios motores muestran 
-mayor variabilidad en poblaciones con condiciones socioeconómicas 
-desfavorables.
+5.22\% alto riesgo (Cuadro~\ref{tab:desarrollo_global}). Se encontraron menores porcentajes de riesgo en cualquier dominio del neurodesarrollo comparado con estudios de Argentina (45\%) y Perú (38.7\%) pero mayores en relación a poblaciones de Cuba (21.5\%) y México (14.7\%)
+\cite{GuadarramaCelaya2011,Kyerematen2014,CarlosOliva2020,RicardoGarcell2022}.
 
 \section{Análisis de asociación de variables}
 El análisis estratificado por edad reveló patrones distintivos de riesgo en el 
@@ -3435,6 +3447,9 @@ Se identificaron períodos adicionales de riesgo elevado a los 4, 16, 18, 20, 24
 y 60 meses, donde los odds ratios superaron el valor de 2.0, con prevalencias 
 de riesgo superiores al 45\%. Esta distribución temporal de riesgos sugiere 
 períodos críticos que requieren monitoreo específico del neurodesarrollo.
+Estos patrones de edad y riesgo en el neurodesarrollo se acercan a las
+recomendaciones de la Academia Americana de Pediatría en su programa Bright
+Futures que propone de tamizar a los 9, 18, y 30 meses de edad, así como monitorear el desarrollo a los 2, 4, 6, 12, 15, 24, 36, 48, 60 meses \cite{Lipkin2020}. 
 
 El análisis de asociación reveló que el sexo del niño no mostró diferencias 
 significativas en ningún dominio del desarrollo: comunicación 
@@ -3442,8 +3457,8 @@ significativas en ningún dominio del desarrollo: comunicación
 $p = 0.503$), motricidad fina ($\chi^2 = 1.591$, $p = 0.451$), resolución 
 de problemas ($\chi^2 = 1.957$, $p = 0.376$) y socio-individual 
 ($\chi^2 = 0.340$, $p = 0.844$) (Cuadro~\ref{tab:sexo_nino_desarrollo_chi2}), 
-contrastando con estudios que sugieren diferencias de género en desarrollo 
-temprano.
+contrastando con estudios que exponen diferencias significativas en las que
+el sexo masculino se asocia con mayor riesgo de trastornos del neurodesarrollo \cite{Sudry2024,Christensen2025,Peyre2019,Nishimura2016}.
 
 Sin embargo, el grupo étnico mostró asociaciones significativas en resolución 
 de problemas ($\chi^2 = 4.57$, $p = 0.033$, OR = 1.50, IC 95\%: 1.05-2.16) 
@@ -3454,7 +3469,8 @@ motricidad gruesa ($\chi^2 = 0.39$, $p = 0.533$) y motricidad fina
 ($\chi^2 = 1.89$, $p = 0.169$) 
 (Cuadro~\ref{tab:grupo_etnico_desarrollo_chi2_compacta}). Este hallazgo 
 sugiere que las disparidades étnicas reflejan inequidades en oportunidades de
-desarrollo.
+desarrollo, la misma observación se ha encontrado en comunidades de Australia, Canada, Nueva Zelanda, Estados Unidos, Brasil y Argentina
+\cite{Lau2022,Hanly2020,Wehby2017}.
 
 El área de residencia mostró asociaciones robustas con riesgo en cuatro 
 dominios: comunicación ($\chi^2 = 8.70$, $p = 0.003$, OR = 2.09, 
@@ -3464,8 +3480,7 @@ $p < 0.001$, OR = 2.77, IC 95\%: 1.85-4.15) y socio-individual
 ($\chi^2 = 15.06$, $p < 0.001$, OR = 2.31, IC 95\%: 1.52-3.51), todos con 
 mayor riesgo en área rural. Solo motricidad fina no mostró asociación 
 significativa ($\chi^2 = 1.73$, $p = 0.188$) 
-(Cuadro~\ref{tab:area_residencia_desarrollo_chi2_compacta}). Esta asociación
-refleja desventajas en la población rural de Quetzaltenango.
+(Cuadro~\ref{tab:area_residencia_desarrollo_chi2_compacta}). Esta asociaciónrefleja desventajas en la población rural de Quetzaltenango, lo que es consistente con estudios de Estados Unidos, India, China y Pakistán \cite{Zablotsky2020-tb,Chatterjee2020,Murthy2020,Wang2020,Avan2010}
 
 El nivel educativo materno se asoció significativamente con todos los dominios 
 del desarrollo: comunicación ($F = 5.96$, $p < 0.001$), motricidad gruesa 
@@ -3474,12 +3489,16 @@ resolución de problemas ($F = 9.51$, $p < 0.001$) y socio-individual
 ($F = 6.44$, $p < 0.001$), donde el grupo universitario mostró puntajes más 
 altos y diferencias significativas con otros grupos, mientras que ``ninguna 
 escolaridad'' presentó valores más bajos 
-(Cuadro~\ref{tab:nivel_educativo_madre_desarrollo_anova}). El nivel educativo 
+(Cuadro~\ref{tab:nivel_educativo_madre_desarrollo_anova}). Esto es consistente
+con resultados de estudios longitudinales realizados en Francia, Singapur y Brasil que reportan menores puntajes en niños de madres con bajo nivel educativo \cite{Charkaluk2024,Lockhart2023,Yeleswarapu2025,Munhoz2022}, y mayores puntajes en todos los dominios en madres con mayor nivel educativo en artículos de Perú e Indonesia \cite{Handal2007,Hanifah2022}.
+
+
+El nivel educativo 
 paterno se asoció con comunicación ($F = 6.82$, $p < 0.001$) y socio-individual 
 ($F = 2.57$, $p = 0.036$), pero no con motricidad gruesa ($F = 1.88$, 
 $p = 0.114$), motricidad fina ($F = 1.09$, $p = 0.359$) ni resolución de 
 problemas ($F = 1.36$, $p = 0.247$) 
-(Cuadro~\ref{tab:nivel_educativo_padre_desarrollo}).
+(Cuadro~\ref{tab:nivel_educativo_padre_desarrollo}). Esto se evidencia en países como Dinamarca, Noruega, y Estados Unidos \cite{Holstein2021,Torvik2020,Sauver2004}
 
 La situación laboral paterna se asoció específicamente con motricidad gruesa 
 ($\chi^2 = 8.00$, $p = 0.005$, OR = 1.78, IC 95\%: 1.21-2.62), donde niños 
@@ -3505,6 +3524,9 @@ fina ($F = 3.70$, $p = 0.011$) y socio-individual ($F = 2.91$, $p = 0.034$),
 pero no con motricidad gruesa ($F = 2.44$, $p = 0.063$) ni resolución de 
 problemas ($F = 0.78$, $p = 0.504$), donde familias con más de 3 hermanos 
 mostraron mayor riesgo (Cuadro~\ref{tab:total_hermanos_desarrollo}).
+Una revisión sistemática de la literatura encontró que los niños en núcleos
+familiares de padres solteros tienen mayor riesgo de presentar TDAH
+\cite{Claussen2022}.
 
 El retardo de crecimiento se asoció con riesgo en motricidad gruesa
 ($\chi^2 = 4.60$, $p = 0.032$, OR = 0.66, IC 95\%: 0.46-0.95) y el dominio
@@ -3518,21 +3540,26 @@ dominios:  comunicación ($\chi^2 = 1.50$, $p = 0.221$), motricidad gruesa
 ($\chi^2 = 0.90$, $p = 0.342$), motricidad fina ($\chi^2 = 1.00$, $p = 0.316$) 
 ni resolución de problemas ($\chi^2 = 1.30$, $p = 0.254$) 
 (Cuadro~\ref{tab:desnutricion_aguda_resumen_compacta}), consistente con 
-evidencia que sugiere que malnutrición aguda afecta competencias 
-socioemocionales a través de mecanismos neurobiológicos.
+evidencia que sugiere que desnutrición tanto crónica como aguda afecta
+competencias del desarrollo \cite{Babikako2022,Suryawan2021,vandenHeuvel2019}.
 
 Las horas de exposición a pantallas (televisor, tablet, móvil) se asociaron
 significativamente con riesgo en todos los dominios del desarrollo: comunicación
 ($F = 3.79$, $p = 0.010$), motricidad gruesa ($F = 2.62$, $p = 0.049$),
 motricidad fina ($F = 2.99$, $p = 0.030$), resolución de problemas ($F = 3.75$,
 $p = 0.011$) y  socio-individual ($F = 4.33$, $p = 0.005$), observándose mayor
-riesgo con mayor exposición (Cuadro~\ref{tab:horas_exposicion_pantallas_desarrollo}). 
+riesgo con mayor exposición (Cuadro~\ref{tab:horas_exposicion_pantallas_desarrollo}). La literatura propone un modelo de disrupción de neurotransmisores como la acetilcolina, glutamato, serotonina como el mecanismo de aumento de
+riesgo de trastornos del neurodesarrollo, el tiempo en pantalla se asocia a
+déficit de atención, trastornos del habla y lenguaje, y si la exposición
+es temprana puede asociarse con trastorno del espectro autista, aunque se
+propone que actividades al aire libre reducen este riesgo \cite{Priyadarshini2025,Zehra2025,Hill2024,Sarfraz2023,Amorim2023,Sugiyama2023,Goswami2023,Jourdren2023}.
+
 Las horas de juego que el cuidador le dedica al niño se asociaron con riesgos en
 dominios de motricidad gruesa ($F = 3.05$, $p = 0.028$) y resolución de
 problemas ($F = 6.49$, $p < 0.001$), pero no con comunicación ($F = 1.19$,
 $p = 0.314$), motricidad fina ($F = 2.57$, $p = 0.053$) ni socio-individual
 ($F = 0.23$, $p = 0.878$), donde el grupo con menos horas (0-1) mostró mayor
-riesgo (Cuadro~\ref{tab:horas_juego_cuidador_desarrollo}).
+riesgo (Cuadro~\ref{tab:horas_juego_cuidador_desarrollo}). Las interacciones entre cuidador y niño se asocian con mejores desenlaces del desarrollo, y son factores protectores de desarrollo cognitivo y conductual en infantes de alto riesgo de presentar trastornos del neurodesarrollo \cite{Jaffee2007,Isaev2023,Schneider2022}
 
 \subsection{Factores sin asociación significativa}
 
@@ -3540,7 +3567,7 @@ Diversos factores no mostraron asociación significativa con el neurodesarrollo:
 edad materna y paterna ($p > 0.05$ en todos los dominios), total de personas en
 el hogar ($p > 0.05$ en todos los dominios), número de controles prenatales
 ($p > 0.05$ en todos los dominios), vitaminas prenatales 
-($p > 0.05$ en todos los dominios) (Cuadro~\ref{tab:asoc_vitaminas_prenatales}), 
+($p > 0.05$ en todos los dominios), 
 tipo de parto ($p > 0.05$ en todos los dominios) 
 (Cuadro~\ref{tab:tipo_parto_desarrollo}), servicio de asistencia al parto 
 ($p > 0.05$ en todos los dominios) 
@@ -3558,6 +3585,8 @@ completamente características de la población general. La posible presencia de
 factores de confusión no medidos, como calidad de interacción entre el cuidador
 y el niño o condiciones médicas no diagnosticadas, o antecedentes médicos
 erróneos podría influir en resultados observados.
+
+\newpage
 
 \section{Conclusiones}
 
@@ -3646,58 +3675,107 @@ fundamentalmente, a la prevención y tratamiento oportuno de las deficiencias
 nutricionales.
 \end{enumerate}
 
+\newpage
+
 \section{Recomendaciones}
+
+\subsection{A las autoridades de salud}
 \begin{enumerate}
-\item 
-Implementar tamizaje e intervenciones diferenciadas por edad. Establecer un
-protocolo de evaluación sistemática con énfasis en períodos críticos: tamizaje
-intensivo a los 8 meses donde el riesgo global alcanza 63.8\%, y monitoreo
-estratégico a los 4, 16, 18, 20, 24 y 60 meses donde el riesgo supera el 45\%.
+\item Incorporar programas de tamizaje del neurodesarrollo infantil en 
+servicios de primer y segundo nivel de atención.
 
-\item Fortalecimiento de la educación materna como estrategia clave de salud 
-pública. Dado que el bajo nivel educativo materno como paterno se asocia 
-significativamente con todos los dominios del desarrollo, se recomienda 
-implementar programas comunitarios de formación y acompañamiento para madres, 
-especialmente en zonas rurales e indígenas, que incluyan orientación sobre 
-prácticas de crianza, nutrición, juego y estimulación.
+\item Modificar el carné del niño y de la niña para incluir una sección 
+específica de seguimiento de resultados del tamizaje del neurodesarrollo.
 
-\item Establecimiento de pautas sobre el uso del tiempo en el hogar. Aunque se 
-evidenció un mayor tiempo de juego con cuidadores frente a la exposición a 
-pantallas, la variabilidad entre familias es considerable. Por ello, se 
-recomienda promover medidas claras desde los servicios de salud y educación 
-sobre la distribución del tiempo en el hogar, así favoreciendo el juego, apego 
-y cariño entre los padres y el niño. 
+\item Implementar herramientas validadas como los Cuestionarios Edades y 
+Etapas 3 (ASQ-3) o las Escalas Globales para el Desarrollo Temprano de la 
+Organización Mundial de la Salud.
 
-\item Monitoreo nutricional riguroso en los primeros 1000 días. Ante la 
-asociación significativa entre desnutrición y riesgo de alteraciones en el 
-desarrollo, se recomienda fortalecer los programas de seguimiento nutricional 
-desde el primer nivel de atención, con énfasis en la prevención del retardo 
-del crecimiento y la desnutrición aguda. Asimismo, se debe reforzar la 
-continuidad de la suplementación nutricional, especialmente después de los 6 
-meses.
+\item Priorizar el tamizaje intensivo a los 8 meses e incorporar el 
+monitoreo en edades que coincidan con los períodos de vacunación (2, 4, 6, 
+12, 18 y 48 meses).
 
-\item Intervención social y económica en cada zona rural. Se propone que las 
-intervenciones en salud infantil no se limiten al abordaje clínico, sino que 
-se asocien con acciones del sector educativo, social y comunitario. La lucha 
-contra la desigualdad educativa, el desempleo y la pobreza puede tener un 
-impacto directo en la calidad del desarrollo infantil.
+\item Crear sistemas de referencia y contrarreferencia entre niveles de 
+atención para casos con riesgo identificado en el tamizaje.
 
-\item Integración del EPS rural en la detección y promoción del desarrollo 
-infantil. Se recomienda fortalecer el rol del programa del Ejercicio 
-Profesional Supervisado (EPS) rural de la Universidad de San Carlos de 
-Guatemala como clave en la vigilancia del desarrollo infantil. Se sugiere que, 
-dentro de sus actividades comunitarias, se incluya de manera sistemática el 
-tamizaje del desarrollo en menores de cinco años, utilizando herramientas 
-validadas y adaptadas al contexto local. Asimismo, se insta a que los 
-resultados obtenidos se canalicen oportunamente hacia el abordaje integral, 
-mediante la articulación con el área de psicología y otros profesionales, 
-especialmente en casos que evidencien alteraciones en el habla, comunicación 
-o desarrollo social. Esta propuesta no solo beneficiaría a la niñez en riesgo, 
-sino que podría tener un impacto significativo a largo plazo en los 
-indicadores de educación, inclusión y productividad económica de la región, al 
-prevenir retrasos que limiten el potencial humano desde los primeros años de 
-vida.
+\item Destinar presupuesto específico para capacitación continua del 
+personal de salud en aplicación e interpretación de herramientas de 
+tamizaje.
 \end{enumerate}
+
+\subsection{Al personal de salud}
+\begin{enumerate}
+\item Promover la importancia del tamizaje del neurodesarrollo infantil en 
+la consulta de niño sano, especialmente a los 8 meses de edad.
+
+\item Informar a los padres sobre actividades específicas de estimulación 
+temprana e interacciones positivas cuidador-niño.
+
+\item Elaborar charlas educativas sobre la importancia de los primeros mil 
+días para el desarrollo infantil.
+
+\item Utilizar material promocional de UNICEF y OMS para empoderar a los 
+padres en el acceso a información sobre estimulación temprana.
+
+\item Enfatizar en las consultas los riesgos de la exposición temprana y 
+prolongada a dispositivos electrónicos en menores de 5 años.
+\end{enumerate}
+
+\subsection{A los padres de familia}
+\begin{enumerate}
+\item Realizar actividades diarias de estimulación temprana estructuradas:
+\begin{itemize}
+    \item 10-15 minutos de ejercicios de motricidad gruesa
+    \item 10 minutos de estimulación del lenguaje con interacción responsiva
+    \item 10 minutos de actividades de motricidad fina
+\end{itemize}
+
+\item Evitar la exposición temprana y prolongada de niños menores de 
+5 años a pantallas de dispositivos electrónicos (televisores, tablets, 
+teléfonos móviles), siguiendo las recomendaciones de la Academia Americana 
+de Pediatría.
+
+\item Promover el juego activo e interacciones directas entre 
+cuidadores y niños como alternativa al uso de medios electrónicos, 
+priorizando actividades que estimulen el desarrollo integral.
+
+\item Permitir espacios de juego con otros niños para fortalecer 
+habilidades socio-individuales y de comunicación.
+\end{enumerate}
+
+\subsection{A las autoridades educativas}
+\begin{enumerate}
+\item Crear centros de desarrollo infantil temprano en comunidades rurales 
+e indígenas con mayor vulnerabilidad.
+
+\item Capacitar a maestros de educación inicial en identificación temprana 
+de retrasos del desarrollo y uso de herramientas de tamizaje.
+
+\item Desarrollar material educativo culturalmente apropiado sobre 
+estimulación temprana para la población.
+\end{enumerate}
+
+\subsection{A las autoridades departamentales}
+\begin{enumerate}
+\item Crear programas de estimulación temprana en coordinación 
+con el sistema de salud, priorizando comunidades rurales.
+
+\item Establecer centros comunitarios de desarrollo infantil en áreas 
+rurales con población indígena.
+
+\item Implementar programas de seguridad alimentaria y nutricional 
+dirigidos a familias con niños menores de 5 años para prevenir 
+desnutrición.
+
+\item Desarrollar campañas de sensibilización sobre la importancia del 
+desarrollo infantil temprano y los riesgos del uso excesivo de pantallas 
+en medios de comunicación locales.
+
+\item Facilitar espacios públicos seguros para el juego infantil y la 
+interacción familiar en comunidades urbanas y rurales.
+\end{enumerate}
+
+\newpage
 
 \section{Aportaciones del estudio}
 \begin{enumerate}
