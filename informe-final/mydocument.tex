@@ -156,6 +156,8 @@ Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
   \renewcommand{\footrulewidth}{0pt} % Remove footer rule
 }
 
+\usepackage{appendix}
+
 \begin{document}
 \pagenumbering{roman}
 %	\chapter*{Dedicatoria}
@@ -292,9 +294,23 @@ la asociación entre diversos factores de riesgo y el neurodesarrollo, y la
 relación entre el acceso a servicios de salud y la presencia de riesgo de
 retraso en el desarrollo.
 
-Los resultados de este estudio son evidencia para contribuir al diseño de
-intervenciones y políticas públicas que puedan mejorar el desarrollo
-infantil temprano en Quetzaltenango.
+Los hallazgos de este estudio revelan datos alarmantes de la realidad en la que
+se desarrollan miles de niños en Quetzaltenango, se identificó que 33.04\% de
+los niños presentan riesgo en al menos un dominio del desarrollo, que las
+categorías de motricidad son las más afectadas en la población. Se identificó
+que el bajo nivel educativo materno, la exposición temprana y prolongada a
+pantallas, así como desigualdades sociales, están estrechamente relacionadas
+con peores desenlaces en el neurodesarrollo infantil.
+
+Los resultados de este estudio constituyen evidencia fundamental para contribuir
+al diseño de intervenciones y políticas públicas que puedan mejorar el
+desarrollo infantil temprano en Quetzaltenango. Esta investigación trasciende el
+ámbito académico; representa un llamado a la acción para mejorar el futuro de la
+niñez guatemalteca. Cada niño que no alcanza su potencial de desarrollo
+representa una oportunidad perdida, no solo para él y su familia, sino para el
+progreso colectivo de nuestra sociedad. Esperamos fervientemente que estos
+hallazgos sean los primeros pasos para transformar la realidad del desarrollo
+infantil en Guatemala.
 
 	\chapter{Antecedentes}
 \section{Antecedentes y contextualización del neurodesarrollo infantil}
@@ -1971,7 +1987,7 @@ riesgo) y determinar la significancia estadística.
 Para una población de \muestradeseada\ niños menores de 5 años, el
 procedimiento para la prueba Chi-cuadrado fue el siguiente:
 
-\begin{enumerate}
+\begin{itemize}
     \item Se realizaron tablas de contingencia para cada par de variables
 		categóricas (factor de riesgo y resultado del \asq).
     
@@ -1987,7 +2003,7 @@ procedimiento para la prueba Chi-cuadrado fue el siguiente:
 		para todas las pruebas, e intervalos de confianza de 95\% cálculados
 		por el método del error estándar para describir el rango en el que se
 		encuentra el valor real.
-\end{enumerate}
+\end{itemize}
 
 \subsection{Análisis de varianza (ANOVA)}
 Para evaluar la relación entre factores de riesgo con múltiples categorías y
@@ -2041,7 +2057,7 @@ sensible a desviaciones de la normalidad que otras pruebas de igualdad de
 varianzas, lo que la hace particularmente útil en el contexto de este estudio.
 
 El procedimiento de la prueba de Levene implica:
-\begin{enumerate}
+\begin{itemize}
     \item Calcular la diferencia absoluta entre cada valor en un grupo y la
 		media o mediana de ese grupo.
     \item Realizar un ANOVA de un factor sobre estos valores de diferencia
@@ -2049,7 +2065,7 @@ El procedimiento de la prueba de Levene implica:
     \item El estadístico resultante sigue una distribución F con k-1 y N-k
 		grados de libertad, donde k es el número de grupos y N el tamaño total
 		de la muestra.
-\end{enumerate}
+\end{itemize}
 
 Se interpretó el valor p de la prueba de Levene de la siguiente manera:
 \begin{itemize}
@@ -2932,42 +2948,6 @@ socio-individual.
 \end{threeparttable}
 \end{table}
 
-\begin{table}[htbp]
-\centering
-\caption{Asociación entre nivel educativo de la madre y riesgo en dominios del desarrollo}
-\label{tab:nivel_educativo_madre_desarrollo_anova}
-\begin{threeparttable}
-\begin{tblr}{
-  width = 0.98\linewidth,
-  colspec = {X[1.3,l]X[0.8,c]X[0.9,c]X[1.0,c]X[1.0,c]X[0.7,c]},
-  row{1} = {font=\bfseries, bg=gray!10},
-  row{even} = {bg=gray!3},
-  cells = {valign=m, font=\footnotesize},
-  hline{1,2,Z} = {1pt},
-  hline{3-Y} = {0.5pt, gray},
-}
-\textbf{Dominio} & \textbf{F/W} & \textbf{\textit{p}-valor} & \textbf{Significativo} & \textbf{Método} & \textbf{N} \\
-Comunicación          & 5.96   & $<$0.001  & Sí  & Welch's ANOVA & 1711 \\
-Motricidad gruesa     & 6.29   & $<$0.001  & Sí  & ANOVA         & 1711 \\
-Motricidad fina       & 8.68   & $<$0.001  & Sí  & ANOVA         & 1711 \\
-Resolución de problemas & 9.51 & $<$0.001  & Sí  & ANOVA         & 1711 \\
-Socio-individual      & 6.44   & $<$0.001  & Sí  & ANOVA         & 1711 \\
-\end{tblr}
-\begin{tablenotes}
-\footnotesize
-\item \textbf{Nota:}
-El nivel educativo de la madre se asocia significativamente con todos los
-dominios del desarrollo infantil (p < 0.001). Resultados ANOVA/Welch:
-Comunicación (F=5.95, p=0.0000), Motricidad gruesa (F=6.29, p=0.0001),
-Motricidad fina (F=8.68, p=0.0000), Resolución de problemas (F=9.51, p=0.0000),
-Socio-individual (F=6.44, p=0.0000). El grupo ``Universitario'' destaca por los
-puntajes más altos y diferencias significativas con otros grupos; ``Ninguna escolaridad''
-muestra los valores más bajos. El bajo nivel educativo materno es un factor
-de riesgo importante para alteraciones en el neurodesarrollo infantil.
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{violinplot_nivel_educativo_madre}
@@ -2975,36 +2955,6 @@ de riesgo importante para alteraciones en el neurodesarrollo infantil.
 	\caption{Desarrollo por nivel educativo (madre). Fuente: Cuadro \ref{tab:nivel_educativo_madre_desarrollo_anova}}
     \label{fig:nivel_educativo_anova_madre}
 \end{figure}
-
-
-\begin{table}[htbp]
-\centering
-\caption{Asociación entre nivel educativo del padre y riesgo en dominios del desarrollo}
-\label{tab:nivel_educativo_padre_desarrollo}
-\begin{threeparttable}
-\begin{tblr}{
-  width = 0.98\linewidth,
-  colspec = {X[1.4,l]X[0.8,c]X[1.0,c]X[1.0,c]X[1.0,c]X[0.7,c]},
-  row{1} = {font=\bfseries, bg=gray!10},
-  row{even} = {bg=gray!3},
-  cells = {valign=m, font=\footnotesize},
-  hline{1,2,Z} = {1pt},
-  hline{3-Y} = {0.5pt, gray},
-}
-\textbf{Dominio} & \textbf{F/W} & \textbf{\textit{p}-valor} & \textbf{Significativo} & \textbf{Método} & \textbf{N} \\
-Comunicación          & 6.82   & $<$0.001  & Sí  & ANOVA         & 1673 \\
-Motricidad gruesa     & 1.88   & 0.114     & No  & Welch's ANOVA & 1673 \\
-Motricidad fina       & 1.09   & 0.359     & No  & ANOVA         & 1673 \\
-Resolución de problemas & 1.36 & 0.247     & No  & ANOVA         & 1673 \\
-Socio-individual      & 2.57   & 0.036     & Sí  & ANOVA         & 1673 \\
-\end{tblr}
-\begin{tablenotes}
-\footnotesize
-\item \textbf{Nota:} El nivel educativo del padre se asocia significativamente con dos dominios del desarrollo infantil. Comunicación (F = 6.82, p $<$ 0.001, significativo) y Socio-individual (F = 2.57, p = 0.036, significativo). El grupo ``Ninguna escolaridad'' muestra los
-valores más bajos y el grupo ``básico'' muestra la media de valores Z más alta.
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
 
 \begin{figure}[htbp]
     \centering
@@ -3480,7 +3430,8 @@ $p < 0.001$, OR = 2.77, IC 95\%: 1.85-4.15) y socio-individual
 ($\chi^2 = 15.06$, $p < 0.001$, OR = 2.31, IC 95\%: 1.52-3.51), todos con 
 mayor riesgo en área rural. Solo motricidad fina no mostró asociación 
 significativa ($\chi^2 = 1.73$, $p = 0.188$) 
-(Cuadro~\ref{tab:area_residencia_desarrollo_chi2_compacta}). Esta asociaciónrefleja desventajas en la población rural de Quetzaltenango, lo que es consistente con estudios de Estados Unidos, India, China y Pakistán \cite{Zablotsky2020-tb,Chatterjee2020,Murthy2020,Wang2020,Avan2010}
+(Cuadro~\ref{tab:area_residencia_desarrollo_chi2_compacta}). Esta asociación
+refleja desventajas en la población rural de Quetzaltenango, lo que es consistente con estudios de Estados Unidos, India, China y Pakistán \cite{Zablotsky2020-tb,Chatterjee2020,Murthy2020,Wang2020,Avan2010}
 
 El nivel educativo materno se asoció significativamente con todos los dominios 
 del desarrollo: comunicación ($F = 5.96$, $p < 0.001$), motricidad gruesa 
@@ -3588,98 +3539,82 @@ erróneos podría influir en resultados observados.
 
 \newpage
 
-\section{Conclusiones}
+\chapter{Conclusiones}
 
 \begin{enumerate}
-\item El análisis por edad del ASQ-3 reveló patrones específicos de riesgo en el 
-neurodesarrollo con alta significancia estadística ($p<0.001$). Los 8 meses 
-emergieron como la edad de mayor riesgo (OR = 3.78, IC 95\%: [2.29, 6.24], 
-$p<0.001$) con una prevalencia de riesgo global del 63.8\%. Se identificaron 
-patrones protectores a los 6 meses (OR = 0.317, IC 95\%: [0.18, 0.56]), 12 meses 
-(OR = 0.396, IC 95\%: [0.25, 0.62]) y 27 meses (OR = 0.272, IC 95\%: [0.14, 
-0.52]). También se observó mayor riesgo a los 4, 16, 18, 20, 24 y 60 meses 
-(OR > 2.0), con prevalencia de riesgo superior al 45\%. Estos hallazgos apoyan 
-la implementación de protocolos de tamizaje específicos por edad, con énfasis 
-en evaluación y seguimiento estratégico durante los períodos de riesgo
-identificados, hallazgos que son consistentes con las recomendaciones de la
-Academia Americana de Pediatría sobre vigilancia y tamizaje del desarrollo.
+\item
+En el análisis de patrones de riesgo por edad se encontró que los 8 meses
+constituyen el período con mayor prevalencia de riesgo del 63.8\% (OR = 3.78),
+en contraste, las edades de 6 meses (OR = 0.317), 12 meses
+(OR = 0.396) y 27 meses (OR = 0.272) mostraron patrones protectores,
+indicando períodos de menor  en el desarrollo. Otras edades con alto
+riesgo incluyen 4, 16, 18, 20, 24 y 60 meses, todas con prevalencia superior
+al 45\%, evidenciando momentos críticos adicionales que requieren vigilancia
+específica.
 
-\item El estudio identificó que el 33.04\% de los niños menores de 5 años 
-evaluados, presentaron riesgo en al menos un dominio del desarrollo, siendo la 
-más afectada la motricidad gruesa con (16.7\%). Los principales factores de 
-riesgo fueron: la etnia siendo la población indígena la más afectada, con 1.50 
-veces mayor riesgo en resolución de problemas y 1.53 en el desarrollo 
-socio-individual. De las personas que residen en el sector rural se identifica 
-riesgo elevado en el área de comunicación (OR=2.09), motricidad gruesa 
-(OR=1.79), resolución de problemas (OR=2.77) y desarrollo socio-individual 
-(OR=2.31). El desempleo paterno se asocia a riesgo en motricidad gruesa 
-(OR=1.78), y bajo nivel educativo materno como factor más consistente 
-afectando todos los dominios del desarrollo (p$<$0.001). El nivel educativo del 
-padre se asocia significativamente con dos dominios del desarrollo infantil 
-siendo estos el área de Comunicación (p$<$0.001) y Socio-individual 
-(p=0.036). El nivel educativo de la madre se asocia significativamente con 
-todos los dominios del desarrollo infantil (p $<$0.001). El grupo de 
-primogénitos es el que presenta mayor riesgo en motricidad fina. En cuanto a la 
-edad gestacional, tipo de parto, servicio de asistencia al parto, no mostraron 
-asociaciones significativas con el neurodesarrollo. Los resultados establecen 
-claramente que los factores sociodemográficos (etnia, área de residencia) y 
-familiares (especialmente el nivel educativo materno y la estructura familiar) 
-constituyen los principales determinantes del riesgo en el neurodesarrollo en 
-el contexto de Quetzaltenango. Esto sugiere la necesidad de implementar 
-estrategias de tamizaje y intervención temprana que consideren estos factores 
-de riesgo, con especial atención a la población indígena, rural y con bajo 
-nivel educativo materno. La ausencia de asociaciones significativas con 
-factores médicos tradicionales (como tipo de parto o edad gestacional) resalta 
-la importancia de los determinantes sociales de la salud en el 
-neurodesarrollo infantil, orientando hacia intervenciones que aborden las 
-desigualdades sociales y educativas como estrategia prioritaria para mejorar 
-los resultados del desarrollo infantil en el distrito de Quetzaltenango.
+\item
+Respecto a patrones de riesgo por dominios del neurodesarrollo,
+la motricidad gruesa fue el área más afectada (16.7\%), seguida por motricidad
+fina (8.6\%), desarrollo socio-individual (7.2\%), resolución de problemas
+(7.4\%) y comunicación (5.6\%), en el total de la población.
 
-Por otro lado, la exposición a dispositivos electrónicos es significativamente 
-menor que el tiempo dedicado al juego con cuidadores, ya que se muestra que la 
-mitad de los niños tienen 1 hora o menos de exposición a pantallas y 3 horas 
-de juego con cuidadores, aunque existe una gran variabilidad entre familias. 
-Esta distribución es positiva desde una perspectiva del desarrollo infantil, 
-ya que favorece la interacción social y el juego activo por encima del uso de 
-medios electrónicos, aunque la amplia variabilidad indica la necesidad de 
-establecer pautas más constantes sobre el uso equilibrado del tiempo en 
-actividades de desarrollo. 
+\item
+Los factores sociodemográficos mostraron asociaciones significativas con el
+riesgo en el neurodesarrollo. La etnia indígena presentó 1.50 veces mayor
+riesgo en resolución de problemas y 1.53 en desarrollo socio-individual. La
+residencia rural se asoció con riesgo elevado en comunicación (OR = 2.09),
+motricidad gruesa (OR = 1.79), resolución de problemas (OR = 2.77) y
+desarrollo socio-individual (OR = 2.31), evidenciando las disparidades
+territoriales en oportunidades de desarrollo.
 
-\item En el período prenatal, no se encontraron asociaciones significativas 
-entre el número de controles prenatales, suplementación y el riesgo de 
-retraso en los dominios del desarrollo (p $>$ 0.05 en todos los casos). 
-Durante el período postnatal, se observó una alta cobertura de vacunación 
-(94.9\%); sin embargo, la suplementación nutricional mostró una tendencia 
-decreciente con la edad, disminuyendo del 69.7\% al 53.9\% para vitamina A 
-entre los 6-24 meses. Ninguno de estos factores mostró relación con el 
-neurodesarrollo. Los antecedentes nutricionales sí demostraron asociaciones 
-significativas con el desarrollo neurológico. El retardo de crecimiento, 
-presente en 11.1\% de la muestra, se asoció con mayor riesgo tanto en 
-motricidad gruesa (OR=0.66, p=0.032) como en desarrollo socio-individual 
-(OR=0.49, p=0.005). Por su parte, la desnutrición aguda (5.9\% de 
-prevalencia) incrementó específicamente el riesgo en el desarrollo 
-socio-individual (OR=1.97, p=0.044). Respecto a otros factores, se registró 
-una alta cobertura de lactancia materna exclusiva (72.7\% en 0-6 meses, 
-descendiendo a 48.1\% en 12-24 meses). Las hospitalizaciones neonatales 
-(12.0\%) e infantiles (13.7\%) no mostraron asociaciones significativas con el 
-neurodesarrollo.
+En cuanto a factores familiares, el nivel educativo materno bajo fue el
+factor más consistente, afectando todos los dominios del desarrollo
+($p < 0.001$). El nivel educativo paterno bajo se asoció con comunicación
+($p < 0.001$) y desarrollo socio-individual ($p = 0.036$). El desempleo
+paterno mostró asociación específica con riesgo en motricidad gruesa
+(OR = 1.78). Respecto a la estructura familiar, los primogénitos presentaron
+mayor riesgo en motricidad fina.
 
-Estos hallazgos subrayan la importancia crítica de implementar estrategias 
-preventivas y de intervención temprana centradas en la nutrición infantil, 
-particularmente durante los primeros años de vida, para optimizar el 
-neurodesarrollo y prevenir déficits en dominios clave del desarrollo. La alta 
-cobertura de lactancia materna exclusiva y vacunación representa un aspecto 
-positivo del cuidado infantil en esta población, aunque se requiere atención 
-especial a la continuidad de la suplementación nutricional y, 
-fundamentalmente, a la prevención y tratamiento oportuno de las deficiencias 
-nutricionales.
+Los factores ambientales también demostraron influencia significativa. El
+tiempo de exposición prolongada a pantallas electrónicas mostró asociación
+con riesgo en todos los dominios del desarrollo ($p < 0.05$), evidenciando
+que a mayor tiempo de exposición, mayor riesgo de alteraciones en el
+neurodesarrollo. En contraste, las horas de juego entre cuidadores y niños
+demostraron ser un factor protector significativo, especialmente para
+motricidad gruesa ($p = 0.028$) y resolución de problemas ($p < 0.001$),
+confirmando la importancia de la interacción social directa para el
+desarrollo óptimo.
+
+\item La atención prenatal, incluyendo número de controles y suplementación,
+no mostró asociaciones significativas con el riesgo en el neurodesarrollo
+($p > 0.05$). Sin embargo, los factores nutricionales postnatales sí
+evidenciaron asociaciones importantes. El retardo de crecimiento, presente en
+11.1\% de la muestra, incremento el riesgo en motricidad gruesa (OR = 0.66)
+y desarrollo socio-individual (OR = 0.49). La desnutrición aguda, con
+prevalencia de 5.9\%, se asoció específicamente con riesgo en desarrollo
+socio-individual (OR = 1.97). Otros factores médicos como edad gestacional,
+tipo de parto y lugar de atención del parto no mostraron relación con el
+riesgo en el neurodesarrollo, sugiriendo que los determinantes sociales
+prevalecen sobre los factores biológicos en el contexto estudiado.
+
+\item Este estudio evidenció que el riesgo en el neurodesarrollo infantil en
+Quetzaltenango está determinado por múltiples factores interrelacionados,
+destacando la edad crítica de 8 meses, el predominio de riesgo en motricidad
+gruesa y la influencia significativa de determinantes sociales como etnia
+indígena, residencia rural y nivel educativo parental principalmente el materno.
+La exposición prolongada a pantallas representa un factor de riesgo evidente,
+mientras que el tiempo de juego cuidador-niño actúa como factor protector.
+Los hallazgos resaltan la necesidad de implementar estrategias preventivas
+enfocadas en los períodos críticos identificados, priorizando poblaciones
+vulnerables y promoviendo interacciones positivas entre cuidadores y niños
+en lugar de la exposición a dispositivos electrónicos.
 \end{enumerate}
 
 \newpage
 
 \section{Recomendaciones}
 
-\subsection{A las autoridades de salud}
+\subsection*{A las autoridades de salud}
 \begin{enumerate}
 \item Incorporar programas de tamizaje del neurodesarrollo infantil en 
 servicios de primer y segundo nivel de atención.
@@ -3703,7 +3638,7 @@ personal de salud en aplicación e interpretación de herramientas de
 tamizaje.
 \end{enumerate}
 
-\subsection{Al personal de salud}
+\subsection*{Al personal de salud}
 \begin{enumerate}
 \item Promover la importancia del tamizaje del neurodesarrollo infantil en 
 la consulta de niño sano, especialmente a los 8 meses de edad.
@@ -3721,9 +3656,9 @@ padres en el acceso a información sobre estimulación temprana.
 prolongada a dispositivos electrónicos en menores de 5 años.
 \end{enumerate}
 
-\subsection{A los padres de familia}
+\subsection*{A los padres de familia}
 \begin{enumerate}
-\item Realizar actividades diarias de estimulación temprana estructuradas:
+\item Realizar actividades diarias de estimulación temprana estructuradas de acuerdo a la edad del niño:
 \begin{itemize}
     \item 10-15 minutos de ejercicios de motricidad gruesa
     \item 10 minutos de estimulación del lenguaje con interacción responsiva
@@ -3743,7 +3678,7 @@ priorizando actividades que estimulen el desarrollo integral.
 habilidades socio-individuales y de comunicación.
 \end{enumerate}
 
-\subsection{A las autoridades educativas}
+\subsection*{A las autoridades educativas}
 \begin{enumerate}
 \item Crear centros de desarrollo infantil temprano en comunidades rurales 
 e indígenas con mayor vulnerabilidad.
@@ -3755,7 +3690,7 @@ de retrasos del desarrollo y uso de herramientas de tamizaje.
 estimulación temprana para la población.
 \end{enumerate}
 
-\subsection{A las autoridades departamentales}
+\subsection*{A las autoridades departamentales}
 \begin{enumerate}
 \item Crear programas de estimulación temprana en coordinación 
 con el sistema de salud, priorizando comunidades rurales.
@@ -3805,21 +3740,119 @@ sobre el desarrollo del niño.
 
 \printbibliography
 
+% Cierra completamente el contenido principal
+\cleardoublepage
+
+% Configuración básica para apéndices
 \appendix
+
+% Reinicia explícitamente el contador de capítulos
+\setcounter{chapter}{0}
+
+% Apéndice A - Tablas
+\stepcounter{chapter} % Asegura que sea el capítulo 1 (A)
+\renewcommand{\thechapter}{Apéndice \Alph{chapter}}
+\chapter*{Apéndice A: Tablas de referencia}
+\addcontentsline{toc}{chapter}{Apéndice A: Tablas de referencia}
+\markboth{Apéndice A: Tablas de referencia}{Apéndice A: Tablas de referencia}
+
+\begin{table}[htbp]
+\centering
+\caption{Asociación entre nivel educativo de la madre y riesgo en dominios del desarrollo}
+\label{tab:nivel_educativo_madre_desarrollo_anova}
+\begin{threeparttable}
+\begin{tblr}{
+  width = 0.98\linewidth,
+  colspec = {X[1.3,l]X[0.8,c]X[0.9,c]X[1.0,c]X[1.0,c]X[0.7,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
+}
+\textbf{Dominio} & \textbf{F/W} & \textbf{\textit{p}-valor} & \textbf{Significativo} & \textbf{Método} & \textbf{N} \\
+Comunicación          & 5.96   & $<$0.001  & Sí  & Welch's ANOVA & 1711 \\
+Motricidad gruesa     & 6.29   & $<$0.001  & Sí  & ANOVA         & 1711 \\
+Motricidad fina       & 8.68   & $<$0.001  & Sí  & ANOVA         & 1711 \\
+Resolución de problemas & 9.51 & $<$0.001  & Sí  & ANOVA         & 1711 \\
+Socio-individual      & 6.44   & $<$0.001  & Sí  & ANOVA         & 1711 \\
+\end{tblr}
+\begin{tablenotes}
+\footnotesize
+\item \textbf{Nota:}
+El nivel educativo de la madre se asocia significativamente con todos los
+dominios del desarrollo infantil. El grupo ``Universitario'' destaca por los
+puntajes más altos y diferencias significativas con otros grupos; ``Ninguna escolaridad''
+muestra los valores más bajos. El bajo nivel educativo materno es un factor
+de riesgo importante para alteraciones en el neurodesarrollo infantil.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Asociación entre nivel educativo del padre y riesgo en dominios del desarrollo}
+\label{tab:nivel_educativo_padre_desarrollo}
+\begin{threeparttable}
+\begin{tblr}{
+  width = 0.98\linewidth,
+  colspec = {X[1.4,l]X[0.8,c]X[1.0,c]X[1.0,c]X[1.0,c]X[0.7,c]},
+  row{1} = {font=\bfseries, bg=gray!10},
+  row{even} = {bg=gray!3},
+  cells = {valign=m, font=\footnotesize},
+  hline{1,2,Z} = {1pt},
+  hline{3-Y} = {0.5pt, gray},
+}
+\textbf{Dominio} & \textbf{F/W} & \textbf{\textit{p}-valor} & \textbf{Significativo} & \textbf{Método} & \textbf{N} \\
+Comunicación          & 6.82   & $<$0.001  & Sí  & ANOVA         & 1673 \\
+Motricidad gruesa     & 1.88   & 0.114     & No  & Welch's ANOVA & 1673 \\
+Motricidad fina       & 1.09   & 0.359     & No  & ANOVA         & 1673 \\
+Resolución de problemas & 1.36 & 0.247     & No  & ANOVA         & 1673 \\
+Socio-individual      & 2.57   & 0.036     & Sí  & ANOVA         & 1673 \\
+\end{tblr}
+\begin{tablenotes}
+\footnotesize
+\item \textbf{Nota:} El nivel educativo del padre se asocia significativamente con dos dominios del desarrollo infantil. Comunicación (F = 6.82, p $<$ 0.001, significativo) y Socio-individual (F = 2.57, p = 0.036, significativo). El grupo ``Ninguna escolaridad'' muestra los
+valores más bajos y el grupo ``básico'' muestra la media de valores Z más alta.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% Apéndice B - Consentimiento - Solución para evitar página en blanco
+\cleardoublepage
+\stepcounter{chapter} % Incrementa a capítulo 2 (B)
+\phantomsection % Necesario para hipervínculos correctos en el TOC
+\addcontentsline{toc}{chapter}{Apéndice B: Consentimiento informado}
 \includepdf[scale=0.9,pages=-,
-  pagecommand={\section*{Anexo 1: Consentimiento informado}},
-  addtotoc={1,chapter,1,{Consentimiento informado},{sec:consentimiento}}
+  pagecommand={\thispagestyle{plain}\vspace*{0pt}\begin{center}\Large\bfseries Apéndice B: Consentimiento informado\end{center}\vspace{1cm}}
 ]{images/consentimiento.pdf}
 
+% Apéndice C - Boleta - Solución para evitar página en blanco
+\cleardoublepage
+\stepcounter{chapter} % Incrementa a capítulo 3 (C)
+\phantomsection
+\addcontentsline{toc}{chapter}{Apéndice C: Boleta de recolección de datos}
 \includepdf[scale=0.85,pages=-,
-  pagecommand={\section*{Anexo 2: Boleta de recolección de datos}},
-  addtotoc={1,chapter,1,{Boleta de recolección de datos},{sec:boleta}}
+  pagecommand={\thispagestyle{plain}\vspace*{0pt}\begin{center}\Large\bfseries Apéndice C: Boleta de recolección de datos\end{center}\vspace{1cm}}
 ]{images/boleta.pdf}
 
+% Apéndice D - ASQ3 - Solución para evitar página en blanco
+\cleardoublepage
+\stepcounter{chapter} % Incrementa a capítulo 4 (D)
+\phantomsection
+\addcontentsline{toc}{chapter}{Apéndice D: Ejemplo de Cuestionario Edades y Etapas 3}
 \includepdf[scale=0.80,pages=1-5,
-  pagecommand={\section*{Anexo 3: Ejemplo de Cuestionario Edades y Etapas 3}},
-  addtotoc={1,chapter,1,{Ejemplo de cuestionario edades y etapas 3},{sec:asq3}}
+  pagecommand={\thispagestyle{plain}\vspace*{0pt}\begin{center}\Large\bfseries Apéndice D: Ejemplo de Cuestionario Edades y Etapas 3\end{center}\vspace{1cm}}
 ]{images/36meses.pdf}
+
+% Apéndice E - Plagio - Solución para evitar página en blanco
+\cleardoublepage
+\stepcounter{chapter} % Incrementa a capítulo 5 (E)
+\phantomsection
+\addcontentsline{toc}{chapter}{Apéndice E: Resultados de análisis de porcentaje de plagio}
+\includepdf[scale=0.80,pages=2,
+  pagecommand={\thispagestyle{plain}\vspace*{0pt}\begin{center}\Large\bfseries Apéndice E: Resultados de análisis de porcentaje de plagio\end{center}\vspace{1cm}}
+]{images/turnitin.pdf}
 
 \chapter*{Permiso para Reproducción de los Contenidos de la Investigación}
 
