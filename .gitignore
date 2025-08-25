@@ -1,0 +1,42 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.lof
+*.bbl
+*.blg
+*.lot
+*.out
+*.toc
+*.bcf
+*.run.xml
+*.blx.bib
+*.ccf
+*.fdb_latexmk
+*.fls
+*.figlist
+*.makefile
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# Generated PDF files (comment out if you want to track PDFs)
+*.pdf
+
+# System files
+.DS_Store
+*~
+*.tmp
+*.temp
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Backup files
+*.bak
+*.backup

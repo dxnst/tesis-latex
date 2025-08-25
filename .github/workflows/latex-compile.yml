@@ -1,0 +1,57 @@
+name: Compile LaTeX Thesis
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  compile-latex:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install LaTeX and dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          texlive-latex-base \
+          texlive-latex-recommended \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-lang-spanish \
+          texlive-bibtex-extra \
+          texlive-pictures \
+          texlive-science \
+          biber \
+          latexmk \
+          make
+          
+    - name: Verify LaTeX installation
+      run: |
+        pdflatex --version
+        biber --version
+        
+    - name: Compile LaTeX document
+      working-directory: ./primer-impresion
+      run: |
+        echo "Starting LaTeX compilation..."
+        make build
+        echo "Compilation completed successfully!"
+        
+    - name: Check PDF output
+      working-directory: ./primer-impresion
+      run: |
+        ls -la mydocument.pdf
+        echo "PDF size: $(stat -c%s mydocument.pdf) bytes"
+      
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: thesis-pdf
+        path: primer-impresion/mydocument.pdf
+        retention-days: 30

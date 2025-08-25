@@ -1,5 +1,7 @@
 # 📚✨ Tesis en LaTeX – Factores de Riesgo en el Neurodesarrollo Infantil 🎓  
 
+[![Compile LaTeX Thesis](https://github.com/dxnst/tesis-latex/actions/workflows/latex-compile.yml/badge.svg)](https://github.com/dxnst/tesis-latex/actions/workflows/latex-compile.yml)
+
 ¡Bienvenido/a al repositorio de mi tesis de graduación! Este proyecto documenta y organiza toda la investigación sobre **factores de riesgo en el neurodesarrollo infantil**, abordando un tema crucial para la salud pública en Guatemala. Todo el trabajo está compilado utilizando **LaTeX** para garantizar un formato académico profesional y de alta calidad.
 
 ---
@@ -10,7 +12,22 @@ Mi tesis investiga los factores de riesgo asociados al **neurodesarrollo infanti
 
 ---
 
-## 🚀 Cómo Compilar el Documento
+## 🤖 Compilación Automática
+
+Este repositorio incluye **GitHub Actions** para compilar automáticamente el documento LaTeX:
+
+- **Triggers**: Se ejecuta en cada push a `main` y en pull requests
+- **Ambiente**: Ubuntu con TeX Live completo
+- **Proceso**: Utiliza `pdflatex` y `biber` para compilación y bibliografía
+- **Artefactos**: El PDF final se guarda como artefacto descargable por 30 días
+
+### Ver compilaciones
+
+Puedes ver el estado de las compilaciones y descargar el PDF generado en la [página de Actions](https://github.com/dxnst/tesis-latex/actions).
+
+---
+
+## 🚀 Cómo Compilar Localmente
 
 Sigue estos pasos para compilar correctamente el documento final:
 
@@ -18,9 +35,11 @@ Sigue estos pasos para compilar correctamente el documento final:
 2. Clona este repositorio en tu computadora:
    ```bash
    git clone https://github.com/dxnst/tesis-latex.git
-   cd tesis-latex/protocolo
+   cd tesis-latex/primer-impresion
+   ```
 
 3. Usa el comando make para compilar el documento:
-    ```bash
-    make
-4. El archivo PDF final se generará como mydocument.pdf.
+   ```bash
+   make build
+   ```
+4. El archivo PDF final se generará como `mydocument.pdf`.
