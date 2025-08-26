@@ -3,27 +3,58 @@
 \usepackage[utf8]{inputenc}
 \usepackage[sfdefault]{arimo}
 \usepackage[T1]{fontenc}
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}
 \linespread{1.5}
 \usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
 
-% Consistent paragraph spacing - exactly 1.5 points between paragraphs
+% Formatos de títulos
+\titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{CAPÍTULO \ \thechapter.}{0.6em}{\centering\MakeUppercase}
+\titlespacing*{\chapter}{0em}{0cm}{1.5pt}
+
+\titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0em}{*1}{1.5pt}
+
+\titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{\subsectionindent}{*1}{1.5pt}
+
+% Formato de subsubtítulos
+\titleformat{\subsubsection}[block]
+  {\normalfont\bfseries\itshape}
+  {}
+  {0pt}
+  {\makebox[1.2em][l]{$\diamond$}\hspace{0.6em}}
+\titlespacing*{\subsubsection}{\subsubsectionindent}{*1}{1.5pt}
+
+% Espaciado de parráfos
 \usepackage[skip=1.5pt, indent=1.25cm]{parskip}
 
-% Add these packages for improved layout
+% Configuración para llenar por completo las páginas
 \usepackage{microtype}  
 \usepackage{needspace}
 
-% Adjust how LaTeX handles page breaks
 \widowpenalty=9999
 \clubpenalty=9999
 \brokenpenalty=9999
 
-% Try to fill pages better
 \flushbottom
+
+\usepackage{etoolbox}
+
+% Formato de indentaciones
+\newlength{\subsectionindent}
+\newlength{\subsubsectionindent}
+\setlength{\subsectionindent}{1em}
+\setlength{\subsubsectionindent}{2.5em}
+
+% Ajustar indentaciones al inicio de una sección
+\makeatletter
+
+% Formato para indentar según secciones, subsecciones y subsubsecciones
+\pretocmd{\section}{\setlength{\leftskip}{0pt}}{}{}
+\pretocmd{\subsection}{\setlength{\leftskip}{\subsectionindent}}{}{}
+\pretocmd{\subsubsection}{\setlength{\leftskip}{\subsubsectionindent}}{}{}
+\makeatother
 
 % Formato de tabla y de título de tabla
 \usepackage{graphicx}
@@ -44,69 +75,6 @@
 % Formato de fórmulas y expresiones matemáticas
 \usepackage{amsmath}
 
-% Custom page style for top-right page numbering (slightly more centered)
-%\usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyhf{} % Clear all header and footer fields
-%\fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
-%\renewcommand{\headrulewidth}{0pt} % Remove header rule
-%\renewcommand{\footrulewidth}{0pt} % Remove footer rule
-
-% For chapter pages (which use 'plain' style by default)
-%\fancypagestyle{plain}{%
-%  \fancyhf{} % Clear all header and footer fields
-%  \fancyhead[R]{\hspace{-1cm}\thepage} % Put page number in top right, slightly more centered
-%  \renewcommand{\headrulewidth}{0pt} % Remove header rule
-%  \renewcommand{\footrulewidth}{0pt} % Remove footer rule
-%}
-
-% Formatos de títulos with consistent 1.5pt spacing after titles
-\titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{CAPÍTULO \ \thechapter.}{0.6em}{\centering\MakeUppercase}
-\titlespacing*{\chapter}{0em}{0cm}{1.5pt}
-
-\titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
-\titlespacing*{\section}{0em}{*1}{1.5pt}
-
-\titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
-\titlespacing*{\subsection}{\subsectionindent}{*1}{1.5pt}
-
-% Modified subsubsection format with a visible bullet
-\titleformat{\subsubsection}[block]
-  {\normalfont\bfseries\itshape}
-  {}
-  {0pt}
-  {\makebox[1.2em][l]{$\diamond$}\hspace{0.6em}}
-\titlespacing*{\subsubsection}{\subsubsectionindent}{*1}{1.5pt}
-
-\usepackage{etoolbox}
-
-% Define the indentation values
-\newlength{\subsectionindent}
-\newlength{\subsubsectionindent}
-\setlength{\subsectionindent}{1em}          % Subtle indentation for subsections
-\setlength{\subsubsectionindent}{2.5em}     % Higher but still subtle indentation for subsubsections
-
-% Setup hooks to adjust paragraph indentation when sections begin
-\makeatletter
-
-% Reset indentation at section level
-\pretocmd{\section}{\setlength{\leftskip}{0pt}}{}{}
-
-% Set indentation for subsection and its paragraphs
-\pretocmd{\subsection}{\setlength{\leftskip}{\subsectionindent}}{}{}
-
-% Set indentation for subsubsection and its paragraphs
-\pretocmd{\subsubsection}{\setlength{\leftskip}{\subsubsectionindent}}{}{}
-\makeatother
-
-% Configure enumerate and itemize spacing - 1.5pt after list environment
-\setlist[enumerate]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
-\setlist[itemize]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
-
-% Set consistent spacing between list items
-\setlist[enumerate]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
-\setlist[itemize]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
-
 % Formato de citación
 \usepackage{csquotes}
 \usepackage[backend=biber, style=vancouver]{biblatex}
@@ -119,7 +87,13 @@
 	urlseen = {Accedido},
 }
 
-% Formato de numeración
+% Interlineado en listas
+\setlist[enumerate]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
+\setlist[itemize]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
+\setlist[enumerate]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+\setlist[itemize]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+
+% Formato de numeración de capítulos
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
@@ -140,6 +114,7 @@ Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
 \newcommand{\muestradeseada}{1,700}
 \newcommand{\asq}{"Cuestionario Edades y Etapas 3"}
 
+% Configuración para el apéndice
 \usepackage{appendix}
 
 \begin{document}
@@ -151,30 +126,30 @@ Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
 \includepdf[scale=1,pages=2]{extras/dictamen2.pdf}
 
 \chapter*{Dedicatoria}
-A mi madre cuyo amor incondicional, sacrificio y  apoyo constante
-ha sido el pilar fundamental de mi formación académica y personal. A mi padre
-por su paciencia y por enseñarme el valor de la perseverancia. Sus consejos y
-apoyo han sido invaluables en cada etapa de este camino.
+A mi madre, cuyo amor incondicional, sacrificio y apoyo constante han sido el 
+pilar fundamental de mi formación académica y personal. A mi padre, por su 
+paciencia y por enseñarme el valor de la perseverancia. Sus consejos y apoyo 
+han sido invaluables en cada etapa de este camino.
 
-A mis queridas abuela y bisabuela, cuya memoria y ejemplo de vida continúan
-inspirándome y recordándome la importancia del servicio hacia los demás y el
+A mis queridas abuela y bisabuela, cuya memoria y ejemplo de vida continúan 
+inspirándome y recordándome la importancia del servicio hacia los demás y el 
 compromiso con la comunidad.
 
-A mis queridos amigos, Sarah, Etelvina, Mariana, Sonia, Ángela, Carlos, Jaime,
-Israel, Estuardo, Óscar, Giselle y Gabriela, por siempre estar presentes.
+A mis queridos amigos Sarah, Etelvina, Mariana, Sonia, Angela, Carlos, Jaime, 
+Israel, Estuardo, Óscar, Giselle y Gabriela, por estar siempre presentes.
 
-A los doctores Sucelly Maaz, Ricardo Guzmán, Salvador Soto, Priscila González,
-quienes participaron en diferentes etapas de esta investigación, muchas gracias
-por la motivación y el apoyo para la realización de esta investigación en
-beneficio de la niñez guatemalteca.
+A los doctores Sucelly Maaz, Ricardo Guzmán, Salvador Soto y Priscila González, 
+quienes participaron en diferentes etapas de esta investigación. Muchas gracias 
+por la motivación y el apoyo para la realización de este estudio en beneficio 
+de la niñez guatemalteca.
 
-A Dra. Norma Yxquiac, por su ardua labor en reducir las desigualdades en salud y
-su dedicación incansable al servicio de las comunidades más vulnerables de
-Guatemala.
+A la Dra. Norma Yxquiac, por su ardua labor en reducir las desigualdades en 
+salud y su dedicación incansable al servicio de las comunidades más vulnerables 
+de Guatemala.
 
-A Aaron Swartz y Alexandra Elbakyan, por su esfuerzo en hacer la ciencia
-accesible para todos. El conocimiento debe compartirse entre todas 
-las personas que lo necesitan, no solo entre aquellas que puedan pagarlo.
+A Aaron Swartz y Alexandra Elbakyan, por su esfuerzo en hacer la ciencia 
+accesible para todos. El conocimiento debe compartirse entre todas las personas 
+que lo necesitan, no solo entre aquellas que pueden pagarlo.
 
 A la Universidad de San Carlos de Guatemala y al Instituto Guatemalteco de 
 Seguridad Social, por ser parte fundamental de mi formación como profesional. 
@@ -185,7 +160,7 @@ Finalmente, esta investigación está dedicada con especial cariño a todos los
 niños de Guatemala. Que este trabajo contribuya a crear intervenciones tempranas 
 que les permitan alcanzar su máximo potencial de desarrollo, sin importar su 
 origen étnico, condición socioeconómica o lugar de residencia. Ellos son la 
-razón por la cual esta investigación cobra sentido y significado.
+razón por la cual esta investigación cobra verdadero significado.
 
 \vspace{1cm}
 
@@ -202,8 +177,8 @@ Josué Daniel Soto Consuegra
 \end{flushright}
 
 \chapter*{Dedicatoria}
-A DIOS: GRACIAS, GRACIAS DIOS, por sostenerme cuando mis fuerzas claudicaban, 
-por abrir caminos donde sólo veía muros y por recordarme que cada tropiezo 
+A Dios: Gracias, gracias Dios, por sostenerme cuando mis fuerzas claudicaban, 
+por abrir caminos donde solo veía muros y por recordarme que cada tropiezo 
 también es aprendizaje. Este logro es testimonio de tu fidelidad incalculable 
 en mi vida.
 
@@ -214,53 +189,43 @@ otra con la certeza de que seguiré creciendo, sirviendo y aprendiendo.
 A mis padres, gracias por no soltarme la mano en los días largos ni en las 
 noches de estudio. Este título también lleva sus nombres.
 
-A mi mami, Angélica Vásquez, eres el modelo de la mujer que aspiro a ser:
-valiente, trabajadora, amorosa y firme. Tus abrazos me devolvieron la 
-calma, tus palabras me devolvieron la fe y tu ejemplo me enseñó que la 
-perseverancia transforma los sueños en metas y las metas en realidad. Quiero 
-ser como tú.
+A mi mami, Angélica Vásquez, eres el modelo de la mujer que aspiro a ser: 
+valiente, trabajadora, amorosa y firme. Tus abrazos me devolvieron la calma, 
+tus palabras me devolvieron la fe y tu ejemplo me enseñó que la perseverancia 
+transforma los sueños en metas y las metas en realidad. Quiero ser como tú.
 
-A mi papi, Edgar Ixquiac, tus consejos han sido guía en mi camino. 
-Gracias por creer en mí, por tu paciencia, por enseñarme a pensar con claridad 
-y a decidir con corazón y cabeza. Tus palabras me acompañarán en cada turno y 
-en cada consulta.
+A mi papi, Edgar Ixquiac, tus consejos han sido guía en mi camino. Gracias por 
+creer en mí, por tu paciencia, por enseñarme a pensar con claridad y a decidir 
+con corazón y cabeza. Tus palabras me acompañarán en cada turno y en cada 
+consulta.
 
-A mi abuelita, Valen ($\dagger$), querida, aunque ya no estés físicamente, tu
-amor sigue vivo en mí. Gracias por tu ternura, por cuidar de mí cuando más
-necesitaba atención y cariño, por las oraciones silenciosas, por enseñarme que
-la bondad también sana, y sobre todo por enseñarme que la fidelidad de Dios
+A mi abuelita, Valen ($\dagger$), querida, aunque ya no estés físicamente, tu 
+amor sigue vivo en mí. Gracias por tu ternura, por cuidar de mí cuando más 
+necesitaba atención y cariño, por las oraciones silenciosas, por enseñarme que 
+la bondad también sana, y sobre todo por enseñarme que la fidelidad de Dios 
 sostiene la vida, y que creer en Él es suficiente siempre. Este logro te honra.
 
-A Mariana Guzmán, gracias por tu compañía incondicional en un camino 
-que no ha sido fácil. Durante el trabajo hospitalario me regalaste tu tiempo, 
-tu apoyo y tu cariño sin medida. En los días más pesados fuiste descanso, y 
-en los días de logro, celebración. Gracias por estar.
+A Mariana Guzmán, gracias por tu compañía incondicional en un camino que no ha 
+sido fácil. Durante el trabajo hospitalario me regalaste tu tiempo, tu apoyo y 
+tu cariño sin medida. En los días más pesados fuiste descanso, y en los días 
+de logro, celebración. Gracias por estar.
 
 A mis padrinos, Paola Cifuentes y Yubini Mérida, gracias por sus consejos 
-oportunos y su apoyo especial en cada etapa. Sus palabras sabias, su guía y 
-su fe en mi formación hicieron la diferencia cuando la ruta parecía incierta. 
-Los llevo conmigo en este logro y en los que vendrán.
+oportunos y su apoyo especial en cada etapa. Sus palabras sabias, su guía y su 
+fe en mi formación hicieron la diferencia cuando la ruta parecía incierta. Los 
+llevo conmigo en este logro y en los que vendrán.
 
 Agradezco profundamente a esta casa de estudios que me abrió sus puertas y me 
-permitió encontrar valiosos mentores. En especial, a las doctoras Norma Yxquiac
-y Sucelly Maaz, quien con su ejemplo me enseñaron la importancia del servicio.
+permitió encontrar valiosos mentores. En especial, a las doctoras Norma Yxquiac 
+y Sucelly Maaz, quienes con su ejemplo me enseñaron la importancia del servicio. 
 Su guía ha sido fundamental en mi formación profesional y personal.
-
-%\vspace{2cm}
-
-%\begin{center}
-%\textit{``El mejor médico es el que conoce la inutilidad \\
-%de la mayor parte de las medicinas.''} \\
-%\textit{--- Benjamin Franklin}
-%\end{center}
-
-%\vspace{1cm}
 
 \begin{flushright}
 Etelvina Del Rosario Ixquiac Vásquez
 \end{flushright}
 
 \chapter*{Dedicatoria}
+
 A Dios, quien ha sido mi guía, mi refugio y mi fortaleza en cada paso de este 
 camino. Su luz me sostuvo y su mano me levantó, enseñándome que incluso en la 
 tormenta se puede hallar paz y que todo sacrificio tiene sentido bajo su 
@@ -270,7 +235,7 @@ con la que me ha bendecido.
 A mi madre, Jacinta Pérez, quien ha sido y seguirá siendo uno de los cimientos 
 más sólidos de mi vida. Gracias a tu amor inquebrantable, a tus sacrificios 
 silenciosos y a tu esperanza constante en mí, hoy puedo ver materializado este 
-sueño de convertirme en Médico y Cirujano. Con tu ejemplo me enseñaste que la 
+sueño de convertirme en médico y cirujano. Con tu ejemplo me enseñaste que la 
 perseverancia vence a la adversidad y que los logros verdaderos se construyen 
 con esfuerzo y entrega. Cada palabra de aliento y todo tu apoyo han quedado 
 grabados en mi corazón. Gracias, mamá, por darme alas para volar y raíces 
@@ -289,9 +254,9 @@ y seguir adelante. Con sus palabras y gestos de aliento me enseñó que las
 metas más grandes no se alcanzan en soledad, y este logro también lleva su 
 huella.
 
-Mi gratitud eterna a mi querida abuelita Valen ($\dagger$), quien en vida me
-brindó cariño, hogar y compañía en los momentos en los que no tuve a mis padres
-cerca durante mi carrera. Aunque ya no está físicamente, su recuerdo permanece
+Mi gratitud eterna a mi querida abuelita Valen ($\dagger$), quien en vida me 
+brindó cariño, hogar y compañía en los momentos en los que no tuve a mis padres 
+cerca durante mi carrera. Aunque ya no está físicamente, su recuerdo permanece 
 vivo en mi corazón, y sé que desde el cielo celebra conmigo este triunfo.
 
 A mis hermanos, Avidan y Esbin, gracias por estar siempre presentes, 
@@ -301,18 +266,9 @@ A la Dra. Norma Yxquiac, quien fue parte fundamental en este camino y cuyo
 apoyo y orientación resultaron esenciales para culminar con éxito este proceso 
 de investigación.
 
-Finalmente, extiendo un sincero agradecimiento a mi asesora Dra. Sucelly Maaz, y
-mi revisor Dr. Ricardo Guzmán por el apoyo y sabiduría durante el proceso de
-mi formación profesional.
-%\vspace{2cm}
-
-%\begin{center}
-%\textit{``La medicina es una ciencia de incertidumbre \\
-%y un arte de probabilidad.''} \\
-%\textit{--- William Osler}
-%\end{center}
-
-%\vspace{1cm}
+Finalmente, extiendo un sincero agradecimiento a mi asesora, Dra. Sucelly Maaz, 
+y a mi revisor, Dr. Ricardo Guzmán, por el apoyo y sabiduría brindados durante 
+el proceso de mi formación profesional.
 
 \begin{flushright}
 Mariana Del Rosario Guzmán Pérez
@@ -362,14 +318,6 @@ expectativas y sueños por cumplir.
 
 A todos ustedes, mi más profundo agradecimiento por ser parte de este logro.
 
-%\vspace{2cm}
-
-%\begin{center}
-%\textit{``El éxito no es el final, el fracaso no es fatal: \\
-%lo que cuenta es el valor para continuar.''} \\
-%\textit{--- Winston Churchill}
-%\end{center}
-
 \vspace{1cm}
 
 \begin{flushright}
@@ -377,44 +325,45 @@ Sonia María Mazariegos Manrique
 \end{flushright}
 
 \chapter*{Dedicatoria}
-A Dios, por ser mi guía y fortaleza en cada paso de este camino. Por darme la
-vida, la salud, y la sabiduría para afrontar cada reto con fe y esperanza.
 
-A mis padres, Simon López y Alby Castillo de López por su amor incondicional,
-por enseñarme el valor del esfuerzo y por estar siempre a mi lado,
-impulsándome a seguir adelante sin importar las circunstancias. Este logro
+A Dios, por ser mi guía y fortaleza en cada paso de este camino. Por darme la 
+vida, la salud y la sabiduría para afrontar cada reto con fe y esperanza.
+
+A mis padres, Simon López y Alby Castillo de López, por su amor incondicional, 
+por enseñarme el valor del esfuerzo y por estar siempre a mi lado, 
+impulsándome a seguir adelante sin importar las circunstancias. Este logro 
 también es suyo.
 
-A mis hermanos Alekza, Cody y Jesse López por su cariño, por compartir
-conmigo alegrías y dificultades, y por ser mi apoyo constante cuando más lo
+A mis hermanos Alekza, Cody y Jesse López, por su cariño, por compartir 
+conmigo alegrías y dificultades, y por ser mi apoyo constante cuando más lo 
 necesitaba.
 
-A mis mejores amigos, Daniel Soto, Alan Batz, Alejandra Hernández, Sonia
-Mazariegos y Manuela Lem, por su compañía, por cada palabra de aliento, por
-las risas que me devolvieron la calma y por recordarme que no estaba sola en
+A mis mejores amigos, Daniel Soto, Alan Batz, Alejandra Hernández, Sonia 
+Mazariegos y Manuela Lem, por su compañía, por cada palabra de aliento, por 
+las risas que me devolvieron la calma y por recordarme que no estaba sola en 
 este proceso.
 
-A mis asesores, Dra. Sucelly Maaz, Dra. Norma Yxquiac, y mi revisor Dr. Ricardo
-Guzmán, por su paciencia, orientación y compromiso. Gracias por compartir su
-conocimiento.
+A mis asesoras, Dra. Sucelly Maaz y Dra. Norma Yxquiac, y a mi revisor, Dr. 
+Ricardo Guzmán, por su paciencia, orientación y compromiso. Gracias por 
+compartir su conocimiento.
 
-A mis tutoras de electivo en anestesiología, doctoras Estela Herrera, Alejandra
-Borja, Hilda Pérez y Esther Ramírez por su dedicación, paciencia, y vocación
-docente que provocaron en mí una admiración por su especialidad, su guía
-constante marcaron un antes y un después en mi formación profesional.
+A mis tutoras de electivo en anestesiología, doctoras Estela Herrera, 
+Alejandra Borja, Hilda Pérez y Esther Ramírez, por su dedicación, paciencia y 
+vocación docente que despertaron en mí una admiración por su especialidad. Su 
+guía constante marcó un antes y un después en mi formación profesional.
 
-A mi abuela Saraí Barrios, por su sabiduría, oraciones y amor eterno y a mi
-abuelo Amado Castillo ($\dagger$), su ejemplo de vida y enseñanzas me inspiran a
-ser mejor cada día, y quien estaría sumamente orgulloso de mi.
+A mi abuela Saraí Barrios, por su sabiduría, oraciones y amor eterno, y a mi 
+abuelo Amado Castillo ($\dagger$), cuyo ejemplo de vida y enseñanzas me 
+inspiran a ser mejor cada día, y quien estaría sumamente orgulloso de mí.
 
-A mis primos D'jalma López, Maxy D'Llachieza, Edgar Camposeco, Meylin de
-Camposeco, a mis tíos, Gilmar, Osman y Mayen López por su apoyo, por las
+A mis primos D'jalma López, Maxy D'Llachieza, Edgar Camposeco y Meylin de 
+Camposeco, y a mis tíos Gilmar, Osman y Mayen López, por su apoyo, por las 
 palabras de ánimo y por estar presentes en mi formación personal y académica.
 
-Al Centro Universitario de Occidente, por brindarme la oportunidad de
-formarme como profesional y asi permitir alcanzar esta meta.
+Al Centro Universitario de Occidente, por brindarme la oportunidad de 
+formarme como profesional y así permitir alcanzar esta meta.
 
-A todos ustedes, gracias por ser parte fundamental de este logro. Cada uno
+A todos ustedes, gracias por ser parte fundamental de este logro. Cada uno 
 dejó una huella imborrable en esta etapa tan importante de mi vida.
 
 \vspace{0.5cm}
@@ -424,8 +373,6 @@ dejó una huella imborrable en esta etapa tan importante de mi vida.
 pero solo el amor cura a las personas.''} \\
 \textit{--- Patch Adams}
 \end{center}
-
-%\vspace{1cm}
 
 \begin{flushright}
 Sarah Ivón López Castillo
@@ -458,7 +405,7 @@ chronic growth retardation affected gross motor and socio-individual
 development, and increased screen time exposure was associated with 
 developmental risk across all domains. These findings provide evidence-based 
 insights for designing targeted interventions that address socioeconomic, 
-educational, and nutritional disparities to improve early childhood 
+educational and nutritional disparities to improve early childhood 
 development in Guatemala's most vulnerable populations.
 
 \textbf{Keywords:} Child Development, Neuropsychological Tests, Developmental
@@ -493,7 +440,7 @@ materno se asoció significativamente con todos los dominios del desarrollo
 grueso y socio-individual, y el aumento del tiempo de exposición a pantallas 
 se asoció con riesgo de desarrollo en todos los dominios. Estos hallazgos 
 proporcionan conocimientos basados en evidencia para diseñar intervenciones 
-dirigidas que aborden las disparidades socioeconómicas, educativas, y
+dirigidas que aborden las disparidades socioeconómicas, educativas y
 nutricionales  para mejorar el desarrollo infantil temprano en las poblaciones
 más  vulnerables de Guatemala.
 
@@ -509,16 +456,15 @@ Discapacidades del Desarrollo, Tamizaje Masivo, Evaluación de Riesgos.
 \chapter{Introducción}
 El neurodesarrollo infantil constituye un proceso dinámico y complejo que 
 establece las bases fundamentales del futuro cognitivo, emocional y social de 
-los individuos. Durante los primeros años de vida, especialmente en los 
-primeros 1000 días, las experiencias tempranas y las interacciones con el 
-entorno moldean la arquitectura cerebral, determinando habilidades cruciales 
-como el lenguaje, la memoria, la motricidad y el control emocional. Los 
-trastornos en este ámbito trascienden el impacto individual, generando una 
-carga significativa sobre las familias, los sistemas educativos y de salud 
-pública.
+los individuos. Durante los primeros años de vida, especialmente en los primeros
+1,000 días, las experiencias tempranas y las interacciones con el entorno
+moldean la arquitectura cerebral, determinando habilidades cruciales como el
+lenguaje, la memoria, la motricidad y el control emocional. Los trastornos en
+este ámbito trascienden el impacto individual, generando una carga significativa
+sobre las familias, los sistemas educativos y de salud pública.
 
 A nivel mundial, UNICEF reporta que aproximadamente 250 millones de niños
-menores  de 5 años están en riesgo de no alcanzar su potencial de desarrollo,
+menores de 5 años están en riesgo de no alcanzar su potencial de desarrollo,
 mientras  que cerca de 200 millones presentan retrasos en su desarrollo global
 debido a  la desnutrición en la primera infancia \cite{UNICEF2023}. Esta
 realidad se  intensifica particularmente en países de ingresos bajos y medios,
@@ -526,107 +472,109 @@ donde las  adversidades socioeconómicas, la pobreza y el acceso limitado a
 servicios de  salud crean un entorno adverso para el desarrollo infantil óptimo.
 
 Guatemala presenta uno de los panoramas más desafiantes de Latinoamérica en
-materia de desarrollo infantil: según el informe de la línea de base 
-de la Gran Cruzada Nacional por la Nutrición 2021/2022, únicamente el 49.8\% 
-de los niños guatemaltecos entre 24 y 59 meses se encuentran en el camino 
-adecuado de desarrollo, salud, aprendizaje y bienestar psicosocial. Esta 
-situación se agrava dramáticamente por el limitado acceso a programas de 
-primera infancia, evidenciado por el hecho de que solo el 1.9\% de las madres 
-de niños entre 2 y 5 años reportaron que sus hijos habían participado en estos 
-programas fundamentales \cite{SESAN2022}.
+materia de desarrollo infantil. Según el informe de la línea de base de la Gran
+Cruzada Nacional por la Nutrición 2021/2022, únicamente el 49.8\% de los niños
+guatemaltecos entre 24 y 59 meses se encuentran en el camino adecuado de
+desarrollo, salud, aprendizaje y bienestar psicosocial. Esta situación se agrava
+dramáticamente por el limitado acceso a programas de primera infancia,
+evidenciado por el hecho de que solo el 1.9\% de las madres de niños entre 2 y 5
+años reportaron que sus hijos habían participado en estos programas
+\cite{SESAN2022}.
 
-El contexto guatemalteco presenta desafíos extraordinarios que se manifiestan 
-en profundas desigualdades estructurales. La desnutrición crónica afecta al 
-46.5\% de los niños menores de 5 años, con disparidades significativas entre 
-población indígena (58\%) versus no indígena (34.2\%), y entre áreas rurales 
-(53\%) versus urbanas (34.6\%) \cite{EnMaternoInfantil}. Estas desigualdades 
-se reflejan directamente en los indicadores de desarrollo: mientras que el 
-57.9\% de los niños no indígenas muestra un desarrollo adecuado, solo el 45\% 
-de los niños indígenas alcanza este nivel, evidenciando las profundas brechas 
-que caracterizan al país \cite{SESAN2022}.
+El contexto guatemalteco presenta desafíos extraordinarios que se manifiestan en
+profundas desigualdades estructurales. La desnutrición crónica afecta al 46.5\%
+de los niños menores de 5 años, con disparidades significativas entre población
+indígena (58\%) y no indígena (34.2\%), así como entre áreas rurales (53\%) y
+urbanas (34.6\%) \cite{EnMaternoInfantil}. Estas desigualdades se reflejan
+directamente en los indicadores de desarrollo: mientras que el 57.9\% de los
+niños no indígenas muestra un desarrollo adecuado, solo el 45\% de los niños
+indígenas alcanza este nivel, evidenciando las profundas brechas que
+caracterizan al país \cite{SESAN2022}.
 
-En la región de Quetzaltenango, estos desafíos se intensifican debido a la 
-particular convergencia de factores sociodemográficos, económicos y 
-ambientales que caracterizan esta zona. A pesar de constituir una de las
-regiones económicamente más activas del país, persisten importantes desafíos en
-términos de equidad en el acceso a oportunidades de desarrollo infantil.
+En la región de Quetzaltenango, estos desafíos se intensifican debido a la
+particular convergencia de factores sociodemográficos, económicos y ambientales
+que caracterizan esta zona. A pesar de constituir una de las regiones
+económicamente más activas del país, persisten importantes desafíos en términos
+de equidad en el acceso a oportunidades de desarrollo infantil.
 
 Esta investigación surgió de la necesidad de generar evidencia científica para
-comprender los factores de riesgo asociados al neurodesarrollo infantil
-en Quetzaltenango. El objetivo principal de esta investigación fue establecer la
-asociación entre factores sociodemográficos, económicos, familiares y médicos
-con el riesgo en el neurodesarrollo en niños menores de 5 años en servicios de 
-atención primaria en el distrito de Quetzaltenango, mediante evaluaciones con
-el \asq. Específicamente, se buscó clasificar los resultados
-según grupos de edad para detectar patrones específicos de riesgo, se evaluó
-la asociación entre diversos factores de riesgo y el neurodesarrollo, y la
-relación entre el acceso a servicios de salud y la presencia de riesgo de
-retraso en el desarrollo.
+comprender los factores de riesgo asociados al neurodesarrollo infantil en
+Quetzaltenango. El objetivo principal fue establecer la asociación entre
+factores sociodemográficos, económicos, familiares y médicos con el riesgo en el
+neurodesarrollo en niños menores de 5 años en servicios de atención primaria en
+el distrito de Quetzaltenango, mediante evaluaciones con el \asq.
+Específicamente, se buscó clasificar los resultados según grupos de edad para
+detectar patrones específicos de riesgo, evaluar la asociación entre diversos
+factores de riesgo y el neurodesarrollo, y examinar la relación entre el acceso
+a servicios de salud y la presencia de riesgo de retraso en el desarrollo.
 
 Los hallazgos de este estudio revelan datos alarmantes de la realidad en la que
-se desarrollan miles de niños en Quetzaltenango, se identificó que 33.04\% de
-los niños presentan riesgo en al menos un dominio del desarrollo, que las
-categorías de motricidad son las más afectadas en la población. Se identificó
-que el bajo nivel educativo materno, la exposición temprana y prolongada a
-pantallas, así como desigualdades sociales, están estrechamente relacionadas
-con peores desenlaces en el neurodesarrollo infantil.
+se desarrollan miles de niños en Quetzaltenango. Se identificó que 33.04\% de
+los niños presentan riesgo en al menos un dominio del desarrollo, siendo las
+categorías de motricidad las más afectadas en la población. Asimismo, se
+determinó que el bajo nivel educativo materno, la exposición temprana y
+prolongada a pantallas, así como las desigualdades sociales, están estrechamente
+relacionadas con desenlaces desfavorables en el neurodesarrollo infantil.
 
 Los resultados de este estudio constituyen evidencia fundamental para contribuir
 al diseño de intervenciones y políticas públicas que puedan mejorar el
 desarrollo infantil temprano en Quetzaltenango. Esta investigación trasciende el
-ámbito académico; representa un llamado a la acción para mejorar el futuro de la
-niñez guatemalteca. Cada niño que no alcanza su potencial de desarrollo
+ámbito académico y representa un llamado a la acción para mejorar el futuro de
+la niñez guatemalteca. Cada niño que no alcanza su potencial de desarrollo
 representa una oportunidad perdida, no solo para él y su familia, sino para el
-progreso colectivo de nuestra sociedad. Esperamos fervientemente que estos
-hallazgos sean los primeros pasos para transformar la realidad del desarrollo
+progreso colectivo de nuestra sociedad. Se espera que estos hallazgos
+constituyan los primeros pasos para transformar la realidad del desarrollo
 infantil en Guatemala.
 
-	\chapter{Antecedentes}
+\chapter{Antecedentes}
 \section{Antecedentes y contextualización del neurodesarrollo infantil}
 \subsection{Panorama global del desarrollo infantil}
-A nivel global,  los desafíos asociados con el desarrollo infantil son amplios
-y están influenciados por factores socioeconómicos, culturales y ambientales.
-Según UNICEF, aproximadamente 250 millones de niños menores de 5 años están en 
-riesgo de no alcanzar su potencial de desarrollo debido a factores como la 
-desnutrición, la falta de estimulación temprana y el acceso limitado a 
-servicios de salud y educación \cite{UNICEF2023}. Estas condiciones adversas 
-son particularmente prevalentes en países de ingresos bajos y medios, donde se 
-observan altas tasas de desnutrición crónica y pobreza.
+A nivel global, los desafíos asociados con el desarrollo infantil son amplios 
+y están influenciados por múltiples factores socioeconómicos, culturales y 
+ambientales. Según UNICEF, aproximadamente 250 millones de niños menores de 5 
+años se encuentran en riesgo de no alcanzar su potencial de desarrollo debido 
+a factores como la desnutrición, la falta de estimulación temprana y el acceso 
+limitado a servicios de salud y educación \cite{UNICEF2023}. Estas condiciones 
+adversas son particularmente prevalentes en países de ingresos bajos y medios, 
+donde se observan altas tasas de desnutrición crónica y pobreza infantil.
 
 La neurociencia del desarrollo ha demostrado que los primeros años de vida, 
-especialmente los primeros 1000 días, son críticos para el desarrollo cerebral. 
-Durante este período, las experiencias ambientales y las interacciones con los 
-cuidadores moldean la arquitectura del cerebro, impactando habilidades como el 
-lenguaje, la memoria y el control emocional \cite{Stiles2010}. Las adversidades 
-tempranas, como la pobreza y la desnutrición, pueden tener efectos negativos 
-duraderos en la plasticidad cerebral, lo que subraya la importancia de 
-intervenciones tempranas y programas de estimulación.
+especialmente los primeros 1000 días, son críticos para el desarrollo cerebral 
+óptimo. Durante este período, las experiencias ambientales y las interacciones 
+con los cuidadores moldean la arquitectura neural, determinando habilidades 
+fundamentales como el lenguaje, la memoria y el control emocional 
+\cite{Stiles2010}. Las adversidades tempranas, incluyendo la pobreza y la 
+desnutrición, pueden generar efectos negativos duraderos en la plasticidad 
+cerebral, lo que subraya la importancia crítica de intervenciones tempranas y 
+programas de estimulación adecuados.
 
-Desde una perspectiva ecológica, el desarrollo infantil está influenciado por 
-múltiples sistemas que interactúan entre sí, como se describe en el modelo de 
-Bronfenbrenner \cite{Bronfenbrenner2005}. Este enfoque destaca la importancia 
-de los entornos inmediatos, como la familia y la comunidad, así como de 
-factores más amplios, como las políticas públicas y las normas culturales. En
-Guatemala, el acceso limitado a programas de primera infancia y los altos
-índices de desnutrición crónica limitan significativamente las oportunidades de
-desarrollo infantil, especialmente en comunidades rurales. \cite{SESAN2022}
+Desde una perspectiva bioecológica, el desarrollo infantil está influenciado 
+por diversos niveles contextuales que interactúan dinámicamente entre sí, como 
+se describe en el modelo de Bronfenbrenner \cite{Bronfenbrenner2005}. Este 
+enfoque destaca la relevancia de los entornos inmediatos, como la familia y la 
+comunidad, así como de factores contextuales más amplios, incluyendo las 
+políticas públicas y las normas culturales. En Guatemala, el acceso limitado a 
+programas de primera infancia y los altos índices de desnutrición crónica 
+restringen significativamente las oportunidades de desarrollo infantil, 
+especialmente en comunidades rurales e indígenas \cite{SESAN2022}.
 
 \subsection{Contexto guatemalteco del neurodesarrollo infantil}
-Guatemala se caracteriza por ser un país con una rica diversidad cultural,
-conformado por diferentes grupos étnicos: Maya, Garífuna, Xinka y Mestizo. 
-Aunque la mayoría de la población guatemalteca (54\%) reside en zonas urbanas,
-es importante señalar que la población indígena habita predominantemente en
-áreas rurales (57\%). \cite{PoliticaInfanciaGuate}
+Guatemala se caracteriza por su rica diversidad cultural, conformada por 
+cuatro grupos étnicos principales: Maya, Garífuna, Xinka y Mestizo. Aunque la 
+mayoría de la población guatemalteca (54\%) reside en zonas urbanas, es 
+importante señalar que la población indígena habita predominantemente en áreas 
+rurales (57\%) \cite{PoliticaInfanciaGuate}.
 
-El panorama demográfico de Guatemala presenta importantes desafíos para la
-primera infancia. Según datos del censo poblacional de 2018, en el país habitan
-aproximadamente 2,3 millones de niñas y niños menores de 6 años, de los cuales
-cerca de un millón viven en condiciones de pobreza y 800 mil en situación de
-extrema pobreza. \cite{INE} Los departamentos con mayor proporción de población
-infantil temprana son Totonicapán (41.7\%), Huehuetenango (41.4\%) y El Quiché
-(41.1\%). \cite{UNICEFAtlas} Adicionalmente, el 3.8\% de la población infantil
-y adolescente entre 4 y 17 años presenta algún tipo de dificultad visual,
-auditiva, física, de concentración, autocuidado o comunicación. \cite{INE}
+El panorama demográfico de Guatemala presenta importantes desafíos para la 
+primera infancia. Según datos del censo poblacional de 2018, en el país 
+habitan aproximadamente 2.3 millones de niñas y niños menores de 6 años, de 
+los cuales cerca de 1 millón viven en condiciones de pobreza y 800 mil en 
+situación de pobreza extrema \cite{INE}. Los departamentos con mayor proporción 
+de población infantil temprana son Totonicapán (41.7\%), Huehuetenango (41.4\%) 
+y El Quiché (41.1\%) \cite{UNICEFAtlas}. Adicionalmente, el 3.8\% de la 
+población infantil y adolescente entre 4 y 17 años presenta algún tipo de 
+dificultad visual, auditiva, física, de concentración, autocuidado o 
+comunicación \cite{INE}.
 
 Si bien Guatemala constituye la economía más grande de América Central en
 términos de población (aproximadamente 17.6 millones de habitantes en 2023) y
@@ -635,47 +583,46 @@ estadounidenses en 2023), este crecimiento económico no se ha traducido en una
 reducción significativa de la pobreza. Para 2023, se estimaba que el 55\% de la
 población vivía en condiciones de pobreza, mientras que la economía informal
 representaba el 49\% del PIB, con un 71.1\% de la población empleada trabajando
-en el sector informal. \cite{WorldBankGuate} Es importante destacar que la
+en el sector informal \cite{WorldBankGuate}. Es importante destacar que la
 pobreza y las experiencias adversas durante la infancia tienen efectos
 fisiológicos y epigenéticos a largo plazo en el desarrollo cerebral y la
-cognición. \cite{Luby_2015} \cite{Noble_2015}
+cognición \cite{Luby_2015, Noble_2015}.
 
 La situación del desarrollo infantil en Guatemala es preocupante. De acuerdo
-con los datos de 2021-2022, Guatemala ha obtenido un 50\% en el Índice de
-Desarrollo Infantil Temprano, lo que significa que apenas la mitad de los niños
-entre 24 y 59 meses presenta un desarrollo adecuado en salud, aprendizaje y
-bienestar psicosocial. Existen disparidades significativas entre diferentes
+con los datos de 2021-2022, Guatemala ha obtenido un 49.8\% en el Índice de
+Desarrollo Infantil Temprano, lo que significa que menos de la mitad de los
+niños entre 24 y 59 meses presenta un desarrollo adecuado en salud, aprendizaje
+y bienestar psicosocial. Existen disparidades significativas entre diferentes
 grupos poblacionales: mientras que el 57.9\% de los niños no indígenas muestra
-un desarrollo adecuado, solo el 45\% de los niños indígenas alcanza este nivel.
-\cite{SESAN2022} Las diferencias se acentúan aún más cuando se analiza el
+un desarrollo adecuado, solo el 45\% de los niños indígenas alcanza este nivel
+\cite{SESAN2022}. Las diferencias se acentúan aún más cuando se analiza el
 índice en función de la riqueza del hogar, observándose una brecha de 23 puntos
-porcentuales entre los hogares con mayor y menor riqueza. \cite{UNICEFGuate}
+porcentuales entre los hogares con mayor y menor riqueza \cite{UNICEFGuate}.
 
-El limitado acceso a oportunidades educativas constituye otro desafío
-fundamental. En 2020, la tasa neta de cobertura en el nivel inicial fue de
-apenas el 1.1\% a nivel nacional. En ese mismo año, se registraron 597,195
-niñas y niños inscritos en educación preprimaria, con una cobertura nacional
-del 60.8\%, representando el 13.8\% del total de estudiantes inscritos en
-los distintos niveles educativos. \cite{PoliticaInfanciaGuate} Para niños
-menores de 4 años, la cobertura educativa es particularmente baja, mientras que
-para niños entre 4 y 6 años alcanza el 64.4\%. \cite{MineducEstadistica}
+El limitado acceso a oportunidades educativas constituye otro desafío 
+fundamental. En 2020, la tasa neta de cobertura en el nivel inicial fue de 
+apenas el 1.1\% a nivel nacional. En ese mismo año, se registraron 597,195 
+niñas y niños inscritos en educación preprimaria, con una cobertura nacional 
+del 60.8\%, representando el 13.8\% del total de estudiantes inscritos en los 
+distintos niveles educativos \cite{PoliticaInfanciaGuate}. Para niños menores 
+de 4 años, la cobertura educativa es particularmente baja, mientras que para 
+niños entre 4 y 6 años alcanza el 64.4\% \cite{MineducEstadistica}.
 
 La situación educativa de la niñez con discapacidad representa un desafío
-particular para el país. Según la ENDIS 2016, el 76\% de las niñas y niños
-entre 5 y 18 años con algún tipo de discapacidad asiste a la escuela,
-observándose una marcada diferencia entre el área urbana (90\%) y el área rural
-(61\%). Los niños con limitaciones significativas en el funcionamiento físico o
-cognitivo tienen menor probabilidad de ser inscritos en establecimientos
-educativos. \cite{PoliticaInfanciaGuate}
+particular para el país. Según la Encuesta Nacional de Discapacidad en Guatemala
+de 2016, el 76\% de las niñas y niños entre 5 y 18 años con algún tipo de
+discapacidad asiste a la escuela, observándose una marcada diferencia entre el
+área urbana (90\%) y el área rural (61\%). Los niños con limitaciones
+significativas en el funcionamiento físico o cognitivo tienen menor probabilidad de ser inscritos en establecimientos educativos \cite{PoliticaInfanciaGuate}.
 
-Al analizar la relación entre desarrollo infantil temprano y estado
-nutricional, los resultados son consistentes con estudios previos que
-demuestran que los niños con desnutrición crónica tienden a presentar un menor
-desarrollo. En la encuesta de línea base de la Cruzada Nacional por la
-Nutrición 2021/2022, esta relación se evidencia claramente: el porcentaje de
-niños con desarrollo adecuado es mayor entre aquellos que no presentan
-desnutrición crónica (55,6\%) en comparación con quienes padecen este tipo de
-malnutrición (43,3\%). \cite{SESAN2022}
+Al analizar la relación entre desarrollo infantil temprano y estado nutricional, 
+los resultados son consistentes con estudios previos que demuestran que los 
+niños con desnutrición crónica tienden a presentar menor desarrollo. En la 
+encuesta de línea base de la Cruzada Nacional por la Nutrición 2021/2022, esta 
+relación se evidencia claramente: el porcentaje de niños con desarrollo 
+adecuado es mayor entre aquellos que no presentan desnutrición crónica (55.6\%) 
+en comparación con quienes padecen este tipo de malnutrición (43.3\%) 
+\cite{SESAN2022}.
 
 La desnutrición crónica afecta aproximadamente al 46.5\% de los niños
 guatemaltecos menores de 5 años, reflejando profundas desigualdades sociales.
@@ -684,9 +631,9 @@ rurales (53\% frente a 34.6\% en zonas urbanas), en población indígena (58\%
 frente a 34.2\% en población no indígena), en hogares donde las madres carecen
 de escolaridad (67.0\% frente a 19.1\% en hogares donde la madre tiene
 educación superior), en hogares con menor riqueza económica (65.9\% en el
-quintil inferior frente a 17.4\% en el quintil superior) y cuando existe un
-menor espaciamiento entre embarazos (57.0\% frente a 39.6\% con mayor
-espaciamiento). \cite{EnMaternoInfantil}
+quintil inferior frente a 17.4\% en el quintil superior) y cuando existe menor
+espaciamiento entre embarazos (57.0\% frente a 39.6\% con mayor espaciamiento)
+\cite{EnMaternoInfantil}.
 
 Las prácticas de alimentación infantil también presentan importantes desafíos.
 Solo el 63.1\% de las niñas y niños reciben lactancia materna dentro de la
@@ -695,8 +642,8 @@ los 0 y 6 meses de edad, y la duración promedio de la lactancia materna
 exclusiva es de apenas 2.8 meses. En cuanto a la alimentación complementaria,
 el 55.7\% de los niños entre 6 y 23 meses que son amamantados reciben cuatro o
 más grupos de alimentos, mientras que el 71.2\% de los niños no amamantados en
-este mismo rango de edad reciben una frecuencia mínima de comidas.
-\cite{EnMaternoInfantil} \cite{PoliticaInfanciaGuate}
+este mismo rango de edad reciben una frecuencia mínima de comidas
+\cite{EnMaternoInfantil, PoliticaInfanciaGuate}.
 
 Si bien la calidad del vínculo entre cuidadores y niños constituye un factor
 fundamental para el desarrollo infantil óptimo, las estadísticas en Guatemala
@@ -707,8 +654,8 @@ Chimaltenango, Quetzaltenango y San Marcos reveló que 8 de cada 10 adultos
 consideran que en su comunidad la forma más habitual de corregir a los hijos es
 mediante castigos físicos como cincho, chicote, vara, golpes o gritos. La mitad
 de los adultos piensa que la falta de este tipo de disciplina refleja una
-carencia de carácter por parte de los padres. \cite{PoliticaInfanciaGuate}
-\cite{UNICEFComportamientosNinez}
+carencia de carácter por parte de los padres
+\cite{PoliticaInfanciaGuate, UNICEFComportamientosNinez}.
 
 \subsection{Estudios previos sobre factores de riesgo en el neurodesarrollo}
 En una revisión sistemática y meta-análisis realizada por Wondmagegn et al.
@@ -765,18 +712,18 @@ dominio del ASQ-3.
 \subsection{Brechas en el conocimiento e importancia del estudio actual}
 En el distrito de Quetzaltenango, Guatemala, la vulnerabilidad económica, el
 acceso limitado a servicios de salud y los factores nutricionales representan
-un riesgo significativo para el neurodesarrollo infantil. Al igual que en otros
+riesgos significativos para el neurodesarrollo infantil. Al igual que en otros
 países de ingresos bajos y medios, las condiciones adversas en esta región
 pueden influir negativamente en los hitos del desarrollo infantil temprano.
 
 Esta problemática local se enmarca en un contexto global igualmente 
-preocupante. Según UNICEF\cite{UNICEF2023}, aproximadamente 250 millones de 
+preocupante. Según UNICEF \cite{UNICEF2023}, aproximadamente 250 millones de 
 niños menores de 5 años a nivel mundial están en riesgo de no alcanzar su 
 potencial de desarrollo, con cerca de 200 millones afectados por desnutrición 
-en la primera infancia. Particularmente relevante para nuestro estudio es que 
-más de 2 de cada 5 niños entre 3 y 4 años no reciben la estimulación temprana 
-ni el cuidado parental adecuados, factores que Domek et al.\cite{Domek2023} 
-identificaron como críticos para el desarrollo del lenguaje y socioemocional. 
+en la primera infancia. Particularmente relevante para este estudio es que más
+de 2 de cada 5 niños entre 3 y 4 años no reciben la estimulación temprana ni el
+cuidado parental adecuados, factores que Domek et al. \cite{Domek2023} 
+identificaron como críticos para el desarrollo socioemocional y del lenguaje. 
 
 La unión de los datos nacionales con los hallazgos globales subraya la 
 necesidad de investigaciones específicas en contextos como Quetzaltenango, 
@@ -2235,7 +2182,7 @@ anexo D) la cual consiste en un formulario en línea.
 Se realizó una limpieza inicial de datos para asegurar la consistencia de los
 datos y evitar sesgo por entrada de datos.
 
-Los puntajes obtenidos en cada área del desarrollo del \asq\ se convertieron a
+Los puntajes obtenidos en cada área del desarrollo del \asq\ se convirtieron a
 puntajes Z de acuerdo a la ficha técnica de los cuestionarios. 
 	
 \subsection{Análisis descriptivo}
@@ -2380,7 +2327,7 @@ En este documento se describieron claramente los objetivos, procedimientos,
 beneficios y posibles riesgos del estudio.
 
 \subsection{Confidencialidad y privacidad}
-La privacidad de los participantes se respetó de forma estrica. Toda la
+La privacidad de los participantes se respetó de forma estricta. Toda la
 información recolectada fue tratada de manera confidencial y utilizada
 únicamente con fines de investigación.
 

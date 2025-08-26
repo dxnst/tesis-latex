@@ -1,0 +1,160 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{arimo}
+\usepackage[T1]{fontenc}
+\linespread{1.5}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+% Formatos de títulos
+\titleformat{\chapter}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{CAPÍTULO \ \thechapter.}{0.6em}{\centering\MakeUppercase}
+\titlespacing*{\chapter}{0em}{0cm}{1.5pt}
+
+\titleformat{\section}[block]{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0em}{*1}{1.5pt}
+
+\titleformat{\subsection}[block]{\normalfont\bfseries\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{\subsectionindent}{*1}{1.5pt}
+
+% Formato de subsubtítulos
+\titleformat{\subsubsection}[block]
+  {\normalfont\bfseries\itshape}
+  {}
+  {0pt}
+  {\makebox[1.2em][l]{$\diamond$}\hspace{0.6em}}
+\titlespacing*{\subsubsection}{\subsubsectionindent}{*1}{1.5pt}
+
+% Espaciado de parráfos
+\usepackage[skip=1.5pt, indent=1.25cm]{parskip}
+
+% Configuración para llenar por completo las páginas
+\usepackage{microtype}  
+\usepackage{needspace}
+
+\widowpenalty=9999
+\clubpenalty=9999
+\brokenpenalty=9999
+
+\flushbottom
+
+\usepackage{etoolbox}
+
+% Formato de indentaciones
+\newlength{\subsectionindent}
+\newlength{\subsubsectionindent}
+\setlength{\subsectionindent}{1em}
+\setlength{\subsubsectionindent}{2.5em}
+
+% Ajustar indentaciones al inicio de una sección
+\makeatletter
+
+% Formato para indentar según secciones, subsecciones y subsubsecciones
+\pretocmd{\section}{\setlength{\leftskip}{0pt}}{}{}
+\pretocmd{\subsection}{\setlength{\leftskip}{\subsectionindent}}{}{}
+\pretocmd{\subsubsection}{\setlength{\leftskip}{\subsubsectionindent}}{}{}
+\makeatother
+
+% Formato de tabla y de título de tabla
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[table]{skip=0pt,singlelinecheck=off}
+\usepackage{tabularray}
+\usepackage{threeparttable}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+% Formato de inserción de imagenes y archivos pdf
+\usepackage{wrapfig}
+\graphicspath{ {images/} }
+\usepackage{pdfpages}
+
+% Formato de fórmulas y expresiones matemáticas
+\usepackage{amsmath}
+
+% Formato de citación
+\usepackage{csquotes}
+\usepackage[backend=biber, style=vancouver]{biblatex}
+\DeclareFieldFormat*{url}{\bibstring{urlfrom}: \url{#1}}
+\DeclareFieldFormat{urldate}{[\bibstring{urlseen}: \space#1]}
+\addbibresource{mydocument.bib}
+
+\DefineBibliographyStrings{spanish}{
+	urlfrom = {Disponible en},
+	urlseen = {Accedido},
+}
+
+% Interlineado en listas
+\setlist[enumerate]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
+\setlist[itemize]{after=\vspace{1.5pt}, before=\vspace{1.5pt}}
+\setlist[enumerate]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+\setlist[itemize]{itemsep=1.5pt, parsep=0pt, topsep=1.5pt}
+
+% Formato de numeración de capítulos
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+
+% Redefinir el formato de numeración de tablas y figuras para usar arábigos
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
+% Cosas generales
+\title{Factores de riesgo en el neurodesarrollo infantil}
+\author{Soto Consuegra, Josué Daniel \and López Castillo, Sarah Ivón \and
+Ixquiac Vásquez, Etelvina Del Rosario \and Guzmán Pérez, Mariana Del Rosario
+\and Mazariegos Manrique, Sonia María}
+\newcommand{\tiempito}{durante 2,025}
+\newcommand{\muestradeseada}{1,700}
+\newcommand{\asq}{"Cuestionario Edades y Etapas 3"}
+
+% Configuración para el apéndice
+\usepackage{appendix}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\includepdf[scale=1,pages=-]{extras/caratulas.pdf}
+\includepdf[scale=1,pages=2]{extras/dictamen2.pdf}
+\includepdf[scale=1,pages=-]{extras/dictamen.pdf}
+\includepdf[scale=1,pages=1]{extras/dictamen2.pdf}
+
+% Incluir dedicatorias
+\input{prefacio/dedicatorias/josue}
+\input{prefacio/dedicatorias/etelvina}
+\input{prefacio/dedicatorias/mariana}
+\input{prefacio/dedicatorias/sonia}
+\input{prefacio/dedicatorias/sarah}
+
+% Incluir abstract
+\input{prefacio/abstract}
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{contenido/01-introduccion}
+\input{contenido/02-antecedentes}
+\input{contenido/03-objetivos}
+\input{contenido/04-material-metodo}
+\input{contenido/05-resultados}
+\input{contenido/06-discusion}
+\input{contenido/07-conclusiones}
+\input{contenido/08-recomendaciones}
+
+\printbibliography[heading=bibintoc]
+
+\cleardoublepage
+
+\input{apendices/apendice}
+\input{apendices/licencia-cc}
+
+\end{document}
